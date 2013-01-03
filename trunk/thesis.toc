@@ -1,0 +1,61 @@
+\contentsline {section}{Abstract}{i}
+\contentsline {section}{Acknowledgements}{iii}
+\contentsline {section}{Table of Contents}{iv}
+\contentsline {section}{List of Figures}{vii}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}Background}{1}
+\contentsline {section}{\numberline {1.2}Problem statement and objectives}{3}
+\contentsline {section}{\numberline {1.3}Contributions and thesis organization}{4}
+\contentsline {chapter}{\numberline {2}Literature Review}{8}
+\contentsline {section}{\numberline {2.1}Sketch-based modeling system}{8}
+\contentsline {subsection}{\numberline {2.1.1}Sketching methods}{9}
+\contentsline {subsection}{\numberline {2.1.2}Sculpting methods}{14}
+\contentsline {section}{\numberline {2.2}Surface-based mesh deformation}{17}
+\contentsline {subsection}{\numberline {2.2.1}Laplacian-based methods}{19}
+\contentsline {subsection}{\numberline {2.2.2}Other methods}{23}
+\contentsline {section}{\numberline {2.3}Surface reconstruction from cross sections}{25}
+\contentsline {chapter}{\numberline {3}Reference Plane Assisted Sketching Interface for Progressive Shape Design}{28}
+\contentsline {section}{\numberline {3.1}Introduction}{28}
+\contentsline {section}{\numberline {3.2}User interface}{30}
+\contentsline {subsection}{\numberline {3.2.1}Sketching tool}{31}
+\contentsline {subsection}{\numberline {3.2.2}Sculpting tool}{34}
+\contentsline {subsubsection}{Basic functions}{34}
+\contentsline {subsubsection}{Deformation tool}{36}
+\contentsline {section}{\numberline {3.3}Algorithms}{38}
+\contentsline {subsection}{\numberline {3.3.1}Input stroke preprocessing}{38}
+\contentsline {subsection}{\numberline {3.3.2}Stroke rules}{39}
+\contentsline {subsection}{\numberline {3.3.3}Reference plane calculation}{42}
+\contentsline {section}{\numberline {3.4}Results and discussions}{46}
+\contentsline {chapter}{\numberline {4}Progressive Surface Reconstruction from Orthogonal Cross Sections}{48}
+\contentsline {section}{\numberline {4.1}Introduction}{48}
+\contentsline {section}{\numberline {4.2}Overview of the algorithm}{49}
+\contentsline {section}{\numberline {4.3}Sub-surface reconstruction for a \textit {body} zone}{52}
+\contentsline {section}{\numberline {4.4}Sub-surface reconstruction for an \textit {end} zone}{55}
+\contentsline {section}{\numberline {4.5}Global surface reconstruction}{57}
+\contentsline {subsection}{\numberline {4.5.1}Mesh improvement}{57}
+\contentsline {section}{\numberline {4.6}Results and discussions}{58}
+\contentsline {chapter}{\numberline {5}Triangular Mesh Deformation via Edge-Based Graph}{60}
+\contentsline {section}{\numberline {5.1}Introduction}{60}
+\contentsline {section}{\numberline {5.2}Edge-based graph}{62}
+\contentsline {section}{\numberline {5.3}Flexible mesh deformation}{63}
+\contentsline {subsection}{\numberline {5.3.1}First and second order discrete differential quantities}{63}
+\contentsline {subsection}{\numberline {5.3.2}Energy function for flexible deformation}{66}
+\contentsline {subsection}{\numberline {5.3.3}Solving of the system}{69}
+\contentsline {section}{\numberline {5.4}Specification of the balance parameters}{70}
+\contentsline {section}{\numberline {5.5}Results and discussions}{75}
+\contentsline {chapter}{\numberline {6}Editable Surface Reconstruction from Cross Sections with Arbitrary Orientations}{79}
+\contentsline {section}{\numberline {6.1}Introduction}{79}
+\contentsline {section}{\numberline {6.2}Overview of the algorithm}{82}
+\contentsline {section}{\numberline {6.3}Surface reconstruction}{83}
+\contentsline {subsection}{\numberline {6.3.1}Sub-surface reconstruction for a \textit {body} zone}{84}
+\contentsline {subsection}{\numberline {6.3.2}Sub-surface reconstruction for an \textit {end} zone}{88}
+\contentsline {subsection}{\numberline {6.3.3}Global surface reconstruction}{90}
+\contentsline {section}{\numberline {6.4}Topology editing}{90}
+\contentsline {subsection}{\numberline {6.4.1}The join operation}{91}
+\contentsline {subsection}{\numberline {6.4.2}The split operation}{93}
+\contentsline {section}{\numberline {6.5}Results and discussions}{95}
+\contentsline {chapter}{\numberline {7}Conclusions}{99}
+\contentsline {section}{\numberline {7.1}Summary}{99}
+\contentsline {section}{\numberline {7.2}Future directions}{101}
+\contentsline {chapter}{References}{103}
+\contentsline {chapter}{Author's Publications}{103}

@@ -1,0 +1,186 @@
+\documentclass{puthesis}
+\usepackage{times}
+\usepackage{listings}
+\usepackage[chapter]{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage[symbol]{footmisc}
+\doublespacing
+\usepackage{fancyhdr}
+\usepackage{lscape}
+\usepackage{cases}
+
+\renewcommand{\algorithmicrequire}{\textbf{Given:}}
+\renewcommand{\algorithmicensure}{\textbf{Goal:}}
+%\renewcommand{\labelitemi}{$\diamond$}
+
+\def\bez{B\'ezier\ }
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\newcommand{\bt}{{\bf t}}
+\newcommand{\bu}{{\bf u}}
+\newcommand{\bv}{{\bf v}}
+\newcommand{\bs}{{\bf S}}
+\newcommand{\jfair}{J_{fair}(\bs)}
+\newcommand{\myvec}[4]{#1_#2,#1_#3,\cdots,#1_#4}
+%\newcommand{\mybracket}{]}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{WANG KAI}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abstract{ This research investigates the use of sketching
+techniques  in 3D modeling and reconstruction to enhance various
+processes such as 3D model creation, editing, analyzing and
+computing. 3D geometric models have been widely used in various
+applications from industrial design to digital entertainment.
+However, creating and processing 3D models with traditional 2D
+WIMP-style (Windows, Icon, Menu, Pointer) interfaces are generally
+tedious and time-consuming. On the other hand, sketching interfaces
+are emerging as a new approach to enhance user interactions for
+various design activities. The sketching interfaces are expected to
+provide flexible and intuitive interactions between computers and
+users. To effectively incorporated the sketching techniques into 3D
+modeling and reconstruction, some fundamental theories and
+supporting algorithms should be developed. The goal of this research
+is thus to investigate how to create intuitive and effective
+sketching interfaces and meanwhile to develop sketch-based
+techniques for creating and editing 3D geometric models.
+
+First, we develop a reference  plane assisted sketching interface
+for freeform shape design, in which the user can create and edit 3D
+models through simple sketches. To regularize and interpret the user
+input properly when sketching the shape of the 3D object, we
+introduce some rules for the strokes into the system, which consider
+both the semantic meaning of the sketched strokes and human
+psychology. To make 3D location and orientation of strokes
+meaningful and intuitive within 2D interface, we propose to perform
+the modeling operations with reference to some auxiliary planes,
+which are automatically constructed based on the user sketches or
+default setting. The use of reference planes helps to make the
+sketch-based modeling system more intuitive and easy to use.
+%Third, we also propose a local refinement scheme for triangular meshes to improve the quality of the constructed mesh, especially after large deformation. This sketching system also serves as a platform to test various digital geometry processing algorithms for our research.
+
+Second, we propose a  progressive modeling approach to allow the
+user to create a 3D model with arbitrary topology through iterative
+sketches, by taking both the existing sketched curves and the
+up-to-date reconstructed model as references. In this way, the user
+gets aware of the shape of the sketched model, which helps to avoid
+unexpected modeling result. To effectively support this modeling
+approach, we present a CSG-based surface reconstruction algorithm
+that enables gradual shape updates and produces models with a singly
+connected component when the user iteratively adds new sketches. By
+using this progressive modeling approach in the sketching interface,
+the creation function  will become more powerful in producing a
+desired 3D shape by iterative sketches from scratch, and ambiguities
+on perception of the sketched shape can be avoided to a large
+extent.
+
+Third, we propose an  edge-based flexible mesh deformation algorithm
+to effectively support the editing function in our sketch-based
+modeling system. An edge-based graph is proposed for a triangular
+mesh, which makes more points get involved in the evaluation of
+shape of the mesh surface and thus renders more accurate computation
+results. Based on the edge-based graph, we develop a flexible mesh
+deformation algorithm which gives the user flexibility to adjust the
+deformation effects between local shape preservation and global
+smoothness through manipulating a simple balance parameter. This
+scheme is also applied to local parts of a mesh, to approximate the
+deformation effect of real-world objects with non-uniformly
+distributed materials. In this way, the deformation process in the
+sketch-based modeling  will become more flexible and effective for
+the user to produce a satisfactory modeling result.
+
+Finally, we apply  the sketching technique to tackle the problem of
+surface reconstruction from general cross section curves. A new
+framework  is proposed to build a smooth mesh surface from cross
+sections with arbitrary orientations. The framework consists of two
+parts. The first part generalizes the algorithm in our progressive
+modeling to reconstruct surfaces  interpolating the input cross
+sections with arbitrary orientations and having regular local
+shapes. The second part allows the user to edit the local topology
+of the reconstructed model through simple sketches, if the initial
+one is not satisfactory. It makes use of the intermediate
+information obtained in the first part and thus avoids complicated
+analysis and computations. Our framework has the unique property of
+producing a manifold surface with only one connected component,
+which is usually desired in practice. It can be used in many
+geometric modeling tasks, including sketch-based modeling.
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\acknowledgements{
+First and foremost, I would like to thank my supervisor Prof. Zheng Jianmin, for his patient instructions and constant support on this research. His great insight and knowledge always guide me stepping forward and getting out of confusions and frustrations, and his serious attitude helps me to keep on improving the quality of the research work. I believe the things I learned from him will benefit me a lot in my future development. I also thank Prof. Seah Hock-Soon for his instructions and support on my research. I deeply appreciate their encouragement and sincerely hope that our cooperation will continue in the future.
+
+I should appreciate the financial support for this research provided by the National Research Foundation grant, which is administrated by the Media Development Authority Interactive Digital Media Programme Office, and the space and equipment provided by GameLab, Nanyang Technological University.
+
+It is a great pleasure to have the useful cooperations, discussions and funs with my following colleagues and friends in the past four years: Dr. Wang Yimin, Dr. Pan Jianjiang, Dr. Chen Xiaodiao, Dr. Chen Wenyu, Dr. Xin Shiqing, Dr. Li Xin, Dr. Cao Juan, Ma Yuewen, Zhou Hailing, Wu Xiaoqun, Li Yusha, Zhao Ming, Chen Shuangmin, Zhang Wenjing, and Zhang Yuzhe.
+
+Deep thanks to Prof. Wu Zhongke and Prof. Tian Feng for providing me the chance to come to Singapore and see the world. I also appreciate the encouragement and valuable opinions on my career development from Prof. Zhao Zhiwen and Prof. Yao Li.
+
+I would like to extend the deepest appreciations to my parents and my wife, for their constant and reliable support which gives me the faith and courage to face all the challenges in my life.
+
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[R]{\nouppercase{\small\bfseries\rightmark}}
+
+
+\chapter{Introduction}\label{ch:introduction}
+\input{chap1_intro}
+
+\chapter{Literature Review}\label{ch:review}
+\input{chap2_review}
+
+\chapter{Reference Plane Assisted Sketching Interface for Progressive Shape Design}\label{ch:planeSBIM}
+\input{chap3_framework}
+
+\chapter{Progressive Surface Reconstruction from Orthogonal Cross Sections}\label{ch:orthsurf}
+\input{chap4_surfreconortho}
+
+\chapter{Triangular Mesh Deformation via Edge-Based Graph}\label{ch:flexdeformation}
+\input{chap5_deform}
+
+
+\chapter{Editable Surface Reconstruction from Cross Sections with Arbitrary Orientations}\label{ch:editsurf}
+\input{chap6_editsurfrecon}
+
+
+\chapter{Conclusions}\label{ch:conclusion}
+\input{chap7_conclusion}
+
+
+\clearpage
+\renewcommand{\bibname}{References}
+\addcontentsline{toc}{chapter}{References}
+
+\bibliographystyle{ieeetrans}
+%\nocite{*}
+\bibliography{thesis_ref}
+
+
+\clearpage
+\addcontentsline{toc}{chapter}{Author's Publications}
+\chapter*{Author's Publications}
+\input{chap8_mypub}
+
+\end{document}
