@@ -1,0 +1,68 @@
+Note that these stroke rules make the input curves consistent
+with the common sense of the cross sections which represent the
+intersections of the planes and the surface of a 3D object with
+no self-intersections. Meanwhile, the curve merging process can
+handle inconsistent cross sections automatically. These make our
+system meet the guidelines of the user interface design proposed
+in~\cite{NM94} that the interface should match with the real world
+conventions and help users to recover from errors. Thus, these
+rules and strategies are coincident with the human psychology and
+make our sketching interface natural and intuitive to user.
+
+
+%some fundamental geometric processing algorithms for supporting the operations in the sketch-based modeling system are studied. For example, we propose an edge-based graph for triangular mesh to have more points evaluated on the mesh surface without remeshing and get more accurate shape computation. Based on this graph, we develop a flexible mesh deformation algorithm, which discretizes the physically accurate thin shell deformation energy of the smooth surfaces on triangular meshes. This algorithm gives the user the flexibility to choose between the rigid and smooth deformation results on both the global and local part of the mesh to meet the specific requirement. We also propose a local refinement scheme for triangular meshes to improve the mesh quality after large deformation.
+
+
+%put these two paragraphs into chapter 1
+%Sketch-based modeling is a method of creating 3D models for use in 3D computer graphics applications. Different from traditional methods which implement the 3D modeling through editing geometric primitives tediously, sketch-based modeling allows the user to input 2D curves first and then converts it to a 3D object automatically using various modeling algorithms. That is to say, by using some simple strokes or gestures, the user could create and edit a 3D object to a desired shape. It integrates the knowledge from several diverse domains, such as computer graphics, computer vision, human-computer interaction (HCI), and artificial intelligent (AI).
+
+%To combine both speed and ease of paper-based sketching with the flexibility of computer systems, the modeling of 3D objects from 2D drawings and the subsequent editing of the 3D models should be as simple and rapid as possible to provide real-time feedback to the user. So it is necessary to develop a user-friendly interface to allow user to sketch directly unrestricted, and to convey their ideas more vividly. This also requires the existing supporting algorithms to be improved fit the new interface and achieve a better performance.
+%put these two paragraphs into chapter 1
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------------------------------------------------------------------------------------------------------------
+\subsection{Pure constructive systems}
+\label{ch2:sec:sbim:pure}
+
+As introduced in~\cite{CIW08}, sketching and sculpting have been the main techniques used by humans to communicate about shapes. These two techniques are also extended into the field of sketch-based modeling when creating a 3D model from scratch. In the sketching method, the user sketches the 2D contours from scratch and the 3D models with the depicted shape will be constructed automatically. While in sculpting, the user starts the creation from a very rough 3D shape and uses various sketching tools to carve, deform, extend or smooth it to a delicate one. Here we first review the systems using the sketching technique, and then introduce various sculpting tools in detail.
+
+
+%-----------------------------------------------------------------------------------------------------------------
+\subsection{Template-based Systems}
+\label{ch2:sec:sbim:templ}
+
+Different from the pure constructive systems which create a 3D model from scratch, the template-based systems build 3D models through learning existing template information and are usually dedicated to some specific applications. They are characterized by the fact that they have some \lq\lq{memory}\rq\rq of 3D shapes built in, which guides their interpretation of input sketches. This requires the analysis of the geometric or semantic features of the template shapes, such as the silhouette of the 3D shape under some views, the curvature distributions, etc. The applications of such systems include the modeling of clothes~\cite{TWBCH07}, trees~\cite{TST06,OOI06}, hair~\cite{WBC07}, clouds~\cite{WBC08}, architectural shapes~\cite{SketchUp} and so on.
+
+Funkhouser et al.~\cite{FMKCHDJ03} proposed a method of constructing an object using the projected contours of existing models from up to 13 different viewpoints. Object templates are first created by applying image-based transformations to each of the projected contours to extract the fixed-length and rotation-invariant features. Input curves are then matched to an object by applying the same image transformations and comparing against the stored templates. This methods works well for models with simple shapes, though it will be tedious for the user to depict the shape when it becomes complex.
+
+The Magic Canvas system~\cite{SI07} uses template retrieval for scene construction. It also extracts several contours from each template object and uses a Fourier-based method for sketch matching. Different from~\cite{FMKCHDJ03}, it enables the automatic rotation and scaling of the objects to match the input sketch orientation and the inferring of simple geometric relationships, although some user intervention is required to initiate the retrieval process on sub-sketches within the scene. 
+
+Vladislav et. al~\cite{KSV09} further applied this method for the construction of free-form models, by using just one template model. The input strokes are matched with the corresponding feature lines on the template using the Hidden Markov Model algorithm~\cite{LR89}, and the final model is constructed by deforming the template using the mean-value encoding algorithm~\cite{KS06}. Similar methods can be found in~\cite{KDS06,ZNA07}. In these methods, no extra user intervention is needed, while the topology of the final model is restricted to be the same as the template.
+
+Yang et al.~\cite{YSM05} proposed a similar template-based system, but rather than mesh-based templates, they use procedurally described models. For example, instead of having a mug's mesh for a template, they have a template that describes how to make a mug from simple primitives. Similar idea can be found in~\cite{LF08}. This method has the benefit of allowing the template to be deformed to match the input sketch, rather than just replaced with an instance of the template. However, the procedural template definition makes adding new templates more difficult than mesh-base approaches.
+
+More recently, Xu et al.~\cite{XZZCLX11} proposed to use both template 3D models and photo for the reconstruction. The user first sketches the silhouettes of the target shape on a photo of a similar 3D shape, then an optimal 3D model will be selected from the pre-analyzed template models and deformed to fit the 2D object in the photo. With the help of the photo template, the depiction of the target model can be more elaborate, though it remains difficult to find the precise correspondence between the 2D photo and 3D model, especially for asymmetric shapes. 
+
+The template-based method provides the user an intuitive and rapid method for creating a 3D model by making use of existing information. However, it remains difficult to handle the increasing of the computational complexity brought by that of the template information. Comparing to the pure constructive systems, it limits the user creativity to some extent and thus is suitable for the modeling in specific applications.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+In the sketching method, the user sketches the 2D contours from scratch and the 3D models with the depicted shape will be constructed automatically. It is somehow like the process that an artist/designer creates a product through drawing on the paper using a pen.
+
+@article {AJC11,
+author = {J. Andrews and P. Joshi and N. Carr},
+title = {A Linear Variational System for Modelling From Curves},
+journal = {Computer Graphics Forum},
+volume = {30},
+number = {6},
+pages = {1850--1861},
+year = {2011},
+}
+
+
+
+By sketching network of curves to define the 3D contours under various viewpoints, these patch-based methods work well on producing non-manifold surfaces. 

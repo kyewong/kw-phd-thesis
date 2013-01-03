@@ -1,0 +1,947 @@
+This chapter reviews the state-of-the-art in the related research
+areas.  We begin from the sketch-based modeling, especially the two
+important modules of producing 3D models: sketching and sculpting.
+Then we survey the work on mesh deformation and surface
+reconstruction from cross sections, which are two fundamental
+geometric algorithms in sketch-based modeling and reconstruction.
+
+
+
+%-----------------------------------------------------------------------------------------------------------------
+\section{Sketch-based modeling system}\label{ch2:sec:sbim}
+
+In recent years, a lot of papers on sketch-based  modeling have been
+published~\cite{OSSJ09}, proposing different kinds of user
+interfaces and algorithms. Some of these works make use of existing
+template models or images to help interpret the user input and
+reconstruct the target models, while others build 3D models purely
+from the 2D user sketches without using any prior information.
+
+The template-based systems are characterized by  the fact that they
+have some \lq\lq{memory}\rq\rq of 3D shapes built in, which guide
+their interpretation of the input sketches. This requires the
+analysis of the geometric or semantic features of the template
+shapes, such as the silhouette of the 3D shape under some views, the
+curvature distributions, etc. These methods are usually dedicated to
+some specific modeling applications, such as the modeling of
+clothes~\cite{TWBCH07}, trees~\cite{TST06,OOI06,CNXDK08},
+hair~\cite{WBC07}, clouds~\cite{WBC08}, architectural
+shapes~\cite{SketchUp} and so on.
+
+Contrarily, the other systems take only the user  sketches as input
+and build 3D models from scratch. In such systems, sketching and
+sculpting, which are the main techniques used by humans to
+communicate about shapes~\cite{CIW08}, are adopted for the creation
+and editing of the 3D models. In the sketching method, the user
+sketches the 2D curves from scratch and the 3D models with the
+depicted shape will be constructed automatically. While in
+sculpting, the user starts the creation from a very rough 3D shape
+and uses various sketching tools to carve, deform, extend or smooth
+it to a delicate one. Here we first review the systems using the
+sketching technique, and then examine various sculpting tools in
+detail.
+
+
+%-----------------------------------------------------------------------------------------------------------------
+\subsection{Sketching methods}
+\label{ch2:sec:sbim:sketch}
+
+
+The sketching technique usually lets the user  sketch the
+silhouettes and feature lines to depict the 3D shape and then
+constructs the model automatically.
+
+\textbf{Single view sketching}: One popular  sketching method is to
+first allow the user to complete complex sketches on the 2D plane
+under a fixed viewpoint, then interpret and map the 2D curves or
+strokes into 3D space according to some rules, and finally
+reconstruct the 3D model corresponding to the input sketches. This
+is quite similar to people's drawing behavior when sketching an
+object on a paper with a pen. The way of the interpretations usually
+conforms to the 10 visual rules proposed by Hoffman~\cite{HD00} for
+the understanding of the 2D drawings which depict a 3D object in
+visual intelligence.
+
+%single view, balloon-like simple shape
+The pioneer work Teddy~\cite{IMT99} allows the  user to sketch a
+simple closed contour to depict a model with balloon-like shape
+which takes the curve as its silhouette. This is consistent with the
+visual rule in~\cite{HD00} that people tend to interpret a curve as
+the rim of a 3D surface which is as smooth as possible. Then the
+closed area bounded by the curve is triangulated and the triangle
+vertices are elevated with the extracted chordal axes to construct a
+balloon shaped 3D mesh. Similar methods can also be found
+in~\cite{IH01,IH03}. FiberMesh~\cite{NISA07} then improved this
+method to get a mesh surface with higher quality and smoother shape,
+by using the method similar to~\cite{NPAI09} to get the initial
+triangles with more regular shapes and minimizing two quadratic
+energy functions to iteratively optimize the mesh surface.
+
+Olga Karpenko et al.~\cite{KHR02} proposed a  similar system to
+Teddy, but they used the RBF(Radial Basis Function) implicit surface
+instead of mesh as the surface representation. By taking the points
+on the user sketched curve as the \lq\lq{zero points}\rq\rq which
+correspond to the zero value of the basis function, and generating
+some extra points which indicate the outside and inside information
+of the target surface, the parameters of the implicit surface can be
+obtained. Similar methods can be found
+in~\cite{AJ03,AGB04,TZF04,SWSJ05,SS08,WBC08,BMSdV10}. The implicit
+surface is naturally smooth and no extra surface optimization is
+needed. Meanwhile, some further editing such as the merging of
+multiple surface components can be easily implemented. However,
+spurious local shapes may be produced due to the intrinsic property
+of the implicit surface, and the troublesome conversion to
+triangular mesh is also inevitable.
+
+To build surfaces with higher quality,  Nasri et al.~\cite{NKS09}
+proposed a method of constructing a subdivision surface from a
+closed 2D contour. By making use of the polygonal
+complex~\cite{NA00}, it is able to build the control mesh of a
+Catmull-Clark subdivision surface with simple topology and the limit
+of the surface will interpolate the input contour. Cherlin et
+al.~\cite{CSSJ05} presented a system which could generate some
+special parametric surfaces from the sketched contour, such as
+rotational blending surfaces and cross section blending surfaces, by
+extracting the skeleton of the input curve and taking it as the axis
+of the target revolution surface. The time for constructing objects
+with relatively complex shapes is usually quite long, making the
+system unsuitable for interactive modeling applications.
+
+Meanwhile, all these methods are only  able to build a smooth object
+with a simple shape, while the creation of the surface features in
+these systems mainly relies on the subsequent editing operations.
+
+%single view, complex shape
+To produce a complex 3D model with features  on its surface through
+sketching, more curves need to be sketched and more rules should be
+proposed to interpret these input curves.
+
+The information of intersection of strokes  usually helps to
+interpret the sketches and reconstruct the models. For example,
+CrossSketch~\cite{ASN07} proposed a method which is able to
+construct a surface patch with details on it from a few strokes.
+This approach detects the intersections of the input strokes and
+makes use of the Cubic Corners method~\cite{DP1968} to infer the 3D
+vertex positions. The 3D surface patch and details which are
+consistent with the 2D input strokes under the viewpoint of
+sketching can then be reconstructed sequentially. However, it is
+only able to construct an open surface rather than a closed 3D mesh,
+and the Cubic Corners method is not efficient for inaccurate
+drawings. SmoothSketch~\cite{KH06} used the algorithm proposed
+in~\cite{WH96} to detect the T-junction points from user sketched
+contours and infer the hidden contours on the target surface. A
+smooth surface with balloon-like shape and T-junction points under
+the current viewpoint can then be reconstructed. A similar method
+can be found in~\cite{CS07}.
+
+Different from the free-form surfaces, the  CAD models are
+characterized by the hard edges, rigid corners and planar
+faces~\cite{OSSJ09}. The reconstruction of such models relies on the
+interpretations of the sketched straight lines. These
+interpretations are also consistent with those proposed
+in~\cite{HD00} for the understanding of the straight lines of human
+being's.
+
+The most important step for the reconstruction  of CAD models is the
+identification of the vertices, edges and corners from the 2D user
+sketches. Early works usually classify line segments from
+images~\cite{MJ86} or let the user to specify them
+manually~\cite{PD92}, which seem tedious for interactive
+applications. Later approaches improved it by either implementing
+the reconstruction incrementally with each input
+sketch~\cite{CNJC03}, or using some rules or templates to create the
+model after all the input sketches complete~\cite{FBSS04,VMS05}.
+However, these systems are limited to construct objects consisting
+of only straight lines, and no curves are allowed.
+
+Varley et al.~\cite{PYJH04} gave an initial  attempt on including
+curves into the sketch-based modeling of CAD models. First of all
+straight lines are required to create a basic frame of the model,
+then the user is allowed to give some further sketches to modify the
+shape of the model and let it contain curves. Masry et
+al.~\cite{ML07} then made this process fully automatic. First they
+selected a vertex with three attached lines as the origin and used
+the optimization method proposed in~\cite{KML04} to reconstruct the
+depth of all the endpoint vertices of all strokes. Similar algorithm
+was also used in~\cite{CCCP04}. Then the gradient steepest descent
+algorithm was used to reconstruct the depth of the curves. This
+method was further improved in~\cite{LF12}, which combines the
+optimization and the Cubic Corners methods to balance between the
+correct convergence and the efficiency for inaccurate input
+sketches.
+
+Although the single view sketching methods  provide a natural and
+simple way for the user to create a 3D model by making use of
+various rules to map the 2D user sketches into 3D, ambiguities on
+the interpretation still exist when the sketches become complex.
+Meanwhile, these methods also propose various requirements on the
+user sketches to guarantee the validity of the input, which limit
+the user's creativity and also the shape of the reconstructed object
+to some extent.
+
+
+\textbf{Multi-view sketching}: To avoid the  ambiguity problem in
+the single view sketching systems and allow the user to give more
+descriptions on the target shape, some methods have been proposed to
+let the user sketch the outlines of the model from multiple
+viewpoints.
+
+Kang et al.~\cite{KMR04} presented a system  which allowed the user
+to sketch 2D curves under two different viewpoints and used the
+Epipolar geometry to combine them into a 3D curve, such that more
+precise description of a target 3D curve can be obtained. Though
+being a little troublesome, this method provides a feasible way to
+define the shape of the target model through sketching multiple
+curves.
+
+Das et al.~\cite{KPG05} allowed the user to  interweave the
+sketching and viewpoint adjustment to build surface patches from
+sketched boundary curves. Similar method was adopted
+in~\cite{KDS06,KS07,BHSF09}. Under each viewpoint, the input 2D
+curve will be mapped to a 3D curve which has the minimum normal
+curvature among all the potential 3D curves whose projections
+overlap with the 2D curve. Thus, the 3D curve will be as smooth as
+possible. After that, the bounding curves of each surface patch are
+identified manually, and the final surface can be obtained by
+stitching these patches. Abbasinejad et al.~\cite{AJA12} further
+made the identification of the bounding curves of each patch fully
+automatic. The patch-based method was extended in~\cite{BBS08}
+and~\cite{BBS09} which employed a multi-touch display and defined
+multiple gestures to make the user interface more intuitive and
+flexible.~\cite{OK11} and~\cite{RSWCT07} further made use of these
+approaches to build subdivision and developable surfaces
+respectively. These patch-based methods work well on producing
+non-manifold surfaces, while for manifold surfaces, the
+reconstruction will be more involved.
+
+Sowel et al.~\cite{SLJGAGL09} proposed a  system allowing the user
+to manipulate a virtual view plane to intersect with the given 3D
+medical data and sketch cross sections along the contours on each
+plane. Then the algorithm proposed in~\cite{LBDLJ08} was used to
+reconstruct a closed mesh surface which interpolates the
+non-parallel input curves. This method relies on the predefined
+volume data, while for sketch-based free-form modeling applications,
+the input strokes may not be regular, and the analysis and process
+of them will thus become complicated.
+
+More recently, Rivers et al.~\cite{RDI10}  presented a system which
+has a similar interface to the traditional modeling software. The
+user sketches the silhouettes of a 3D object from three orthogonal
+views and the final model is computed by using a method similar to
+the visual hull approach~\cite{LA94}. This method requires much
+imagination for novice users when a model with multiple components
+and different depths are desired.
+
+Sketching a 3D model from multiple viewpoints  gives more
+descriptions of the target shape and avoids the ambiguity problem in
+single view sketching to a large extent. Nevertheless, it is not
+easy to maintain the coherence and validity of the sketches from
+different viewpoints, especially for shapes with complex topologies.
+
+Despite all the above mentioned attempts on  reconstructing 3D
+objects from 2D sketches, the modeling result can only be obtained
+after all the curves have been sketched, thus little hints of the 3D
+shape are provided to the user during the sketching process.
+Meanwhile, sometimes it is still difficult to create a 3D object
+with many details in the sketching methods. The underlying reason is
+that sketching does not directly communicate the shape people have
+in mind, and such drawings take a great deal of skill which
+restricts the medium to trained and experienced
+designers~\cite{CIW08}. Therefore, some subsequent editing
+operations, which are similar to the sculpting behavior in real
+life, are also important for further modification of the initially
+reconstructed model in sketch-based modeling systems. Next we will
+introduce the sculpting operations.
+
+
+%-----------------------------------------------------------------------------------------------------------------
+\subsection{Sculpting methods}
+\label{ch2:sec:sbim:sculpt}
+
+The sculpting method provides various tools to  allow the user to
+modify the shape of the model and add features on the surface
+through iterative 2D sketches and gestures. Since the editing
+operations are implemented directly on the model surface, perception
+ambiguities on the input sketches and output shapes can be avoided
+to a large extent. Therefore, the sculpting methods are quite
+popular and compose a large body of the works on sketch-based
+modeling.
+
+The sculpting technique can be thought of as the  melding of two
+parts: the original surface and the sketched features. According to
+the scale of the features, the sculpting operations can be divided
+into three categories: The big scale feature creation which is used
+to modify the global shape of the model; The small scale surface
+augmentation which focuses on creating or erasing detailed features
+on local parts of the surface; The surface deformation technique
+which produces surfaces with appealing shapes without introducing
+any additional features -- all elements in the final surface come
+from the original surface.
+
+%big scale: extrusion, boolean, cutting,
+To add a surface part with big scale to the existing  surface,
+Teddy~\cite{IMT99} provided an extrusion operation to define a new
+part connecting the original model. It is a two-stroke operation: a
+closed stroke sketched on the surface suggesting the part to extrude
+and a stroke depicting the silhouette of the extruded surface
+sketched on the view plane perpendicular to the former stroke. Then
+the closed stroke will be swept along the skeleton of the silhouette
+stroke to construct the extruded 3D shape. Similar functions can be
+found in~\cite{NISA07,MI07,WM07}.
+
+To give a more detailed description to the shape of  the part to
+add, Karpenko et al.~\cite{KHR02} proposed to allow the user to
+first sketch the silhouettes of the new part and then merge the two
+parts by sketching a guidance stroke. The use of the implicit
+surface as the surface representation makes the computation much
+easier. This approach was also used
+in~\cite{AJ03,AGB04,TZF04,SWSJ05,SSB08,WBC08}.~\cite{WM07,RDI10,LMZ11}
+further extended this operation to mesh surfaces by using the
+CSG-based methods.
+
+To remove a surface part, the cutting~\cite{IMT99,NISA07,MI07,LMZ11} and tunneling~\cite{IMT99,NISA07,SWSJ05,SSB08} techniques are often used. The former allows the user to cut a surface part off by sketching the cutting boundary, which is a simplified version of the operation usually seen in interactive mesh segmentation~\cite{SA08}. The latter is used to dig a hole by sketching two closed circles on the frontal and back sides of the model.
+
+%small scale: feature creation, smoothing
+The systems~\cite{NSAC05,OSSJ05,SWSJ05,NISA07} provided  functions
+for the user to create sharp or smooth features with small scales on
+the current mesh. The user drawn stroke is first projected onto the
+existing mesh surface, then the features are created along the
+projected stroke by moving the related vertices. Furthermore, the
+projected sketch stroke can be seen as new positional constraints
+for some advanced surface optimization
+operations~\cite{NISA07,EP09}. Yotam et al.~\cite{GZ08} enhanced the
+feature creation function by using the shading information. It
+allows the user to sketch shadings on a 3D shape under the current
+viewpoint to create different kinds of features, just like what the
+artists do when drawing 2D pictures. Instead of creating the details
+from scratch, Zhang et al.~\cite{ZCFWP10} allowed the user to sketch
+around the existing features on the mesh surface to enhance them, by
+making use of a variation of the bilateral
+filter~\cite{JDD03,FDC03}.
+
+Due to the inaccuracy of the user sketches and iterative  operations
+during the modeling process, some local parts on the model may not
+be smooth. The systems~\cite{IMT99,NISA07,LMZ11} enable the user to
+sketch back and forth to smooth these local parts, by using various
+mesh smoothing algorithms.
+
+
+%deformation
+Note that all the above sculpting operations aim at changing  the
+features on the original surface, regardless of the scale of the
+modification. To modify the shape of the model while preserving the
+original features, the deformation tool, which is a very effective
+and popular function in surface sculpting, is often used.
+
+Existing deformation methods can be divided  into two categories:
+the space-based deformation~\cite{GB08} and the surface-based
+deformation~\cite{BS08,XZ09}. The former methods indirectly reshape
+an object by warping its surrounding space. They are computationally
+efficient and applicable to a variety of object representations.
+Since manipulating ambient space directly is infeasible,
+deformations are controlled by tools of various dimensions, such as
+points~\cite{BK05}, curves~\cite{SF98,PJF97} and
+volumes~\cite{SP86,JSW05,LLC08}. However in these methods, when
+large scale deformation happens, the geometric details on the
+original surface could not be well preserved. Besides, it is not
+suitable for applications where direct manipulations on the mesh
+surfaces are needed.
+
+The surface-based method allows the user to deform the  mesh by
+manipulating a handle on it.~\cite{NISA07,SCLARS04,SA07,SWS10}
+proposed to let the user drag a point on the surface along the
+direction parallel to the screen and then compute its new position
+according to the position of the camera. The new positions of the
+surface part to deform is then computed according to the positional
+change of the handle point by solving an optimization problem. This
+approach can give real-time feedback of the shape change to the user
+and is suitable for interactive editing, though it is not intuitive
+enough for confirming the direction of deformation in 3D space and
+the degree of freedom on the manipulation is limited.
+
+To manipulate multiple handle points at the same time,  Nealen et
+al~\cite{NSAC05} proposed to deform a mesh by changing the shape of
+a handle curve on the surface. First, a curve is drawn on the mesh
+to serve as the handle curve. Then the model is rotated manually to
+a proper angle and the deformed curve is drawn on the screen. The 3D
+position of the new curve could be calculated according to the
+current viewpoint and the deformed mesh can be computed.
+SilSketch~\cite{ZNA07} extends this idea by automatically detecting
+the handle curve which is a part of the silhouette of the model and
+corresponds to a user input stroke for the deformed handle curve. A
+similar method can be found in~\cite{KSV09}. Since these methods
+rely on the 2D screen and lack references for mapping the 2D
+information into 3D, the handle curve and its deformed shape are
+limited to be planar.
+
+The details of the algorithms on the surface deformation  will be
+introduced in Section~\ref{ch2:sec:deformation}.
+
+Different from the sketching technique, the sculpting tools  allow
+the user to directly interact with the model surface. However when
+the initial shape is far from desired, iterative and boring
+sculpting operations need to be done. Meanwhile, it will not be easy
+to preserve the quality of the final shape if too many operations
+are implemented.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%-----------------------------------------------------------------------------------------------------------------
+\section{Surface-based mesh deformation}\label{ch2:sec:deformation}
+
+Deformation is an important tool for the editing of a created model.
+The deformation methods for parametric or subdivision surfaces have
+already been developed for years, but these algorithms are difficult
+to be applied directly to meshes. Due to its importance in various
+kinds of applications such as geometric modeling and computer
+animation, mesh deformation has become a popular research topic in
+digital geometry processing.
+
+As introduced in Section~\ref{ch2:sec:sbim:sculpt},  the
+surface-based deformation method allows the user to directly
+manipulate the mesh surface and is thus more suitable for
+interactive applications than the space-based method which deforms a
+mesh by indirectly manipulating its surrounding space.
+
+The general goal of the surface deformation is to preserve the
+local details on the original mesh while keeping the global surface
+as smooth as possible. To achieve this goal, the mesh is usually
+encoded into some kinds of representations which reflect the
+geometric properties of the surface. The deformed mesh will then be
+calculated by preserving these representations as much as possible.
+Based on the way of the encoding, surface-based deformation can be
+further classified into multi-resolution and single-resolution
+methods.
+
+The multi-resolution
+methods~\cite{ZSS97,GSS99,KCVS98,KVS99,SL99,BK04,MS11} encode the
+mesh into a base layer and several levels of refinement, according
+to its surface geometric properties. The base layer is the
+low-frequency component which represent the rough shape of the
+surface and is typically represented in Cartesian coordinates. The
+refinement are described locally to represent the geometric details
+of the surface. During the deformation process, only the low-level
+layers are deformed and the high levels with more details keep
+fixed, such that the details of the mesh will be preserved. Using
+this representation, deformation can be performed on an appropriate
+user-specified level-of-detail. The multi-resolution approach is the
+straightforward representation of the details of the shape in a
+manner that is invariant to the global coordinate system. However,
+it requires the user to manually set both the base mesh and levels
+of refinement for meshes with complex details, which seems quite
+tedious for interactive applications which require fast and
+convenient operations.
+
+Different  from the multi-resolution method, the single-resolution
+approach encodes the geometric details of a mesh in some
+measurements in a uniform manner. Since these measurements are
+computed by local operators, they naturally contain the local
+relationship between primitives (usually be vertices) and their
+one-ring neighbors. By preserving these measurements, the mesh
+details can be preserved and the global shape will be smooth. The
+user can thus easily implement the deformation by directly
+manipulating the mesh surfaces and no extra manual intervention is
+required. These advantages make the single-resolution method a
+natural choice for the interactive geometric editing applications,
+such as the sketch-based modeling.
+
+The way of  representing the mesh surface in the single-resolution
+approach comes from that of representing a smooth surface. It is
+known from differential geometry~\cite{MPDC76} that the first and
+second fundamental forms are often used to measure geometric
+properties of a smooth surface, such as lengths, areas, and
+curvatures. By minimizing the changes of the two fundamental forms
+and adding positional constraints for the corresponding surface
+parts, the geometric properties of the original surface can be
+preserved during a deformation process, leading to the minimization
+of the famous thin shell energy~\cite{TPBF87}. This energy is
+physically accurate to simulate the deformation of the surface of a
+real-world object made of physical material. Since the solving of
+this nonlinear minimization problem is computationally expensive, it
+can be further simplified by replacing the changes of first and
+second fundamental forms with the first and second order partial
+derivatives of the displacement function w.r.t. each point on the
+surface~\cite{CG91,WW92}.
+
+For a mesh  surface which can be regarded as a piecewise linear
+surface, different methods are adopted to first represent the
+geometric properties corresponding to those of a smooth surface. To
+perform the deformation, the new positions of some vertices are
+designated and the remaining vertex positions are solved by fitting
+the new geometric properties of the deformed mesh to those of the
+original mesh. The vertices whose positions are to be specified
+usually include the \textit{handle} vertices, which the users want
+to move to designated new 3D locations and the \textit{static}
+vertices, which are expected to stay fixed during the deformation
+process. The other vertices whose positions need to be solved are
+usually called the \textit{Region of Interest} (ROI) vertices.
+
+We next divide  these methods into two categories: the
+Laplacian-based methods and the other methods. The former formulate
+the deformation problem based on the Laplacian coordinates, which
+represent the second order discrete differential quantities of the
+mesh, while the latter try to solve the problem by encoding the mesh
+surface into other representations and preserving them.
+
+
+%-----------------------------------------------------------------------------------------------------------------
+\subsection{Laplacian-based methods}\label{ch2:sec:deformation:Lap}
+
+The most popular methods  to approximate the deformation energy on a
+mesh surface are the Laplacian coordinates methods, which used the
+Laplacian vectors defined on the mesh surface to approximate the
+second order differential quantities of the smooth surface. These
+methods comprise a large body of work on mesh deformation over the
+recent years.
+%The minimization of the changes of the Laplacian vectors can then be used as the approximation of that of the second derivatives in the thin shell energy of a smooth surface.
+
+Specifically, a Laplacian  vector at a vertex is defined as a vector
+pointing from the weighted center of its neighboring vertices to the
+vertex itself. Its magnitude and direction approximate the mean
+curvature and normal direction at that vertex respectively. The
+cotangent weights scheme proposed in~\cite{MDSB02} is often used for
+computing the weights for each neighboring vertex. Usually, the
+weights are calculated on the original mesh and treated as constants
+during the deformation, and the vertex positions of the deformed
+mesh can be calculated by solving a linear system. This method was
+first used by Marc Alexa in~\cite{AM01}.
+
+However, the Laplacian vector  is a 3D vector that is not invariant
+under rotation and scale transformations. So if a deformation that
+contains rotation or scale happens on a given mesh, preserving the
+orientation and magnitude of the Laplacian vectors w.r.t. the global
+coordinate system will cause the distortion of the local details.
+Thus the transformations of the Laplacian vectors during the
+deformation process are also considered in subsequent works. These
+works can be classified into the linear and nonlinear methods.
+
+The linear methods represent the  transformation of the Laplacian
+vector as a linear one, such that the solving of the result system
+can be easy and fast. Depending on the way of estimating this
+transformation, the linear methods can be further classified into
+explicit and implicit types. The former methods specify the
+transformation explicitly from existing information, while the
+latter methods evaluate the transformation implicitly from the
+deformed surface.
+
+Yu et al.~\cite{YZXSBGS04}  proposed an explicit method of
+propagating the transformation of the handle vertices to the other
+vertices of the mesh using geodesic interpolation. Besides the
+positional constraints, the user has to specify the transformation
+matrices for the handle vertices explicitly. The transformation
+matrix is then decomposed into rotation and scaling matrices and
+interpolated over the ROI vertices of the mesh according to their
+geodesic distances to the handles.
+
+This method is also used in~\cite{ZHSLBGS05}, which  constructs a
+graph representing the volume inside the input mesh and encodes the
+volumetric details by computing the Laplacian coordinates on the
+graph. By preserving these Laplacian vectors, the unnatural changes
+in volume can be prevented during the deformation process. However,
+when more vertices and details are involved in the deformation,
+constructing the volume inside the mesh and solving the resulting
+system may become quite time-consuming.
+
+Instead of using geodesic interpolation,  Zayer et al.~\cite{ZRKS05}
+proposed to use the harmonic interpolation, which computes a smooth
+harmonic scalar filed on the mesh to control the propagation of the
+transformation. This method shows smoother distributed local
+transformations and produces better result than the geodesic
+propagation method.
+
+Popa et al.~\cite{PJS05} further used a  scalar field to control the
+weight in the harmonic propagation. The scalar filed which is
+specified by the user or learned from examples can be used to
+specify the stiffness of the material of the object, and the
+deformation of objects with different materials can thus be
+simulated.
+
+All these explicit methods require manual  specification of the
+transformation at the handles by the user. Moreover, since only
+rotation and scaling are considered in the transformation, the
+change of orientation caused by the pure translation of the handle
+vertices cannot be obtained. This will lead to the distortion of the
+local shape features.
+
+Different from the explicit methods, the  implicit methods try to
+estimate the transformation automatically from the unknown vertex
+positions of the deformed surface.
+
+Lipman et al.~\cite{LSCLRS04} proposed to  estimate the local
+rotation of the Laplacian vector for each vertex from the original
+mesh and an initially deformed result calculated using the method
+in~\cite{AM01}. Then the Laplacian vectors are rotated and a new
+deformed mesh is calculated using these rotated Laplacian vectors.
+This process is repeated for several iterations until satisfactory
+result is obtained. This method of estimating the rotation only
+works well for relatively smooth surfaces with no largely protruding
+features. Besides, since scale is not considered in the
+transformation, this approach cannot preserve the details well under
+stretching or shrinking.
+
+Sorkine et al.~\cite{SCLARS04} proposed  to explicitly represent the
+transformation of the Laplacian vectors with a linearized matrix
+which is a combination of the initial and deformed vertex positions,
+and the deformed mesh can be calculated by solving a linear system.
+Nealen et al.~\cite{NSAC05} later used this method in a sketching
+interface. By adjusting the weights on the preservation of the
+Laplacian vectors and positional constraints, various deformation
+results can be obtained. This method works well for deformations
+with small rotations. However, since rotation in 3D space is
+inherently nonlinear, the linearization of the transformation matrix
+makes the method difficult to handle large rotations in a
+deformation task.
+
+To overcome this problem, Fu et al.~\cite{FAT07}  uses a two-step
+strategy to estimate the local transformation. Instead of limiting
+the transformation matrix to be linearized, this method allows it to
+be any affine-transformation. In the first step, this method
+directly solves the affine transformation matrix associated at each
+vertex. In order to obtain visual-pleasant deformation result, in
+the second step, a similarity transformation of each vertex is
+derived from the solved affine-transformations of its neighbors and
+then used to transform the Laplacian coordinates for the subsequent
+mesh reconstruction. This approach enables larger rotations
+than~\cite{SCLARS04}, but it requires tweaking the relative
+weighting of local transformation smoothness terms; moreover the
+formulation of implicit transformations may be ill-conditioned for
+flat one-rings, in which case an extra perturbation is required.
+
+The linear methods are popular due to the robustness  and ease of
+implementation. However, for the sake of speed and robustness, these
+methods linearize the inherently nonlinear 3D rotation problem.
+Thus, the computed result will be suboptimal.
+
+Different from the linear methods, the nonlinear  approaches
+formulate the deformation problem as a nonlinear one and use various
+methods to iteratively solve it.
+
+Huang et al.~\cite{HSLZWTBGS06} considered the  skeleton, volume and
+projection constraints in addition to the positional constraints for
+the vertices based on the Laplacian coordinates method, and the
+result system becomes a nonlinear one. Then the Gauss-Newton solver
+is used to solve the energy function iteratively. To make the
+convergence more steady and faster, it projects the original energy
+function onto a control mesh to reduce the number of unknown
+variables. However, since the mean value coordinates it used for
+editing the constructed control mesh is not a local scheme, a slight
+editing of the handle vertices may be propagated to the whole mesh
+and introduce undesired distortions.
+
+To avoid this limitation, Au et al.~\cite{AFTC07}  proposed to
+represent the mesh surface by a set of isolines of the scalar
+harmonic field propagating from the handle vertices. These isolines
+function as a constraint similar to the skeleton constraint
+in~\cite{HSLZWTBGS06} and the local rigidity of the vertices can
+then be measured and controlled with respect to the isolines.
+However, the insertion and deletion of handles become expensive
+operations in this approach, since recomputation and refactorization
+of the resulting linear system are needed.
+
+Au et al.~\cite{ATLF06} extended the Laplacian  coordinates into the
+dual mesh domain. Since the valence of a vertex in the dual mesh is
+always three, the shape structure formed by a dual mesh vertex and
+its 1-ring neighborhood is simple, making the convergence more
+stable. By keeping the magnitude of each Laplacian vector fixed and
+iteratively updating the normal direction, the deformed mesh can be
+calculated. Nevertheless, the convergence in this method is slow and
+it is even difficult to decide when the iteration should stop since
+no specific energy to minimize is formulated.
+
+These nonlinear  methods try to reach optimal solution of the
+deformation energy function and avoid the inaccurate calculation in
+the linear methods. However since the computation is relatively
+expensive, real-time feedback cannot be given to the user when a
+large number of vertices are involved in the deformation.
+
+Meanwhile,  since the Laplacian vectors are related to the second
+order differential properties of the mesh surface, methods on
+preserving them only simulate part of the thin shell deformation
+energy of smooth surfaces. As a result, the deformation result may
+not be satisfactory.
+
+
+\subsection{Other methods}\label{ch2:sec:deformation:other}
+
+Besides the Laplacian-based methods,  there are also some methods
+proposed to encode the mesh surface into other representations and
+preserve them during deformation.
+
+To avoid the rotation-variant  property of the Laplacian
+coordinates, Lipman et al.~\cite{LSLC05} proposed a frame-based
+representation which is invariant under rigid transformation. This
+approach first defines a discrete frame at each vertex and records
+the relative relationship between frames of neighboring vertices
+into a matrix. By preserving this relative relationship which is
+rotation-invariant during the deformation, the frames of the
+deformed surface can be estimated and the new positions of the
+deformed surface can be solved. This method can preserve the details
+for mesh deformation under rigid motions, and it was further
+improved in~\cite{LCGL07} to handle rotations larger than $2\pi$.
+This method was also used in the animation editing
+in~\cite{XZYTPG07}, in which a linear least-square deformation
+solver is used to solve the transformation and vertex positions
+until convergence. However, since the estimation of the local frames
+is separated from the positional constraints, rotations caused by
+the translation of the handles cannot be detected, making this
+method translation-insensitive.
+
+Alla Sheffer et al.~\cite{SK04}  introduced the pyramid coordinates
+to describe the local shape properties. A projection plane for a
+vertex and its neighbors is first defined, and the edges between the
+vertex and the neighbors are then projected onto the plane. The
+local shape is represented by the angles between the projected
+edges, the angles between the normal and the edges, and the
+projected edge lengths. Given several fixed vertex coordinates as
+boundary conditions, the deformed mesh can be obtained by preserving
+the initially calculated pyramid coordinates, and the local details
+on the original mesh can be preserved. However, the computation of
+this method is too expensive.
+
+Different from the Laplacian  coordinates methods which tried to
+preserve the second order differential properties of the mesh
+surface, Sorkine et al.~\cite{SA07} presented a nonlinear method to
+preserve the first order differential properties during deformation.
+Its basic idea is to use the edge vectors at each vertex to
+represent the first order differential property at that point, and
+minimize their changes under rotation transformation. Given an
+initial guess of the deformed vertex positions, the mesh vertex
+positions and the rotation matrix can be iteratively updated until
+convergency. This method can preserve the local details under rigid
+transformations, while the deformed shape usually appears too rigid
+and the smoothness is not well guaranteed especially when stretching
+or shrinking occurs.
+
+To better approximate the thin shell  deformation energy on
+triangular meshes, Eigensatz et al.~\cite{ESP08} proposed a
+nonlinear method to minimize both the changes of the first and
+second order differential properties of the mesh surface.
+Especially, these two properties are represented as the inner angles
+of each triangle and the two principal curvatures at each vertex
+respectively. The minimization of the energy function is then solved
+iteratively by using the Levenberg-Marquardt algorithm~\cite{MNT04}.
+This method is further extended in~\cite{EP09} to consider the
+positional, metric and curvature constraints in a deformation
+process. Although the Levenberg-Marquardt algorithm is faster and
+obtains better convergence than the Gauss-Newton method, this
+algorithm is still quite slow to converge when the number of
+vertices becomes larger.
+
+Some recent works proposed to use  the analyze-and-edit strategy to
+preserve the high-level properties of a surface, such as the global
+structure and specific features. For example, Zhou et
+al.~\cite{ZWS11} proposed to first extract the ridge and valley
+information represented as the principal curvatures~\cite{HPW05},
+and then deform the mesh by using the method in~\cite{ESP08}, such
+that the feature lines of the mesh surface can be well preserved.
+Gal et al.~\cite{GSMC09} proposed to extract groups of lines to
+represent the shape of the man-made object. By analyzing and
+maintaining the individual and mutual relationship of these lines
+during the deformation, the global structure of the model can be
+preserved. Similarly, the work~\cite{ZFCAT11} proposed to decompose
+the model into components and use the volumes surrounding each
+component to represent the shape of the object. The deformation is
+then carried out by maintaining the mutual relationship of these
+volumes, and the shape of the model can be preserved at the
+component level.
+
+
+
+
+
+
+
+
+
+
+
+
+%-----------------------------------------------------------------------------------------------------------------
+\section{Surface reconstruction from cross sections}\label{ch2:sec:surfreconst}
+
+Surface reconstruction  from planar cross section curves has been
+researched for years. It refers to the process of reconstructing a
+smooth surface interpolating a set of input cross sections, either
+parallel or with arbitrary orientations. It has wide applications in
+computer graphics and computer-aided design, such as bio-medical
+modeling, terrain modeling and sketch-based modeling.
+
+%early works,one cross section per slice
+Early  works on mesh surface reconstruction~\cite{KE75, FKU77,
+CS78, Kd82, GD82, WA86} focus on handling the interpolation of
+parallel cross sections, for example, each of which lies on one
+slice of the medical data scanned using CT or other devices. In
+these works, strategies are proposed to find polygonal tiling
+between each pair of cross sections on neighboring slices. While
+for slices containing multiple cross sections, these methods do not
+work since it will be difficult to establish the correspondence
+between more than two cross sections on neighboring slices.
+
+%parallel: triangulation
+To avoid the  disadvantages of the global approach,~\cite{BJ88,
+MSS92, GB93, FL98, CD99} used the triangulation methods to compute
+a volumetric mesh interpolating cross sections on each pair of
+planes, such that correspondence between the curves can be
+established and a surface mesh can be extracted. To avoid the
+complicated calculation in fitting a volumetric
+mesh,~\cite{BS96,BCL96,OPC96,KSS00,BGLS04,JWCET05,BV07} proposed to
+project the cross sections from neighboring planes onto a common
+plane and match the projections from different cross sections. The
+final surface can then be built by connecting the curves and their
+projections.
+
+%parallel: implicit
+Subsequent  works proposed various solutions to handling more
+complicated cross sections on parallel planes. For examples, the
+works~\cite{HZB92, CNKG02, TO99} extended the implicit surface
+method which is often used in the point cloud fitting problem to fit
+an implicit function to the input curves, extract the isosurface and
+convert it to a mesh. Some works also considered the
+normal~\cite{BMSdV10} or material~\cite{WD00} constraints during the
+fitting process. However the global fitting method using implicit
+function may produce werid local shapes due to the sparsity of the
+cross section data. Tessellation of the isosurface should also be
+taken care of to make sure the final surface still interpolate the
+input curves, and the time for computation may be long.
+
+%non-parallel
+There have also  been some attempts made to reconstruct surfaces
+from non-parallel cross sections.~\cite{RU90, WMTBDC95, BTS04}
+extended the implicit function method to build a surface composed
+of patches, each of which is bounded by cross sections on two
+adjacent planes.~\cite{PT94,DP97,BM07} used a divide-and-conquer
+scheme which first partitions the whole space into zones bounded by
+the planes that the cross sections lie on. Then within each zone,
+Delaunay triangulation is used to compute a sub-surface that
+connects the cross sections on the faces of the zones. The
+triangulation methods provide a feasible approach to build surfaces
+from non-intersected cross sections, while for those who have
+intersections or even more complex relationship, it will fail to
+produce a satisfactory result.
+
+A more recent  work~\cite{LBDLJ08}  adopted the divide-and-conquer
+scheme and extended the method in~\cite{JWCET05} to handle more
+complicated non-parallel cross sections. In each zone, the cross
+sections are projected onto the medial axis planes to establish the
+correspondence and sub-surface is built by connecting the cross
+sections and their projections. The quality of the final surface is
+then improved through iterative smoothing and refinement. This
+method has been used in the reconstruction of 3D medical data from
+contours of scanned 2D images~\cite{SLJGAGL09}. Although it can
+handle non-parallel cross sections with more complex relationship,
+the reconstruction result heavily relies on the geometric agency
+(i.e., the medial axis plane). When the shape of the zone becomes
+complex, the agency may become irregular, leading to unexpected
+topological noise to the result surface.
+
+%local method: multi-component problem
+All these methods on handling the non-parallel cross sections aim at
+building a single object. They used a standard partition scheme in
+Computational Geometry to subdivide the 3D space into convex
+arrangements~\cite{BM07}. However, this partition algorithm may
+separate the connections of different surface components. As a
+result, the final object will be composed of multiple disconnected
+components, while in most cases a one-component surface is desired.
+Contrarily,~\cite{EB11} proposed an approach to build multiple
+objects from multi-labeled contours at the same time instead of one
+single object, by defining rules to distinguish components belonging
+to different objects. Both self-intersections and inter-object
+intersections between these components can be avoided. While this is
+useful in some bio-medical modeling applications such as
+reconstructing neurons from electron microscopy images, the
+multi-component problem when building one single object still
+remains.
+
+%post-edit after reconstruction
+%Finally,  although all these algorithms focus on the reconstruction
+%of 3D objects with satisfactory shapes, sometimes the topology of
+%the result model still cannot meet the user's expectation. In that
+%case, post-editing of the model is often needed, while these
+%reconstruction algorithms can provide little useful information to
+%this operation but only the 3D model itself. There have been some
+%topology editing tools, especially those with simple sketch-based
+%interfaces proposed~\cite{JZH07,JT09,HRABV11}. However, these
+%methods all require to globally analyze and modify the model
+%according to the user input, which seems complicated. In other
+%words, the reconstruction and editing of the 3D model are regarded
+%as independent operations. Our algorithm builds a bridge to connect
+%them to help produce a 3D model with satisfactory shape in an
+%efficient and natural manner.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\section{Digital geometry processing}
+%\label{ch2:sec:dgp}
+%
+%With the development of 3D scanner techniques, digital geometry has become a new multimedia type after sound, image and video. It has wide applications in the area of engineering manufacturing, digital entertainment (game, movies, etc.), medicine and biology, art history and archeology, architecture design and so on. With the enlargement of its application area, there is a strong need for the processing techniques of digital geometry modeling, structure analysis and data optimization, leading to the emergence of digital geometry processing.
+%
+%Digital geometry describes 3D objects and uses 3D surfaces as the main representation. Surfaces in 3D space can be divided into the continuous and discrete forms. The continuous surfaces include parametric surfaces, implicit surfaces and subdivision surfaces. The discrete representations of surfaces include mesh and point cloud, and they are the most popular surface representations in digital geometry processing. This is due to their following advantages: they are relatively simple comparing to the continuous forms, both on the descriptions and transfers; they are the basic data types for the rendering of software and hardware; they are the output forms of most acquisition tools (CT, MRI, 3D scanner, etc.) and the inputs to most simulation/analysis tools.
+%
+%According to the pipeline of modeling, processing, application and transmission, the main research topics of digital geometry processing are stated as follows.
+%
+%First of all, since the acquisition from 3D scan equipment is point cloud which is quite irregular, the data needs to be processed for further applications. Point-based graphics provides methods of dealing with points directly, including the representation, modeling, processing and rendering of the points. Point-based graphics does not separate geometry and appearance/attributes of an object, and it seems natural for many 3D acquisition systems. Detailed introductions on point-based graphics can be found at~\cite{AGPPSZ04,GM09}.
+%
+%However since no connectivity or topology information is available in point cloud, mesh is often a more popular and desirable representation. To reconstruct a mesh from point cloud, two main methods are often used: the geometry-based method and implicit surface-based method. The former often uses the triangulation methods while the latter chooses to fit the points with implicit functions. The representative works of surface reconstruction from point cloud include~\cite{LC87,CL96,ABK98,HDDMS92,CBCMFME01}.
+%
+%Furthermore, since the point cloud data obtained from scanners may contain noise, difficulties will be brought to the surface reconstruction algorithms, leading to the geometric or topological errors of the reconstructed mesh. So mesh repairing is often needed. The geometric errors denote the holes, self-intersections or face overlaps of the mesh surface and the topological errors include the redundant handles, islands or cavities. The methods for mesh repairing include the surface-based methods~\cite{BS95,LP03,GW01} and volume-based methods~\cite{NT03,JT04,ZJH07}.
+%
+%Since the initially reconstructed mesh is often irregular, optimization techniques are needed to improve its quality. Mesh smoothing is an optimization method of fairing the mesh surface by only adjusting its geometry. It has multiple applications, such as mesh noise removal and multi-resolution analysis. It reduces curvature variations by moving the mesh vertices and is similar to the high frequency elimination in signal processing. Methods of mesh smoothing include the isotropic~\cite{TG95,DMSB99,LTJW07} and anisotropic filtering~\cite{CDR00,BX03,JDD03,SRML07}, and the selection of a proper algorithm should consider both the speed and the quality.
+%
+%Another method of regularizing the mesh is remeshing, which reconstructs the geometry and connectivity while striving to preserve the original geometry information. There have been methods proposed for remeshing the triangular mesh~\cite{AVDI03,SG03,AMD02} and quadrilateral mesh~\cite{ACDLD03,ML04}. By remeshing we could make a mesh meet our certain requirement (such as equilateral triangles) or represent the geometry better (such as minimize the number of triangles while preserving the sampling precision).
+%
+%Mesh simplification can reduce the number of vertices, faces and edges while keeping the original geometry as much as possible, so that the model could be rendered and processed on a computer with low performance. Algorithms of mesh simplification include the vertex-collapse~\cite{SZL92,CVMT96}, edge-collapse~\cite{HDDMS93,HH96,LT98}, and face-collapse~\cite{WHST01} methods. Currently the most popular method is the edge-collapse one which has largest degrees of freedom and best simplification effect.
+%
+%After a regular mesh is constructed, some further editing operations are often needed. One of the most important editing functions is mesh deformation, which deforms a mesh without changing the topology. A detailed review can be found in Chapter~\ref{ch2:sec:deformation}. Based on deformation, some advanced operations are developed, such as morphing, which generates a series of intermediate shapes between a mesh and its deformed shape and deformation transfer, which transfers the existing mesh deformation from one character to another.
+%
+%Since a mesh is often a two-manifold embedded in 3D space, comparing to images and videos, it does not have a regular parameter domain. This brings difficulties for the efficient processing of 3D meshes. Mesh parameterization studies the one-to-one mapping between a 3D surface and a simpler and more regular 2D parameter domain. Methods on parameterization include the base mesh parameterization, planar parameterization, spherical parameterization and so on. Parameterization has been used in almost each field of digital geometry modeling and processing. A detailed introduction on mesh parameterization can be found at~\cite{HLS07}.
+%
+%Given an existing model, there have been a lot of methods proposed for calculating and extracting its features~\cite{GE05,CRT04,PWYLH07,OBS04,RVLL08}. Based on these features, some more advanced operations such as mesh segmentation, shape matching and retrieval can be implemented.
+%
+%Finally after we have reconstructed and processed a mesh, transmission or storage of the mesh is needed. For complex meshes with lots of details, compression is necessary. This involves conversion between meshes and bit streams. Methods have been proposed for the encoding and decoding of meshes~\cite{JR99,SCT03,KSS00,AG05}, by applying the theory of information and coding.
+%
+%Digital geometry processing is a fast-growing area of research that uses concepts from applied mathematics, computer science and engineering to design efficient algorithms for the acquisition, reconstruction, analysis, manipulation, simulation and transmission of complex 3D models. For all the above mentioned research topics, a developing trend is towards the combination of various interactive techniques and algorithms for a more intelligent and effective processing. Among all the interactive techniques, sketch-based modeling has drawn much attention from scientists and researchers in recent years. We will then give a detailed review of sketch-based modeling in the following section.

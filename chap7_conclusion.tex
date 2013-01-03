@@ -1,0 +1,149 @@
+
+%==========================================
+\section{Summary}\label{ch:conclusion_sec:1}
+%==========================================
+This thesis has described our research of developing intuitive
+interfaces and effective algorithms for sketch-based 3D modeling and
+reconstruction. Our aim is to develop modeling techniques and tools
+allowing the user to effectively create, edit, and manipulate 3D
+models using sketch-based interface. To this end, various techniques
+for surface reconstruction and editing have been investigated. The
+analysis on user behavior, psychology and intrinsic properties of 3D
+shapes have been employed to guide the development of techniques for
+better and high-level manipulation. We have established a framework
+for sketch-based modeling and developed supporting algorithms for
+creation and editing operations in the sketching interface. We also
+present a solution to the problem of surface reconstruction from
+cross sections. The goal of our research has been fulfilled. In
+particular, our work of the research includes:
+
+We present a reference plane assisted sketching  interface for
+freeform shape design. We propose some rules for regularizing and
+interpreting the user input when sketching the shape of the 3D model
+to be created. These rules consider both the semantic meaning of the
+sketched strokes and human psychology and partially eliminate the
+ambiguity of understanding the user input sketches. We propose to
+use reference planes to assist the creation and editing functions,
+such that the location and orientation of strokes in 3D space become
+meaningful and intuitive. These reference planes are created
+automatically during the process of sketching and help make the
+sketch-based modeling process intuitive and easy to use.
+%Finally we propose a local refinement algorithm to improve the mesh quality after large deformation. This system also serves as a platform to implement various digital geometry processing algorithms for our research in the next steps.
+
+We introduce a progressive approach for modeling, which allows the
+user to create a 3D model by iteratively sketching cross section
+curves, taking both the up-to-date reconstructed model and the
+existing curves as references. In this way, perception ambiguities
+on the sketched 3D shape can be eliminated to a large extent and the
+sketching function in sketch-based modeling systems is enhanced to
+allow the creation of complex 3D models with arbitrary topologies.
+To effectively support this operation, we develop a new surface
+reconstruction algorithm which enables gradual shape updating and
+produces models with a singly connected component when the user
+iteratively adds new sketches.
+
+To better support the sculpting function  in our sketching
+interface, we propose an edge-based flexible mesh deformation
+algorithm. An edge-based graph for a triangular mesh is proposed to
+evaluate more points on the mesh surface without explicit re-meshing
+or re-sampling and deliver more accurate computation result. Based
+on the edge-based graph, a mixed deformation model, which considers
+both the changes of the first order and the second order
+differential quantities, has been proposed. Various deformation
+effects between local shape preservation and global smoothness can
+thus be produced by tuning a simple scalar parameter. The scalar
+parameter can also be applied to local regions of the mesh to
+simulate the deformation behavior of real-world objects with
+non-uniform materials. Experimental results have demonstrated the
+effectiveness and flexibility of our approach.
+
+We also extend our techniques to provide a solution to the
+challenging problem of surface reconstruction from cross sections
+with arbitrary orientations. The solution consists of two modules.
+The first one is generalizing the method in our progressive modeling
+to generate sub-surfaces for irregular zones and to extend some
+sub-surfaces to connect possibly isolated surface components. The
+second one is further editing of local topology of the initially
+generated model. By utilizing the intermediate results obtained
+during the surface reconstruction process instead of from scratch,
+we provide the user a simple sketching tool to quickly edit the
+local topology of the generated model if the initial shape is not
+satisfactory. As a result, the final output model of our surface
+reconstruction is guaranteed to be a manifold surface having only
+one connected component, which is usually difficult to achieve in
+previous methods. Various examples have demonstrated the usefulness
+and efficiency of our approach.
+
+
+%==========================================
+\section{Future directions}
+\label{chap:conclusion_sec:2}
+%==========================================
+%more references
+In our sketching interface, we have provided  the users planes as
+references for mapping the 2D sketches into 3D, such that the user
+input will become intuitive and meaningful. There exist other types
+of geometric objects such as sphere and cylinder, which can be taken
+as references, to make the user interface intuitive and flexible.
+Nevertheless, with the introduction of more reference types, the
+intelligent selection of references may become a challenge. This
+thus requires careful evaluation on the trade-off since each type of
+references has its own pros and cons. Moreover, the combination of
+different types of references may be considered.
+
+%shape description
+Currently the input in the sketching function of our system  is
+allowed to be the cross section curve, which can be quickly sketched
+and provides an intuitive and accurate description of a 3D shape.
+However when an artist/designer sketches a 3D model, other strokes
+which depict the features, such as the hatching, shading, and
+suggestive contours~\cite{DFRS03} are also used. These shape
+descriptors may also be incorporated into our sketching function.
+This involves not only how to interpret the user sketches, but also
+how the progressive surface reconstruction algorithm can be improved
+to have more types of input curves besides the cross sections.
+
+%Feature-sensitive mesh deformation
+For the mesh deformation algorithm, most existing works  tried to
+maintain various local and low-level geometric properties of the
+mesh, while some recent works~\cite{GSMC09,ZFCAT11} have shifted the
+focus to high-level shape editing which preserves the structural and
+semantic shape features of man-made objects. However for free-form
+objects, this remains a big challenge. There have been various
+feature descriptions proposed, such as ridges and
+valleys~\cite{OBS04}, and suggestive contours~\cite{DFRS03}, though
+they usually do not have the regular relationships as the features
+in the man-made objects. After these features are extracted and
+analyzed, the corresponding deformation algorithms on preserving
+these features should be explored.
+
+%skeleton guided
+For the problem of surface reconstruction from cross  section
+curves, currently the topology of the output model is initially
+decided by the relative positions of the cross sections. Though we
+provide a sketching tool for the further modification of the
+topology, it still seems troublesome when the target one is far more
+different from the initial shape. In that case, some other
+descriptors which suggest the target topology can also be included
+as the input besides the cross sections. For example, it will be
+interesting to allow the user to sketch the skeleton of the target
+shape which could suggest the desired topology. Meanwhile, template
+models which have similar topologies can also be utilized to guide
+the reconstruction. Correspondingly, our surface reconstruction
+algorithms should be modified to incorporate more input information.
+
+%subdivision
+Moreover, the surface reconstruction algorithm can also  be extended
+to produce subdivision surfaces which have higher quality and
+scalability than mesh surfaces. The output in that case will be a
+coarse control mesh, whose limit surface under subdivision rules
+interpolates or approximates the input cross sections. The
+challenges will include how to build the initial control mesh and
+how to reduce the number of extraordinary points which are not
+preferred in subdivision surfaces. This technique may also be used
+to help create high quality 3D models, which is a challenging
+problem in sketch-based modeling.
+
+
+%edge-based graph
+%two hands

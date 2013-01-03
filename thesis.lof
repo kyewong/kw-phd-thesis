@@ -1,0 +1,223 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Geometric models used in various applications. These models are courtesy of the INRIA Gamma team research database\nobreakspace {}\cite {INRIA}.}}{1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces 3D modeling using the 3Ds Max software\nobreakspace {}\cite {3DSMAX}.}}{2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Sketch-based 3D modeling.}}{3}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Sketching tool. (a) Initially, three basic planes are provided; (b) A closed curve is sketched on the blue plane; (c) The preview of the reconstructed shape; (d) A new cross section is added on the red plane and the previewed shape is rendered; (e) The green plane is translated and three more cross sections are sketched; (f) More cross sections are added to refine the model; (g) The calculated cross section on the green plane is rendered semi-transparently to provide the user reference for further sketches; (h) Two incomplete cross sections are sketched on the green plane and the shape of the model is refined; (i) Final model.}}{31}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{31}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{31}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{31}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{31}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{31}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{31}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {}}}{31}
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {}}}{31}
+\contentsline {subfigure}{\numberline {(i)}{\ignorespaces {}}}{31}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Sculpting tools. (a) The user sketched cross section (yellow) and initially generated model; (b) Tunneling operation; (c) Extrusion operation; (d) Cutting operation; (e) Smoothing operation.}}{35}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{35}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{35}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{35}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{35}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{35}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces An example of using the deformation tool. (a) The blue curve is the handle curve sketched on the initial model. The yellow, red and green dots denote the handle, ROI and static vertices respectively; (b) The automatically generated base plane (blue) and projection plane (green); (c) The new curve (green) drawn on the base plane; (d) A curve (red) is drawn on the projection plane to create a non-planar new curve; (e) The updated new curve (green); (f) The deformed model.}}{36}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{36}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{36}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{36}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{36}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{36}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{36}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Stroke Preprocessing: The goal here is to filter the noisy points and get a smooth curve with 10 points. (a) Initial input; (b) Filtering result; (c) Resampling result; (d) Final result after smoothing.}}{38}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{38}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{38}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{38}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{38}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces An example for rule\nobreakspace {}2\hbox {}. (a) The user sketched cross sections. Containing relationship exists among multiple cross sections on the blue plane; (b) The generated model.}}{41}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{41}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{41}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Curve sewing. (a) Two curves lie on two orthogonal planes. The colored points denote the intersection points between a curve and a plane that another curve lies on. (b) Deform the two curves so that they intersect at two points. (c) Generate a mesh that takes the two curves as contours.}}{42}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{42}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{42}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{42}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces The sketching of some models using our system.}}{44}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Mushroom}}}{44}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Handicraft}}}{44}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Car}}}{44}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Censer}}}{44}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Bicycle}}}{44}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Sculpture}}}{44}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces The sketching and sculpting of some models using our system.}}{45}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Cup}}}{45}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Rabbit}}}{45}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Chair}}}{45}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 2D illustration of our surface reconstruction algorithm. (a) Input segments (red, corresponding to the 3D cross sections) and partitioned zones; (b) The \textit {empty} zones (blue), \textit {end} zones (green) and \textit {body} zones (yellow); (c) Generating polygons (corresponding to the cylinders) in \textit {body} zones; (d) Generating polygons in the \textit {end} zones using the same way as the reconstruction in the \textit {body} zones. The reconstruction result contains multiple components; (e) Generating extended polygons for an \textit {end} zone; (f) Generating polygons for all \textit {end} zones; (g) The reconstruction result. }}{50}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{50}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{50}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{50}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{50}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{50}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{50}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {}}}{50}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces An example of comparing our surface reconstruction algorithm and that of\nobreakspace {}\cite {LBDLJ08}. (a) Two cross sections are sketched first and then one more is added; (b) The initial reconstruction results in\nobreakspace {}\cite {LBDLJ08}. The Medial Axis planes (blue) in a zone are shown; (c) The final reconstruction results in\nobreakspace {}\cite {LBDLJ08}; (d) The initial reconstruction results in our algorithm. The union of cylinders in each zone is shown; (e) The final reconstruction results in our algorithm.}}{51}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{51}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{51}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{51}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{51}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{51}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces An example of surface reconstruction from non-intersected cross sections in the \textit {body} zones. (a) The input cross sections; (b) Partition result. The red planes are the bounding planes of each zone and the numbers represent the indices of the zones; (c)-(d) Cylinders generated from the two cross sections in Zone 1; (e) The union of cylinders in Zone 1; (f) The unions of cylinders in all zones; (g) The initial reconstruction result obtained by stitching surfaces in all zones; (h) The final reconstruction result after refinement and smoothing.}}{53}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{53}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{53}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{53}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{53}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{53}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{53}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {}}}{53}
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {}}}{53}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces An example of surface reconstruction from intersected cross sections in the \textit {body} zones. (a) The input cross sections. (b)-(c) Cylinders are generated from the two cross sections and perturbed; (d) The union of cylinders in the zone; (e) The initial reconstruction result; (f) The final reconstruction result after refinement and smoothing.}}{54}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{54}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{54}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{54}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{54}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{54}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{54}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces An example of surface reconstruction in the \textit {end} and \textit {body} zones. (a) Input cross sections; (b) The partition result; (c) The extended cylinders for the \textit {end} zones. The blue faces are those which may cause isolated surface components; (d) The unions of cylinders in all zones; (e) Final surface reconstruction result in our approach; (f) Reconstruction result using the algorithm in\nobreakspace {}\cite {LBDLJ08}.}}{56}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{56}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{56}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{56}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{56}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{56}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{56}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces An illustration of an edge-based graph. The black lines represent the primal mesh and the green lines form the edge-based graph.}}{62}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Flexible deformation of the \textit {Baby} model. (a) The initial model. (b)-(d) Results of the flexible deformation algorithm performed on the primal domain, with the global balance parameters valued 0, 0.5 and 1.0 respectively. (e)-(g) Results of the flexible deformation algorithm performed via the edge-based graph, with the global balance parameters valued 0, 0.5 and 1.0 respectively.}}{64}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{64}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{64}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{64}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{64}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{64}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{64}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {}}}{64}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces (a) The 1-form. (b) The Laplacian vector.}}{65}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{65}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{65}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces The Laplacian vector $\mathaccentV {tilde}07E{\delta _i}$ in the edge-based graph and the dihedral angle $\alpha _i$ between adjacent faces in the primal domain. (a) The shorter $\mathaccentV {tilde}07E{\delta _i}$ is, the larger $\alpha _i$ will be. (b) The longer $\mathaccentV {tilde}07E{\delta _i}$ is, the smaller $\alpha _i$ will be. }}{66}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{66}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{66}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Flexible deformation of the \textit {Dinosaur} model. (a) The initial model. (b)-(d) Results of flexible deformation algorithm performed on the primal domain, with the global balance parameters valued 0, 0.5 and 1.0 respectively. (e)-(g) Results of flexible deformation algorithm performed via the edge-based graph, with the global balance parameters valued 0, 0.5 and 1.0 respectively. }}{72}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{72}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{72}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{72}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{72}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{72}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{72}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {}}}{72}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Flexible deformation of the \textit {Buffle} model via the edge-based graph under different balance parameter values. (a) The initial model. (b)-(f) Deformation results with the global balance parameters valued 0, 0.2, 0.5, 0.8, 1.0 respectively. }}{73}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{73}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{73}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{73}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{73}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{73}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{73}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Flexible deformation of the \textit {Julius-Caesar} model via the edge-based graph under different balance parameter values. (a) The initial model. (b)-(f) Deformation results with the global balance parameters valued 0, 0.2, 0.5, 0.8, 1.0 respectively. }}{74}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{74}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{74}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{74}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{74}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{74}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{74}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Material-constrained deformation result of the \textit {plane} model. (a) The initial model and its specified materials. (b)-(c) Deformation results of uniformly distributed materials with global balance parameter valued 0 and 1 respectively. (d) Deformation result with the specified non-uniform materials.}}{75}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{75}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{75}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{75}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{75}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Material-constrained deformation of the \textit {Julius-Caesar} model. (a) The initial model and its specified materials. (b)-(d) Deformation results of uniformly distributed materials with global balance parameter valued 0, 0.5 and 1 respectively. (e) Deformation result with the specified non-uniform materials.}}{76}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{76}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{76}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{76}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{76}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{76}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Material-constrained deformation of the \textit {pig} model. (a) The initial model and its specified materials. (b)-(d) Deformation results of uniformly distributed materials with global balance parameter valued 0, 0.5 and 1 respectively. (e) Deformation result with the specified non-uniform materials.}}{76}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{76}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{76}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{76}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{76}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{76}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces An example of surface reconstruction using Liu et al's algorithm \cite {LBDLJ08}: (a) Input cross sections; (b) The reconstructed result that has several disconnected components.}}{80}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{80}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{80}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces The proposed surface reconstruction process for the input cross sections given in Figure\nobreakspace {}6.1\hbox {}(a): (a) Reconstructed sub-surfaces in zones; (b) The reconstructed surface that has only one connected component; (c) Sketching a stroke (red) to indicate the local region to be split if desired; (d) The reconstructed result after splitting. }}{81}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{81}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{81}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{81}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{81}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces 2D illustration of our surface reconstruction algorithm. (a) Input segments (red, corresponding to the 3D cross sections) and partitioned zones; (b) The \textit {empty} zones (blue), \textit {end} zones (green) and \textit {body} zones (yellow); (c) Generating polygons (corresponding to the frusta) in \textit {body} zones; (d) Generating polygons in the \textit {end} zones using the same way as the reconstruction in the \textit {body} zones. The reconstruction result contains multiple components; (e) Generating extended polygons for an \textit {end} zone. The blue segments correspond to the virtual cross sections we built; (f) Generating polygons for all \textit {end} zones; (g) The reconstruction result. }}{83}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{83}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{83}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{83}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{83}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{83}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{83}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {}}}{83}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Illustration of sub-surface reconstruction for non-intersected cross sections in a \textit {body} zone. (a) Input cross sections; (b) Generate initial frustum $fr_p$ from one cross section; (c) Adjust the top $fr_p^t$ of the frustum to make it lie within the zone; (d)Generate another frustum; (e) Compute the union of the two frusta.}}{85}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{85}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{85}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{85}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{85}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{85}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Illustration of sub-surface reconstruction for intersected cross sections in a \textit {body} zone. (a) Input cross sections; (b) Generate the frusta by shrinking the top faces; (c) Non-manifold sub-surface caused by the over-shrinkage of the top of each frustum; (d) Translate the bottom $fr_p^b$ to get the initial frustum $fr_p$. The yellow dots represent the points outside the zone (i.e. $PT_f$ in Eq\nobreakspace {}6.3\hbox {}); (e) Move the outside points into the zone. The green dots are the points near the other faces of the zone (i.e. $PT_o$ in Eq\nobreakspace {}6.3\hbox {}); (f) Deform the boundary of the frustum top by keeping the yellow and green points fixed, to get a valid frustum; (g) Generate another frustum; (h) Compute the union of the two frusta.}}{86}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{86}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{86}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{86}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{86}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{86}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{86}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {}}}{86}
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {}}}{86}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Illustration of sub-surface reconstruction in an \textit {end} zone. (a) The input cross section $cs_p$ on face $f_{ij}$ is projected onto the other faces in the orthogonal direction of $f_{ij}$ and the face $f_{ik}$ with the largest projection area is selected; (b) A virtual cross section $cs_v$ is obtained by projecting $cs_p$ onto $f_{ik}$ and the frustum $fr_p$ is built by taking $cs_p$ and $cs_v$ as the bottom and top. }}{88}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{88}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{88}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces An example of the join operation in sketch-based topology editing. (a) Input cross sections; (b) Computed frusta in zones; (c) Sketch a curve (red) on the reconstruction result to join surface parts; (d) The corresponding frustum (with light green color) is deformed; (e) Editing result.}}{92}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{92}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{92}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{92}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{92}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{92}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Illustration of the join of surface parts in different zones. (a) Sketch a curve (green) to select the two frusta; (b) Re-calculate the top of the first selected frustum by projecting its bottom onto the common face with the neighbor zone; (c)-(d) Extend the frustum; (e) Build the extended frustum in the zone containing the second selected frustum; (f) Editing result.}}{92}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{92}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{92}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{92}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{92}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{92}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{92}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces An example of the split operation in sketch-based topology editing. (a) Input cross sections; (b) Computed frusta in zones; (c) Sketch a curve (red) on the reconstruction result to split local surface; (d) The corresponding frusta (with light green color) are shrunk to be separated; (e) Sketch another split curve on the updated model; (f) The corresponding blue frusta are shrunk; (g) Editing result.}}{94}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{94}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{94}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{94}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{94}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{94}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{94}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {}}}{94}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Results of our surface reconstruction algorithm. In each example, the input cross sections, the generated sub-surfaces in zones, the reconstruction result of our algorithm, and the result of the algorithm of\nobreakspace {}\cite {LBDLJ08} are shown in order.}}{95}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {The \textit {Cactus} model}}}{95}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {The \textit {Teacup} model}}}{95}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {The \textit {Tooth} model}}}{95}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {The \textit {Tree} model}}}{95}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {The \textit {Stomach} model}}}{95}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {The \textit {Hand} model}}}{95}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces An example of the reconstruction and editing of the \textit {skull} model. (a) Input cross sections. (b) Generated sub-surfaces in zones. (c) Reconstruction result. (d) Sketch a curve (red) to split the local surface. (e) Updated sub-surfaces in zones. (f) Editing result.}}{96}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{96}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{96}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{96}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{96}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{96}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{96}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces An example of the reconstruction and editing of the \textit {ovaries} model. (a) Input cross sections. (b) Generated sub-surfaces in zones. (c) Reconstruction result. (d) Sketch a curve (red) to join the local surface. (e) Updated sub-surfaces in zones. (f) Editing result.}}{96}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{96}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{96}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{96}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{96}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{96}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{96}
+\addvspace {10\p@ }

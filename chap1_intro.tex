@@ -1,0 +1,237 @@
+\section{Background}\label{ch1:sec:background}
+
+%introduction on 3D modeling and reconstruction
+Geometric models are kernels of many scientific and engineering
+subjects and they are widely used in various applications including
+product design, digital entertainment, biology, archeology and so
+on~\cite{BPKALBR07}. Correspondingly, there is a strong need for 
+development of modeling and reconstruction techniques to create, 
+edit, analyze and compute 3D models. Although there 
+have been a lot of techniques and devices such as image-based modeling~\cite{DTM96,LTZYWK06} and 3D scanner techniques~\cite{LPCRK00,ZSCS04}
+developed to build virtual 3D models, most 3D shapes still need to
+be constructed manually via various modeling tools by the user,
+either from scratch or by editing existing models.
+
+\begin{figure} [htbp]
+    \centering
+  \includegraphics[scale=0.35]{figs/f1.geomodels.eps}
+  \caption{Geometric models used in various applications. These models are courtesy of the INRIA Gamma team research database~\cite{INRIA}.}
+\end{figure}
+
+Traditional tools for 3D modeling and reconstruction such as 3ds Max~\cite{3DSMAX}, Maya~\cite{MAYA} and so on are mainly
+designed for expert users to precisely construct sophisticated
+models~\cite{CIW08}. They are difficult to use. One must spend a long time
+learning the tools and is expected to work on a task for a period of
+time to obtain a final result. This seems too complicated for novice
+users to master. These tools are also difficult for professional
+users in the initial design phase. Designers still need to work with
+pen and paper first and then move on to the computational tools when
+the design is fixed.
+
+\begin{figure} [htbp]
+    \centering
+  \includegraphics[scale=0.2]{figs/f1.3dsMax.eps}
+  \caption{3D modeling using the 3Ds Max software~\cite{3DSMAX}.}
+\end{figure}
+
+Advances in information technology have  enabled many systems to
+extend human's abilities in design and creative work. Modern
+cognition study indicates that human has two cognitive modes:
+experimental cognition and reflective cognition~\cite{DN98}. The
+former corresponds to skilled behavior and the latter accounts for
+intellectual work. Tano et al.~\cite{TKNK03} show that while most of
+current computer graphics (CG) and virtual reality (VR) tools are
+good for experimental cognition and poor for reflective cognition,
+sketch-based tools can promote reflective cognitive activities. On
+the other hand, with the rapid development of pen-based computer
+hardware, digital sketching interface emerges as a powerful way for
+users to interact with the computer and do various 3D modeling and
+reconstruction tasks.
+
+Sketch-based modeling refers to the process  of producing 3D models
+from user sketched curves or strokes. Instead of requiring the users
+to work with buttons, menus, icons and pointers, it allows the
+direct expression of their thoughts in the form of freehand
+sketching. The goal of the sketching interfaces is to solve the
+problem of accessibility by reducing the amount of explicit control
+of the users to simplify the user interface dramatically. The
+sketch-based technique makes 3D modeling and reconstruction tasks
+accessible to novice users. Meanwhile, it can also be used for
+experts in their initial design stage. With the improvement on the
+computational capabilities of computers and the emergency of various
+powerful input devices, the sketching techniques are developing
+rapidly in recent years. There have been some commercial modeling
+software and packages supporting freehand sketches, examples of
+which are SketchUp~\cite{SketchUp}, Archipelis
+Designer~\cite{ArcDes}, and Sunny 3D~\cite{Sunny3D}.
+
+\begin{figure} [htbp]
+    \centering
+  \includegraphics[scale=0.6]{figs/f1.sketch.eps}
+  \caption{Sketch-based 3D modeling.}
+\end{figure}
+
+The design of interactive and  powerful sketching interfaces
+requires the exploration of various modeling algorithms and the
+combination of the knowledge from other fields, such as human
+psychology, virtual reality, computer vision and so on. At the same
+time, the sketching technique can also help to make the fundamental
+modeling and reconstruction algorithms more effective and
+intelligent. The development of sketch-based modeling systems and
+the utilization of the sketching technique in improving the modeling
+and reconstruction algorithms compose the main content of this
+research.
+
+
+\section{Problem statement and objectives}
+
+Though a lot of efforts have  been done in sketch-based modeling and
+reconstruction, there are still many important open problems.
+Sketch-based modeling is often related to human shape perception and
+human shape perception of 2D sketches is a complicated issue
+involving various subjects. While sketch-based techniques offer an
+improvement over traditional methods in terms of accessibility, they
+are not yet complete replacements. There remains much work to be
+done for sketch-based modeling  to produce a wide range of objects
+with high complexity. The challenges for sketch-based modeling
+include the development of a natural and friendly user interface,
+the exploration on perceptually meaningful description of a 3D
+shape, the proper interpretation of the user sketches, and the
+enhancement of the sketch precisions and model qualities. Meanwhile,
+it is non-trivial to incorporate sketching techniques into
+fundamental modeling and reconstruction algorithms, in order to
+produce a faithful and desirable results to the user.
+
+
+This thesis researches the use  of sketching techniques in 3D
+modeling and reconstruction to enhance various geometric modeling
+algorithms. It aims to gain deep understanding of diverse techniques
+from geometric modeling, computer graphics, human computer
+interaction required to advance the state of the art in interactive
+3D modeling, to investigate how sketching interfaces can be
+efficiently used for enhancing 3D modeling and reconstruction, and
+to develop sketch-based techniques for creating, editing, and
+manipulating digital geometric models. In particular, the research
+objectives are:
+\begin{itemize}
+\item to explore and develop novel sketching interfaces and
+algorithms for sketch-based modeling, by combining the knowledge of
+geometric modeling, human computer interaction, compute vision, human psychology and so on;
+
+\item to investigate how to enhance the fundamental 3D modeling and reconstruction
+algorithms by using sketching techniques, thus producing faithful
+and satisfactory modeling results to the user and making the
+algorithms suitable for various interactive geometric
+ processing applications.
+\end{itemize}
+
+
+\section{Contributions and thesis organization}
+
+
+%approaches:
+To accomplish these objectives, the following approaches have been
+proposed:
+
+%system: reference plane and rules
+First, we developed a sketch-based modeling system with auxiliary
+planes as  references for 3D freeform shape design. The user can
+first create an initial 3D shape with arbitrary topology by
+sketching the cross section curves of the model, and then use
+sketches to perform deformation, extrusion, etc, to further edit the
+model. To regularize and interpret the user's sketches properly, we
+introduce some rules for the input strokes, which are based on both
+the semantic meaning of the sketched strokes and human psychology.
+Unlike other sketching systems, all the creation and editing
+operations in the proposed system are performed with reference to
+some auxiliary planes that are automatically constructed based on
+the user sketches or default settings. The use of reference planes
+provides a heuristic solution to the ambiguity problem of the 2D
+interface for modeling in 3D space and makes the user input
+meaningful and intuitive.
+
+%progressive approach and algorithm, to enhance the creation function
+Second, it is observed that most previous sketch-based modeling
+systems mainly focus on providing editing tools to gradually sculpt
+a 3D model from a rough shape rather than creating it from scratch
+through iterative sketches. In order to enhance the creation
+function in sketching-based modeling, we proposed a progressive
+modeling approach, which allows the user to create a 3D model
+through iterative sketches, taking both existing sketched curves and
+the up-to-date reconstructed 3D shape as references to get fully
+aware of the shape of the sketched model. A novel surface
+reconstruction algorithm which ensures gradual shape updating during
+iterative sketching and produces models with a singly connected
+component is proposed to effectively support this creation
+operation.
+%detailed introduction on the algorithm?
+
+%deformation
+Third, we studied one important editing function in sketch-based
+modeling: surface deformation. We presented a new surface-based mesh
+deformation method that performs the computation via an edge-based
+graph, which allows to naturally increase the sampling rate for more
+accurate shape computation and obtains better deformation results.
+The user is given the flexibility of adjusting the deformation
+effect between local shape preservation and global smoothness.
+Moreover, to simulate the deformation behaviors of regions with
+different materials, we introduce a stiffness property into the
+deformation model and present an easy and intuitive way for the user
+to set the material property. Thus, our algorithm can produce
+satisfactory results and make the deformation more flexible.
+
+%surface reconstruction
+Fourth, we utilized sketching  in solving the problem of surface
+reconstruction from cross sections with arbitrary orientations and
+presented a new scheme which constructs a smooth mesh surface from
+cross section curves. The scheme is composed of two parts. The first
+part is a surface reconstruction algorithm that produces a manifold
+surface interpolating the input cross sections and having regular
+local shapes. It is the  generalization of the algorithm developed
+in our progressive modeling, to handle cross sections with arbitrary
+orientations. The second part is sketching assisted topology
+editing, which allows the user to make further adjustment on the
+local topology of the reconstructed model through simple sketches if
+the initial shape is not satisfactory. The computation of this
+editing operation makes use of the intermediate information obtained
+during the reconstruction process and avoids complicated analysis on
+the shape of the global surface. Our surface reconstruction scheme
+has the unique ability to build a manifold surface with only one
+connected component, and avoids producing spurious or weired local
+shapes which are often seen in previous methods. The reconstruction
+process is further accelerated by computing the sub-surfaces in
+parallel. This surface reconstruction scheme can be used in various
+applications including sketch-based modeling.
+
+
+The remainder of this thesis is organized as follows:
+\begin{itemize}
+\item Chapter~\ref{ch:review} reviews the related works, which include
+ sketch-based modeling systems, mesh deformation algorithms and
+  surface reconstruction from cross section curves.
+
+\item Chapter~\ref{ch:planeSBIM} presents our sketch-based modeling
+system which takes planes as references for freeform shape design.
+The interfaces for the progressive creation and editing operations,
+the rules for interpreting and regularizing the user sketches, as well as
+ the algorithm on the calculation of the reference planes in this system are
+ described in detail.
+%The system also serves a vehicle for carrying out our research in next steps.
+
+\item Chapter~\ref{ch:orthsurf} introduces the algorithm on progressive
+surface reconstruction from orthogonal cross sections, which effectively
+ supports the creation function in our sketching interface.
+
+\item Chapter~\ref{ch:flexdeformation} presents the algorithm on
+mesh deformation , which is one of the most important editing functions in our system.
+
+\item Chapter~\ref{ch:editsurf} introduces a new framework for
+surface reconstruction from cross sections with arbitrary
+orientations, which includes generalizing the algorithm in
+Chapter~\ref{ch:orthsurf} to handle cross
+ sections with arbitrary orientations and using sketching  to edit
+ topology of the resulting surface.
+
+\item Chapter~\ref{ch:conclusion} summarizes the thesis and points out some
+directions for future work.
+\end{itemize}
