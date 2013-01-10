@@ -58,4 +58,4 @@
 \contentsline {section}{\numberline {7.1}Summary}{99}
 \contentsline {section}{\numberline {7.2}Future directions}{101}
 \contentsline {chapter}{References}{103}
-\contentsline {chapter}{Author's Publications}{103}
+\contentsline {chapter}{Author's Publications}{122}

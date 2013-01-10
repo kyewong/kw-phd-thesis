@@ -1,12 +1,12 @@
 \section{Background}\label{ch1:sec:background}
 
 %introduction on 3D modeling and reconstruction
-Geometric models are kernels of many scientific and engineering
-subjects and they are widely used in various applications including
+Geometric models are the kernels of many scientific and engineering
+subjects. They are widely used in various applications including
 product design, digital entertainment, biology, archeology and so
-on~\cite{BPKALBR07}. Correspondingly, there is a strong need for 
-development of modeling and reconstruction techniques to create, 
-edit, analyze and compute 3D models. Although there 
+on~\cite{BPKALBR07}. Correspondingly, there is a strong need for
+development of modeling and reconstruction techniques to create,
+edit, analyze and compute 3D models. Although there
 have been a lot of techniques and devices such as image-based modeling~\cite{DTM96,LTZYWK06} and 3D scanner techniques~\cite{LPCRK00,ZSCS04}
 developed to build virtual 3D models, most 3D shapes still need to
 be constructed manually via various modeling tools by the user,
@@ -31,7 +31,7 @@ the design is fixed.
 \begin{figure} [htbp]
     \centering
   \includegraphics[scale=0.2]{figs/f1.3dsMax.eps}
-  \caption{3D modeling using the 3Ds Max software~\cite{3DSMAX}.}
+  \caption{3D modeling using the 3ds Max software~\cite{3DSMAX}.}
 \end{figure}
 
 Advances in information technology have  enabled many systems to
@@ -56,9 +56,9 @@ sketching. The goal of the sketching interfaces is to solve the
 problem of accessibility by reducing the amount of explicit control
 of the users to simplify the user interface dramatically. The
 sketch-based technique makes 3D modeling and reconstruction tasks
-accessible to novice users. Meanwhile, it can also be used for
-experts in their initial design stage. With the improvement on the
-computational capabilities of computers and the emergency of various
+accessible to novice users. Meanwhile, it can also be used by
+experts in their initial design stage. With the improvement of the
+computational capabilities of computers and the emerging of various
 powerful input devices, the sketching techniques are developing
 rapidly in recent years. There have been some commercial modeling
 software and packages supporting freehand sketches, examples of
@@ -85,7 +85,7 @@ research.
 
 \section{Problem statement and objectives}
 
-Though a lot of efforts have  been done in sketch-based modeling and
+Though a lot of efforts have been made in sketch-based modeling and
 reconstruction, there are still many important open problems.
 Sketch-based modeling is often related to human shape perception and
 human shape perception of 2D sketches is a complicated issue
@@ -99,7 +99,7 @@ the exploration on perceptually meaningful description of a 3D
 shape, the proper interpretation of the user sketches, and the
 enhancement of the sketch precisions and model qualities. Meanwhile,
 it is non-trivial to incorporate sketching techniques into
-fundamental modeling and reconstruction algorithms, in order to
+fundamental modeling and reconstruction algorithms in order to
 produce a faithful and desirable results to the user.
 
 
@@ -138,7 +138,8 @@ First, we developed a sketch-based modeling system with auxiliary
 planes as  references for 3D freeform shape design. The user can
 first create an initial 3D shape with arbitrary topology by
 sketching the cross section curves of the model, and then use
-sketches to perform deformation, extrusion, etc, to further edit the
+sketches to perform operations such as deformation, extrusion and so on
+to further edit the
 model. To regularize and interpret the user's sketches properly, we
 introduce some rules for the input strokes, which are based on both
 the semantic meaning of the sketched strokes and human psychology.
@@ -170,14 +171,14 @@ operation.
 Third, we studied one important editing function in sketch-based
 modeling: surface deformation. We presented a new surface-based mesh
 deformation method that performs the computation via an edge-based
-graph, which allows to naturally increase the sampling rate for more
-accurate shape computation and obtains better deformation results.
+graph, which allows natural increase of the sampling rate for more
+accurate shape computation and generates better deformation results.
 The user is given the flexibility of adjusting the deformation
 effect between local shape preservation and global smoothness.
 Moreover, to simulate the deformation behaviors of regions with
 different materials, we introduce a stiffness property into the
 deformation model and present an easy and intuitive way for the user
-to set the material property. Thus, our algorithm can produce
+to set the material property as well. Thus, our algorithm can produce
 satisfactory results and make the deformation more flexible.
 
 %surface reconstruction
@@ -188,7 +189,7 @@ cross section curves. The scheme is composed of two parts. The first
 part is a surface reconstruction algorithm that produces a manifold
 surface interpolating the input cross sections and having regular
 local shapes. It is the  generalization of the algorithm developed
-in our progressive modeling, to handle cross sections with arbitrary
+in our progressive modeling which is used to handle cross sections with arbitrary
 orientations. The second part is sketching assisted topology
 editing, which allows the user to make further adjustment on the
 local topology of the reconstructed model through simple sketches if
