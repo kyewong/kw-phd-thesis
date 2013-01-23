@@ -1,6 +1,10 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: thesis_ref.bib
+"{" immediately follows a field name---line 90 of file thesis_ref.bib
+ : note
+ :     { = "http://www.archipelis.com/"
+I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in INRIA
 Warning--to sort, need author or key in 3DSMAX
 Warning--to sort, need author or key in MAYA
@@ -10,4 +14,4 @@ Warning--to sort, need author or key in Sunny3D
 Warning--empty chapter and pages in DA06
 Warning--can't use both volume and number fields in JDD03
 Warning--empty school in MJ86
-(There were 9 warnings)
+(There was 1 error message)

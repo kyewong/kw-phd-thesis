@@ -2,27 +2,26 @@
 
 \bibitem{ArcDes}
 Archipelis designer.
-\newblock \url{http://www.archipelis.com/}.
 
 \bibitem{3DSMAX}
 Autodesk 3ds max.
-\newblock \url{http://usa.autodesk.com/3ds-max/}.
+\newblock http://usa.autodesk.com/3ds-max/.
 
 \bibitem{MAYA}
 Autodesk maya.
-\newblock \url{http://usa.autodesk.com/maya/}.
+\newblock http://usa.autodesk.com/maya/.
 
 \bibitem{Sunny3D}
 E-frontier sunny3d.
-\newblock \url{http://graphic.e-frontier.co.jp/sunny3d}.
+\newblock http://graphic.e-frontier.co.jp/sunny3d.
 
 \bibitem{SketchUp}
 Google sketchup.
-\newblock \url{http://sketchup.google.com}.
+\newblock http://sketchup.google.com.
 
 \bibitem{INRIA}
 Inria gamma team research database.
-\newblock \url{http://www-roc.inria.fr/gamma/gamma/disclaimer.php}.
+\newblock http://www-roc.inria.fr/gamma/gamma/disclaimer.php.
 
 \bibitem{AJA12}
 F.~Abbasinejad, P.~Joshi, and N.~Amenta.
@@ -692,8 +691,8 @@ L.~Olsen, F.~Samavati, M.~Sousa, and J.~Jorge.
 
 \bibitem{openmp08}
 {OpenMP Architecture Review Board}.
-\newblock {OpenMP} application program interface version 3.0.
-\newblock http://www.openmp.org/mp-documents/spec30.pdf, 2008.
+\newblock {OpenMP} application program interface version 3.0, 2008.
+\newblock http://www.openmp.org/mp-documents/spec30.pdf.
 
 \bibitem{OK11}
 G.~Orbay and L.~Kara.

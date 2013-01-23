@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  10 JAN 2013 21:47
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  23 JAN 2013 22:05
 entering extended mode
 **thesis.tex
 (D:\research\doc\Thesis\kw-phd-thesis\thesis.tex
@@ -1008,17 +1008,16 @@ Chapter 7.
 
 ] [100] [101])
 [102] (D:\research\doc\Thesis\kw-phd-thesis\thesis.bbl
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 5.
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
+[][]\OT1/ptm/m/n/12 Inria gam-ma team re-search database.  http://www-
+ []
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd"
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [103
+[103
 
 
-] [104]
-[105] [106] [107] [108] [109] [110]
+] [104] [105] [106] [107] [108] [109] [110]
 
-LaTeX Warning: Command \ss invalid in math mode on input line 484.
+LaTeX Warning: Command \ss invalid in math mode on input line 483.
 
 [111] [112] [113] [114] [115] [116] [117] [118] [119]
 Missing character: There is no ¡ in font ptmr7t!
@@ -1034,12 +1033,12 @@ Ap-pli-ca-tion-s\OT1/ptm/m/n/12 , Vol.9, No.3, 2012, pp.361-
 
 ]) [123] (D:\research\doc\Thesis\kw-phd-thesis\thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4946 strings out of 495355
- 72129 string characters out of 3183097
+ 4912 strings out of 495355
+ 71638 string characters out of 3183097
  129752 words of memory out of 3000000
- 7832 multiletter control sequences out of 15000+200000
- 18771 words of font info for 52 fonts, out of 3000000 for 9000
+ 7802 multiletter control sequences out of 15000+200000
+ 18555 words of font info for 51 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,11n,43p,1516b,369s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (137 pages, 430672 bytes).
+Output written on thesis.dvi (137 pages, 430584 bytes).
