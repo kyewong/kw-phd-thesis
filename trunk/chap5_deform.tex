@@ -317,9 +317,35 @@ $\tilde{e_{ij}}^\prime=\tilde{v_i}^\prime-\tilde{v_j}^\prime$ are
 the undeformed and deformed edge vectors between $\tilde{v_i}$ and
 $\tilde{v_i}$ respectively. $\tilde{\omega_{ij}}$ is the same weight
 as that in Eq.~\ref{eq:edgelaplacian}. $R_i$ represents the rotation
-matrix associated to $\tilde{v_i}$. The optimal rotation matrix
-$R_i$ can be calculated given the old and new values of the edge
-vectors. Detailed deduction can be found in~\cite{SA07}.
+matrix associated to $\tilde{v_i}$. 
+
+Given the old and new values of the edge vectors, we use the method 
+proposed in~\cite{SA07} to compute the optimal rotation matrix $R_i$
+which minimizes Eq.~\ref{eq:edgerigidenergy}. First, Eq.~\ref{eq:edgerigidenergy}
+can be re-written as:
+
+\begin{eqnarray}
+\label{eq:rotationmat}
+E(\tilde{v_i}^\prime) &=& \sum\limits_{j\in N(i)}{\tilde{\omega_{ij}} ||\tilde{e_{ij}}^\prime -R_i \tilde{e_{ij}}||^2}\nonumber\\
+&=& \sum\limits_{j\in N(i)}{\tilde{\omega_{ij}} (\tilde{e_{ij}}^\prime -R_i \tilde{e_{ij}})^T 
+(\tilde{e_{ij}}^\prime -R_i \tilde{e_{ij}})}\nonumber\\
+&=&\sum\limits_{j\in N(i)}{\tilde{\omega_{ij}} (\tilde{e_{ij}}^{\prime T}\tilde{e_{ij}}^\prime
+-2\tilde{e_{ij}}^{\prime T}R_i\tilde{e_{ij}}+\tilde{e_{ij}}^T R_i^T R_i \tilde{e_{ij}})}\nonumber\\
+&=&\sum\limits_{j\in N(i)}{(\tilde{\omega_{ij}} \tilde{e_{ij}}^{\prime T}\tilde{e_{ij}}^\prime
+-2\tilde{\omega_{ij}} \tilde{e_{ij}}^{\prime T}R_i\tilde{e_{ij}}
++\tilde{\omega_{ij}} \tilde{e_{ij}}^T \tilde{e_{ij}})}
+\end{eqnarray}
+
+Since the terms that do not contain $R_i$ are constant, they can be ignored. 
+The goal then is to compute the optimal $R_i$ which  minimizes the term 
+$-2\tilde{\omega_{ij}} \tilde{e_{ij}}^{\prime T}R_i\tilde{e_{ij}}$
+(i.e. maximize $\tilde{\omega_{ij}} \tilde{e_{ij}}^{\prime T}R_i\tilde{e_{ij}}$).
+Take ..., then it can be seen the matrix equals to the trace...
+
+
+
+
+
 
 The rigid transformation of the 1-form during  deformation strives
 to do a \textit{hard} transform to the mesh. We say \textit{hard} as
