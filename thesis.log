@@ -1,10 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.11.2)  1 FEB 2013 18:05
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  2 FEB 2013 15:48
 entering extended mode
 **thesis.tex
-(E:\kw-phd-thesis\thesis.tex
+(D:\research\doc\Thesis\kw-phd-thesis\thesis.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
-(E:\kw-phd-thesis\puthesis.cls (E:\kw-phd-thesis\psfig.tex
+(D:\research\doc\Thesis\kw-phd-thesis\puthesis.cls
+(D:\research\doc\Thesis\kw-phd-thesis\psfig.tex
 \@unused=\write3
 
 psfig/tex 1.9
@@ -13,28 +14,29 @@ psfig/tex 1.9
 \p@intvaluey=\dimen103
 )
 Document Class: puthesis 1997/04/16 v1.3 Princeton University Thesis class
-(E:\kw-phd-thesis\setspace.sty) (C:\CTEX\MiKTeX\tex\latex\graphics\epsfig.sty
+(D:\research\doc\Thesis\kw-phd-thesis\setspace.sty)
+("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
-(C:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(C:\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\CTEX\MiKTeX\tex\latex\graphics\trig.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(C:\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
+("F:\Program Files\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: dvips.def on input line 91.
 
-(C:\CTEX\MiKTeX\tex\latex\graphics\dvips.def
+("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\dvips.def"
 File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen104
@@ -45,9 +47,9 @@ File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 )
 \c@subyear=\count79
 
-(C:\CTEX\MiKTeX\tex\latex\base\report.cls
+("F:\Program Files\CTEX\MiKTeX\tex\latex\base\report.cls"
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(C:\CTEX\MiKTeX\tex\latex\base\size12.clo
+("F:\Program Files\CTEX\MiKTeX\tex\latex\base\size12.clo"
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count80
@@ -63,10 +65,10 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen108
 ))
-(C:\CTEX\MiKTeX\tex\latex\psnfss\times.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\psnfss\times.sty"
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-(C:\CTEX\UserData\tex\latex\listings\listings.sty
+("F:\Program Files\CTEX\UserData\tex\latex\listings\listings.sty"
 \lst@mode=\count89
 \lst@gtempboxa=\box26
 \lst@token=\toks15
@@ -80,7 +82,7 @@ Package: times 2005/04/12 PSNFSS-v9.2a (SPQR)
 \lst@lineno=\count94
 \lst@maxwidth=\dimen112
 
-(E:\kw-phd-thesis\lstpatch.sty
+(D:\research\doc\Thesis\kw-phd-thesis\lstpatch.sty
 File: lstpatch.sty 2002/10/13 1.0i (Carsten Heinz)
 
 
@@ -91,22 +93,22 @@ File: lstpatch.sty 2002/10/13 1.0i (Carsten Heinz)
 *** Patch file not loaded.
 ***
 
-) (C:\CTEX\UserData\tex\latex\listings\lstmisc.sty
+) ("F:\Program Files\CTEX\UserData\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 \c@lstnumber=\count95
 \lst@skipnumbers=\count96
 \lst@framebox=\box27
 )
-(C:\CTEX\UserData\tex\latex\listings\listings.cfg
+("F:\Program Files\CTEX\UserData\tex\latex\listings\listings.cfg"
 File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
 Package: listings 2007/02/22 1.4 (Carsten Heinz)
 
-(E:\kw-phd-thesis\algorithm.sty
+(D:\research\doc\Thesis\kw-phd-thesis\algorithm.sty
 Package: algorithm 
 
 Document Style `algorithm' - floating environment
-(C:\CTEX\MiKTeX\tex\latex\float\float.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count97
 \float@exts=\toks16
@@ -114,16 +116,17 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks17
 \@floatcapt=\box29
 )
-(C:\CTEX\MiKTeX\tex\latex\base\ifthen.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\base\ifthen.sty"
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks18
 \c@algorithm=\count98
-) (E:\kw-phd-thesis\algorithmic.sty
+)
+(D:\research\doc\Thesis\kw-phd-thesis\algorithmic.sty
 Package: algorithmic 2006/06/02
 
 Document Style `algorithmic' - environment
-(C:\CTEX\MiKTeX\tex\latex\tools\calc.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\tools\calc.sty"
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count99
 \calc@Bcount=\count100
@@ -142,7 +145,7 @@ LaTeX Info: Redefining \addtolength on input line 77.
 \ALC@tlm=\skip46
 \algorithmicindent=\skip47
 )
-(C:\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks19
 \symAMSa=\mathgroup4
@@ -150,24 +153,24 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 )
-(C:\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty"
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip48
 
 For additional information on amsmath, use the `?' option.
-(C:\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-(C:\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks20
 \ex@=\dimen115
 ))
-(C:\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen116
 )
-(C:\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count105
@@ -208,7 +211,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-(C:\CTEX\UserData\tex\latex\subfigure\subfigure.sty
+("F:\Program Files\CTEX\UserData\tex\latex\subfigure\subfigure.sty"
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip51
 \subfigcapskip=\skip52
@@ -224,14 +227,14 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-(C:\CTEX\UserData\tex\latex\subfigure\subfigure.cfg)
+("F:\Program Files\CTEX\UserData\tex\latex\subfigure\subfigure.cfg")
 \subfig@top=\skip55
 \subfig@bottom=\skip56
 )
-(C:\CTEX\MiKTeX\tex\latex\tools\tabularx.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\tools\tabularx.sty"
 Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
 
-(C:\CTEX\MiKTeX\tex\latex\tools\array.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen126
 \extrarowheight=\dimen127
@@ -246,7 +249,8 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \TX@delta=\dimen132
 \TX@cols=\count121
 \TX@ftn=\toks26
-) (E:\kw-phd-thesis\booktabs.sty
+)
+(D:\research\doc\Thesis\kw-phd-thesis\booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen133
 \lightrulewidth=\dimen134
@@ -266,12 +270,13 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@lastruleclass=\count125
 \@thisrulewidth=\dimen145
 )
-(E:\kw-phd-thesis\footmisc.sty
+(D:\research\doc\Thesis\kw-phd-thesis\footmisc.sty
 Package: footmisc 1999/03/31 v3.3j1 a miscellany of footnote facilities
 \footnotemargin=\dimen146
 \FN@tempboxb=\box32
 \FN@tempboxc=\box33
-) (E:\kw-phd-thesis\fancyhdr.sty
+)
+(D:\research\doc\Thesis\kw-phd-thesis\fancyhdr.sty
 \fancy@headwidth=\skip59
 \f@ncyO@elh=\skip60
 \f@ncyO@erh=\skip61
@@ -282,20 +287,21 @@ Package: footmisc 1999/03/31 v3.3j1 a miscellany of footnote facilities
 \f@ncyO@olf=\skip66
 \f@ncyO@orf=\skip67
 )
-(C:\CTEX\MiKTeX\tex\latex\graphics\lscape.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\lscape.sty"
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
-(C:\CTEX\UserData\tex\latex\cases\cases.sty
+("F:\Program Files\CTEX\UserData\tex\latex\cases\cases.sty"
 Package: cases 2002/05/02 ver 2.5 
 )
-(C:\CTEX\MiKTeX\tex\latex\ltxmisc\url.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\ltxmisc\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-(C:\CTEX\MiKTeX\tex\latex\tools\enumerate.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\tools\enumerate.sty"
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks27
-) (E:\kw-phd-thesis\thesis.aux)
+)
+(D:\research\doc\Thesis\kw-phd-thesis\thesis.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 143.
 LaTeX Font Info:    ... okay on input line 143.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 143.
@@ -311,7 +317,7 @@ LaTeX Font Info:    ... okay on input line 143.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 143.
 
 
-(C:\CTEX\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+("F:\Program Files\CTEX\MiKTeX\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 File: ntu.eps Graphic file (type eps)
@@ -320,22 +326,23 @@ File: ntu.eps Graphic file (type eps)
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 143.
- [1
+
+[1
 
 ] [2] [3
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 143.
-
-(E:\kw-phd-thesis\thesis.toc
+ (D:\research\doc\Thesis\kw-phd-thesis\thesis.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 1.
- (C:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
+
+("F:\Program Files\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 
-(C:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
+("F:\Program Files\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
@@ -346,25 +353,26 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 ] [5])
 \tf@toc=\write4
  [6]
-(E:\kw-phd-thesis\thesis.lof [7
+(D:\research\doc\Thesis\kw-phd-thesis\thesis.lof [7
 
 
 ] [8] [9] [10] [11] [12])
 \tf@lof=\write5
- [13]
+
+[13]
 \c@lstlisting=\count126
 
 Chapter 1.
-(E:\kw-phd-thesis\chap1_intro.tex
+(D:\research\doc\Thesis\kw-phd-thesis\chap1_intro.tex
 File: figs/f1.geomodels.eps Graphic file (type eps)
- <figs/f1.geomodels.eps> [1
+ <figs/f1.geomodels.eps>
+[1
 
 
 
 ]
 File: figs/f1.3dsMax.eps Graphic file (type eps)
-
-<figs/f1.3dsMax.eps>
+ <figs/f1.3dsMax.eps>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 67.
  [2]
@@ -373,14 +381,15 @@ File: figs/f1.sketch.eps Graphic file (type eps)
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 117.
 
 
-(C:\CTEX\MiKTeX\tex\latex\psnfss\omsptm.fd
+("F:\Program Files\CTEX\MiKTeX\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 117.
- [4] [5] [6]) [7]
+ [4] [5] [6])
+[7]
 Chapter 2.
-(E:\kw-phd-thesis\chap2_review.tex [8
+(D:\research\doc\Thesis\kw-phd-thesis\chap2_review.tex [8
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
@@ -394,11 +403,12 @@ Ted-dy, but they used the RBF(Radial
 [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24]
 [25] [26]) [27]
 Chapter 3.
-(E:\kw-phd-thesis\chap3_framework.tex [28
+(D:\research\doc\Thesis\kw-phd-thesis\chap3_framework.tex [28
 
 ] [29] [30]
 File: figs/f3.pig-1.eps Graphic file (type eps)
- <figs/f3.pig-1.eps>
+
+<figs/f3.pig-1.eps>
 Overfull \hbox (18.0028pt too wide) in paragraph at lines 162--162
  [][] 
  []
@@ -567,7 +577,7 @@ Overfull \hbox (3.0pt too wide) in paragraph at lines 890--905
 
 [43] [44] [45] [46]) [47]
 Chapter 4.
-(E:\kw-phd-thesis\chap4_surfreconortho.tex [48
+(D:\research\doc\Thesis\kw-phd-thesis\chap4_surfreconortho.tex [48
 
 ]
 File: figs/f4.illu-workflow-2d1.eps Graphic file (type eps)
@@ -684,34 +694,34 @@ File: figs/f3.surf-end-6.eps Graphic file (type eps)
  <figs/f3.surf-end-6.eps>
 [56] [57] [58]) [59]
 Chapter 5.
-(E:\kw-phd-thesis\chap5_deform.tex [60
+(D:\research\doc\Thesis\kw-phd-thesis\chap5_deform.tex [60
 
 ] [61]
 File: figs/f5.2.edge-based-graph.eps Graphic file (type eps)
- <figs/f5.2.edge-based-graph.eps>
-[62]
+
+<figs/f5.2.edge-based-graph.eps> [62]
 File: figs/f5.1.baby-pc-3.eps Graphic file (type eps)
  <figs/f5.1.baby-pc-3.eps>
 File: figs/f5.1.ver0-iso-3.eps Graphic file (type eps)
- <figs/f5.1.ver0-iso-3.eps>
+
+<figs/f5.1.ver0-iso-3.eps>
 File: figs/f5.1.ver05-iso-3.eps Graphic file (type eps)
-
-<figs/f5.1.ver05-iso-3.eps>
+ <figs/f5.1.ver05-iso-3.eps>
 File: figs/f5.1.ver10-iso-3.eps Graphic file (type eps)
- <figs/f5.1.ver10-iso-3.eps>
+
+<figs/f5.1.ver10-iso-3.eps>
 File: figs/f5.1.edge0-iso-3.eps Graphic file (type eps)
-
-<figs/f5.1.edge0-iso-3.eps>
+ <figs/f5.1.edge0-iso-3.eps>
 File: figs/f5.1.edge05-iso-3.eps Graphic file (type eps)
- <figs/f5.1.edge05-iso-3.eps>
+
+<figs/f5.1.edge05-iso-3.eps>
 File: figs/f5.1.edge10-iso-3.eps Graphic file (type eps)
-
-<figs/f5.1.edge10-iso-3.eps> [63] [64]
+ <figs/f5.1.edge10-iso-3.eps> [63] [64]
 File: figs/f5.3.Rigid.eps Graphic file (type eps)
- <figs/f5.3.Rigid.eps>
-File: figs/f5.3.Laplacian.eps Graphic file (type eps)
 
-<figs/f5.3.Laplacian.eps> [65]
+<figs/f5.3.Rigid.eps>
+File: figs/f5.3.Laplacian.eps Graphic file (type eps)
+ <figs/f5.3.Laplacian.eps> [65]
 File: figs/f5.4.dihedral1.eps Graphic file (type eps)
  <figs/f5.4.dihedral1.eps>
 File: figs/f5.4.dihedral2.eps Graphic file (type eps)
@@ -799,16 +809,17 @@ File: figs/f5.10.PigMat5.eps Graphic file (type eps)
 
 <figs/f5.10.PigMat5.eps> [72] [73] [74] [75] [76] [77] [78]) [79]
 Chapter 6.
-(E:\kw-phd-thesis\chap6_editsurfrecon.tex [80
+(D:\research\doc\Thesis\kw-phd-thesis\chap6_editsurfrecon.tex [80
 
 ]
 File: figs/f6.anatomy-input.eps Graphic file (type eps)
- <figs/f6.anatomy-input.eps>
-File: figs/f6.anatomy-tj-result.eps Graphic file (type eps)
 
-<figs/f6.anatomy-tj-result.eps>
+<figs/f6.anatomy-input.eps>
+File: figs/f6.anatomy-tj-result.eps Graphic file (type eps)
+ <figs/f6.anatomy-tj-result.eps>
 File: figs/f6.anatomy-result-initial-union.eps Graphic file (type eps)
- <figs/f6.anatomy-result-initial-union.eps>
+
+<figs/f6.anatomy-result-initial-union.eps>
 Overfull \hbox (2.4594pt too wide) in paragraph at lines 68--68
  [][] 
  []
@@ -992,10 +1003,10 @@ Overfull \hbox (27.91943pt too wide) in paragraph at lines 1263--1280
 
 [98]) [99]
 Chapter 7.
-(E:\kw-phd-thesis\chap7_conclusion.tex [100
+(D:\research\doc\Thesis\kw-phd-thesis\chap7_conclusion.tex [100
 
-] [101] [102]) [103]
-(E:\kw-phd-thesis\thesis.bbl
+] [101] [102])
+[103] (D:\research\doc\Thesis\kw-phd-thesis\thesis.bbl
 Underfull \hbox (badness 6792) in paragraph at lines 24--27
 [][]\OT1/ptm/m/n/12 Inria gam-ma team re-search database.  Avail-able from: $\O
 ML/cmm/m/it/12 <$\OT1/ptm/m/n/12 http://www-
@@ -1022,7 +1033,8 @@ Underfull \hbox (badness 2932) in paragraph at lines 695--698
 
 [116] [117] [118] [119] [120]
 Missing character: There is no ¡ in font ptmr7t!
- [121]) [122] (E:\kw-phd-thesis\chap8_mypub.tex
+ [121]) [122]
+(D:\research\doc\Thesis\kw-phd-thesis\chap8_mypub.tex
 Overfull \hbox (3.88936pt too wide) in paragraph at lines 19--23
 \OT1/ptm/m/n/12 ing with curves,'' \OT1/ptm/m/it/12 Computer-Aided De-sign and 
 Ap-pli-ca-tion-s\OT1/ptm/m/n/12 , Vol.9, No.3, 2012, pp.361-
@@ -1031,14 +1043,18 @@ Ap-pli-ca-tion-s\OT1/ptm/m/n/12 , Vol.9, No.3, 2012, pp.361-
 [123
 
 
-]) [124] (E:\kw-phd-thesis\thesis.aux) ) 
+]) [124] (D:\research\doc\Thesis\kw-phd-thesis\thesis.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4914 strings out of 495355
- 69641 string characters out of 3183882
- 135958 words of memory out of 3000000
- 7804 multiletter control sequences out of 15000+200000
+ 4915 strings out of 495355
+ 71691 string characters out of 3183097
+ 136828 words of memory out of 3000000
+ 7805 multiletter control sequences out of 15000+200000
  18555 words of font info for 51 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,11n,43p,1516b,369s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (138 pages, 417232 bytes).
+Output written on thesis.dvi (138 pages, 437476 bytes).
