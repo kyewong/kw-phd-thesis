@@ -319,6 +319,8 @@ $\tilde{v_i}$ respectively. $\tilde{\omega_{ij}}$ is the same weight
 as that in Eq.~\ref{eq:edgelaplacian}. $R_i$ represents the rotation
 matrix associated to $\tilde{v_i}$.
 
+%the following part is added in the modified thesis, in order
+%to explain the calculation of the optimal rotation matrix
 Given the old and new values of the edge vectors, we use the method
 proposed in~\cite{SA07} to compute the optimal rotation matrix $R_i$
 which minimizes Eq.~\ref{eq:edgerigidenergy}. First, Eq.~\ref{eq:edgerigidenergy}
@@ -350,12 +352,12 @@ where $tr(\cdot)$ represents the trace of the matrix.
 According to the property of the trace of the matrix,
 $tr (\sum\limits_{j\in N(i)}{\tilde{\omega_{ij}} \tilde{e_{ij}}^{\prime T}R_i\tilde{e_{ij}}})$
 equals to $tr (R_i \sum\limits_{j\in N(i)}{\tilde{\omega_{ij}} \tilde{e_{ij}}^{\prime T}\tilde{e_{ij}}})$.
-For simplicity, we denote the matrix 
+For simplicity, we denote the matrix
 $\sum\limits_{j\in N(i)}{\tilde{\omega_{ij}} \tilde{e_{ij}}^{\prime T}\tilde{e_{ij}}}$ by $C_i$.
-It is well known that the rotation matrix $R_i$ maximizing $tr(R_iC_i)$ is 
-obtained when $R_iC_i$ is symmetric positive semi-definite (if $M$ is a 
-positive semi-definite matrix then for any orthogonal $R$, $tr(M)\geq tr(RM)$). 
-Thus, the optimal rotation matrix $R_i$ can be derived from the 
+It is well known that the rotation matrix $R_i$ maximizing $tr(R_iC_i)$ is
+obtained when $R_iC_i$ is symmetric positive semi-definite (if $M$ is a
+positive semi-definite matrix then for any orthogonal $R$, $tr(M)\geq tr(RM)$).
+Thus, the optimal rotation matrix $R_i$ can be derived from the
 singular value decomposition of $C_i=U_i \Sigma_i V_i^T$:
 
 \begin{equation}
@@ -364,10 +366,6 @@ R_i=V_iU_i^T,
 \end{equation}
 up to changing the sign of the column of $U_i$ corresponding to the
 smallest singular value, such that the determinant of $R_i$ will be positive.
-
-
-
-
 
 The rigid transformation of the 1-form during  deformation strives
 to do a \textit{hard} transform to the mesh. We say \textit{hard} as
@@ -866,15 +864,42 @@ natural and realistic result.
 \section{Results and discussions}
 \label{ch5:sec:results}
 %==========================================
-In our implementation of the proposed  deformation algorithm, the
-LAPACK library~\cite{ABBD92} is used to solve the linear equations.
+%modified in the revised thesis to introduce the environment
+%and performance briefly
+We tested our deformation algorithm in the hardware and software
+environment introduced in Section~\ref{ch3:sec:result}. We used the
+LAPACK library~\cite{ABBD92} to solve the linear equations.
 For the operations of the mesh deformation, we adopted a user
 interface presented in Chapter~\ref{ch:planeSBIM}, which allows the
 user to sketch strokes on the mesh surface and on a reference plane
 as the handle curve and its deformed shape (indicated by the blue
 and green curves in all the examples) respectively. The ROI is also
 specified through sketching. The red dots in the examples indicate
-the static vertices.
+the static vertices. The performance of our algorithm on various
+examples is shown in Table~\ref{tb:DeformPerform}.
+
+%the following table is added in the revised thesis to show
+%the performance of our algorithm
+\begin{table*}[htbp]
+\caption{Performance of our deformation algorithm.}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+  Model    &$\sharp$ Involved vertices&$\sharp$ Involved nodes&Time\\
+           & &in edge-based graph& \\
+
+\hline plane (Figure~\ref{fig:deformplane})         &812&2225&162 ms\\
+\hline Baby (Figure~\ref{fig:deformbaby})           &885&2603&181 ms\\
+\hline Julius-Caesar (Figure~\ref{fig:deformJCglb}) &890&2471&171 ms\\
+\hline pig (Figure~\ref{fig:deformpig})             &902&2599&179 ms\\
+\hline Buffle (Figure~\ref{fig:deformbuf})          &2769&8026&557 ms\\
+\hline Julius-Caesar (Figure~\ref{fig:deformJCMat}) &4359&12641&982 ms\\
+\hline Dinosaur (Figure~\ref{fig:deformdino})       &9209&27407&2192 ms\\
+\hline
+\end{tabular}
+\label{tb:DeformPerform} %\vspace{0.1in}
+\end{center}
+\end{table*}
 
 Figures~\ref{fig:deformbaby}  and~\ref{fig:deformdino} compare the
 deformation results of the flexible deformation algorithm performed
@@ -948,7 +973,6 @@ that the algorithm only needs up to three or four iterations  to
 reach convergence, and since only the right hand side of the linear
 system needs to be updated at each iteration, the computation is
 still  faster than those nonlinear methods.
-
 
 %=================section==================
 %\section{Summary}
