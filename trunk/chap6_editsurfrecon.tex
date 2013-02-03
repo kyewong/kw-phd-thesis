@@ -1256,29 +1256,110 @@ time-consuming than the projection-based methods. However, since not
 all the frusta are intersected, and the computation within each zone
 can be implemented in parallel, this time can be reduced a lot.
 
+%\begin{table*}[htbp]
+%\caption{Performance of our surface reconstruction
+%algorithm.}
+%\small
+%\begin{center}
+%\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}|c|c|c|c|c|c|c|}
+%\hline
+%  Model    &$\sharp$ Input&$\sharp$ Input&$\sharp$ Zones&$\sharp$ Output&Initial&Mesh\\
+%                 &cross&&after&&surface&\\
+%                 &sections&points&partition&triangles&reconstruction&improvement\\
+%
+%\hline cactus   &14&251&37&3950&1223 ms&1719 ms\\
+%       (Figure~\ref{fig:eg:a})  &&&&&&\\
+%\hline stomach  &18&413&73&4710&1929 ms&2141 ms\\
+%       (Figure~\ref{fig:eg:f})  &&&&&&\\
+%\hline anatomy  &23&524&856&7548&3484 ms&3250 ms\\
+%       (Figure~\ref{fig:anatomy})  &&&&&&\\
+%\hline tooth    &24&760&56&9054&4773 ms&9359 ms\\
+%       (Figure~\ref{fig:eg:c})  &&&&&&\\
+%\hline tree     &45&829&3202&10284&5136 ms&4672 ms\\
+%       (Figure~\ref{fig:eg:d})  &&&&&&\\
+%\hline hand     &25&1094&67&14834&6711 ms&17406 ms\\
+%       (Figure~\ref{fig:eg:e})  &&&&&&\\
+%\hline teacup   &24&1486&28&23862&8383 ms&15796 ms\\
+%       (Figure~\ref{fig:eg:b})  &&&&&&\\
+%\hline ovaries  &50&2638&1941&43944&25582 ms&44859 ms\\
+%       (Figure~\ref{fig:ovaries})  &&&&&&\\
+%\hline skull    &103&5915&50&72432&45046 ms&39343 ms\\
+%       (Figure~\ref{fig:skull})  &&&&&&\\
+%\hline
+%\end{tabular*}
+%\label{tb:perform} %\vspace{0.1in}
+%\end{center}
+%\end{table*}
+
+\newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
 \begin{table*}[htbp]
 \caption{Performance of our surface reconstruction
 algorithm.}
+\footnotesize
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|c|c|}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}|c|c|c|c|c|c|c|}
 \hline
-  Model    &$\sharp$ Input&$\sharp$ Input&$\sharp$ Zones after&$\sharp$ Output&Initial surface&Mesh\\
-                 &cross sections&points&partition&triangles&reconstruction&improvement\\
+\multirow{3}*{\minitab[c]{Model}} & $\sharp$ Input &
+\multirow{3}*{\minitab[c]{$\sharp$ Input \\ points}} & $\sharp$ Zones &
+\multirow{3}*{\minitab[c]{$\sharp$ Output \\ triangles}} & Initial&
+\multirow{3}*{\minitab[c]{Mesh \\ improvement}}\\
+& cross & & after & & surface &\\
+& sections & & partition & & reconstruction &\\
 
-\hline cactus   &14&251&37&3950&1223 ms&1719 ms\\
-\hline stomach  &18&413&73&4710&1929 ms&2141 ms\\
-\hline anatomy  &23&524&856&7548&3484 ms&3250 ms\\
-\hline tooth    &24&760&56&9054&4773 ms&9359 ms\\
-\hline tree     &45&829&3202&10284&5136 ms&4672 ms\\
-\hline hand     &25&1094&67&14834&6711 ms&17406 ms\\
-\hline teacup   &24&1486&28&23862&8383 ms&15796 ms\\
-\hline ovaries  &50&2638&1941&43944&25582 ms&44859 ms\\
-\hline skull    &103&5915&50&72432&45046 ms&39343 ms\\
+\hline cactus   & \multirow{2}*{\minitab[c]{14}}& \multirow{2}*{\minitab[c]{251}}&
+\multirow{2}*{\minitab[c]{37}} &\multirow{2}*{\minitab[c]{3950}} &
+\multirow{2}*{\minitab[c]{1223 ms}}  &\multirow{2}*{\minitab[c]{1719 ms}}\\
+       (Figure~\ref{fig:eg:a})  &&&&&&\\
+
+\hline stomach   & \multirow{2}*{\minitab[c]{18}}& \multirow{2}*{\minitab[c]{413}}&
+\multirow{2}*{\minitab[c]{73}} &\multirow{2}*{\minitab[c]{4710}} &
+\multirow{2}*{\minitab[c]{1929 ms}}  &\multirow{2}*{\minitab[c]{2141 ms}}\\
+       (Figure~\ref{fig:eg:f})  &&&&&&\\
+
+\hline anatomy   & \multirow{2}*{\minitab[c]{23}}& \multirow{2}*{\minitab[c]{524}}&
+\multirow{2}*{\minitab[c]{856}} &\multirow{2}*{\minitab[c]{7548}} &
+\multirow{2}*{\minitab[c]{3484 ms}}  &\multirow{2}*{\minitab[c]{3250 ms}}\\
+       (Figure~\ref{fig:anatomy})  &&&&&&\\
+
+\hline tooth   & \multirow{2}*{\minitab[c]{24}}& \multirow{2}*{\minitab[c]{760}}&
+\multirow{2}*{\minitab[c]{56}} &\multirow{2}*{\minitab[c]{9054}} &
+\multirow{2}*{\minitab[c]{4773 ms}}  &\multirow{2}*{\minitab[c]{9359 ms}}\\
+       (Figure~\ref{fig:eg:c})  &&&&&&\\
+
+\hline tree   & \multirow{2}*{\minitab[c]{45}}& \multirow{2}*{\minitab[c]{829}}&
+\multirow{2}*{\minitab[c]{3202}} &\multirow{2}*{\minitab[c]{10284}} &
+\multirow{2}*{\minitab[c]{5136 ms}}  &\multirow{2}*{\minitab[c]{4672 ms}}\\
+       (Figure~\ref{fig:eg:d})  &&&&&&\\
+
+\hline hand   & \multirow{2}*{\minitab[c]{25}}& \multirow{2}*{\minitab[c]{1094}}&
+\multirow{2}*{\minitab[c]{67}} &\multirow{2}*{\minitab[c]{14834}} &
+\multirow{2}*{\minitab[c]{6711 ms}}  &\multirow{2}*{\minitab[c]{17406 ms}}\\
+       (Figure~\ref{fig:eg:e})  &&&&&&\\
+
+\hline teacup   & \multirow{2}*{\minitab[c]{24}}& \multirow{2}*{\minitab[c]{1486}}&
+\multirow{2}*{\minitab[c]{28}} &\multirow{2}*{\minitab[c]{23862}} &
+\multirow{2}*{\minitab[c]{8383 ms}}  &\multirow{2}*{\minitab[c]{15796 ms}}\\
+       (Figure~\ref{fig:eg:b})  &&&&&&\\
+
+\hline ovaries   & \multirow{2}*{\minitab[c]{50}}& \multirow{2}*{\minitab[c]{2638}}&
+\multirow{2}*{\minitab[c]{1941}} &\multirow{2}*{\minitab[c]{43944}} &
+\multirow{2}*{\minitab[c]{25582 ms}}  &\multirow{2}*{\minitab[c]{44859 ms}}\\
+       (Figure~\ref{fig:ovaries})  &&&&&&\\
+
+\hline skull   & \multirow{2}*{\minitab[c]{103}}& \multirow{2}*{\minitab[c]{5915}}&
+\multirow{2}*{\minitab[c]{50}} &\multirow{2}*{\minitab[c]{72432}} &
+\multirow{2}*{\minitab[c]{45046 ms}}  &\multirow{2}*{\minitab[c]{39343 ms}}\\
+       (Figure~\ref{fig:skull})  &&&&&&\\
 \hline
-\end{tabular}
+
+\end{tabular*}
 \label{tb:perform} %\vspace{0.1in}
 \end{center}
 \end{table*}
+
+
+
+
 
 Our current implementation of the surface reconstruction and editing
 algorithm was  written in C++ on the Windows platform. To accelerate

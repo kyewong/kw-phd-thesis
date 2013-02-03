@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  2 FEB 2013 15:48
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  3 FEB 2013 22:31
 entering extended mode
 **thesis.tex
 (D:\research\doc\Thesis\kw-phd-thesis\thesis.tex
@@ -301,20 +301,23 @@ Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks27
 )
+("F:\Program Files\CTEX\MiKTeX\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen147
+)
 (D:\research\doc\Thesis\kw-phd-thesis\thesis.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 143.
-LaTeX Font Info:    ... okay on input line 143.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 143.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 144.
 
 
 ("F:\Program Files\CTEX\MiKTeX\tex\latex\psnfss\ot1ptm.fd"
@@ -325,7 +328,7 @@ File: ntu.eps Graphic file (type eps)
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 143.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 144.
 
 [1
 
@@ -333,7 +336,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 143.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 144.
  (D:\research\doc\Thesis\kw-phd-thesis\thesis.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 1.
 
@@ -996,12 +999,7 @@ File: figs/f6.ovaries-edit-union.eps Graphic file (type eps)
  <figs/f6.ovaries-edit-union.eps>
 File: figs/f6.ovaries-edit.eps Graphic file (type eps)
 
-<figs/f6.ovaries-edit.eps> [97]
-Overfull \hbox (27.91943pt too wide) in paragraph at lines 1263--1280
- [][] 
- []
-
-[98]) [99]
+<figs/f6.ovaries-edit.eps> [97]) [98] [99]
 Chapter 7.
 (D:\research\doc\Thesis\kw-phd-thesis\chap7_conclusion.tex [100
 
@@ -1043,18 +1041,14 @@ Ap-pli-ca-tion-s\OT1/ptm/m/n/12 , Vol.9, No.3, 2012, pp.361-
 [123
 
 
-]) [124] (D:\research\doc\Thesis\kw-phd-thesis\thesis.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+]) [124] (D:\research\doc\Thesis\kw-phd-thesis\thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4915 strings out of 495355
- 71691 string characters out of 3183097
- 136828 words of memory out of 3000000
- 7805 multiletter control sequences out of 15000+200000
- 18555 words of font info for 51 fonts, out of 3000000 for 9000
+ 4939 strings out of 495355
+ 72088 string characters out of 3183097
+ 142014 words of memory out of 3000000
+ 7823 multiletter control sequences out of 15000+200000
+ 20254 words of font info for 59 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,11n,43p,1516b,369s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,16n,43p,1516b,369s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (138 pages, 437476 bytes).
+Output written on thesis.dvi (138 pages, 440700 bytes).
