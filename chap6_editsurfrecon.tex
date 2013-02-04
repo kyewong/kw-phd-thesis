@@ -1256,42 +1256,6 @@ time-consuming than the projection-based methods. However, since not
 all the frusta are intersected, and the computation within each zone
 can be implemented in parallel, this time can be reduced a lot.
 
-%\begin{table*}[htbp]
-%\caption{Performance of our surface reconstruction
-%algorithm.}
-%\small
-%\begin{center}
-%\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}|c|c|c|c|c|c|c|}
-%\hline
-%  Model    &$\sharp$ Input&$\sharp$ Input&$\sharp$ Zones&$\sharp$ Output&Initial&Mesh\\
-%                 &cross&&after&&surface&\\
-%                 &sections&points&partition&triangles&reconstruction&improvement\\
-%
-%\hline cactus   &14&251&37&3950&1223 ms&1719 ms\\
-%       (Figure~\ref{fig:eg:a})  &&&&&&\\
-%\hline stomach  &18&413&73&4710&1929 ms&2141 ms\\
-%       (Figure~\ref{fig:eg:f})  &&&&&&\\
-%\hline anatomy  &23&524&856&7548&3484 ms&3250 ms\\
-%       (Figure~\ref{fig:anatomy})  &&&&&&\\
-%\hline tooth    &24&760&56&9054&4773 ms&9359 ms\\
-%       (Figure~\ref{fig:eg:c})  &&&&&&\\
-%\hline tree     &45&829&3202&10284&5136 ms&4672 ms\\
-%       (Figure~\ref{fig:eg:d})  &&&&&&\\
-%\hline hand     &25&1094&67&14834&6711 ms&17406 ms\\
-%       (Figure~\ref{fig:eg:e})  &&&&&&\\
-%\hline teacup   &24&1486&28&23862&8383 ms&15796 ms\\
-%       (Figure~\ref{fig:eg:b})  &&&&&&\\
-%\hline ovaries  &50&2638&1941&43944&25582 ms&44859 ms\\
-%       (Figure~\ref{fig:ovaries})  &&&&&&\\
-%\hline skull    &103&5915&50&72432&45046 ms&39343 ms\\
-%       (Figure~\ref{fig:skull})  &&&&&&\\
-%\hline
-%\end{tabular*}
-%\label{tb:perform} %\vspace{0.1in}
-%\end{center}
-%\end{table*}
-
-\newcommand{\minitab}[2][l]{\begin{tabular}{#1}#2\end{tabular}}
 \begin{table*}[htbp]
 \caption{Performance of our surface reconstruction
 algorithm.}
