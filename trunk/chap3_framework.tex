@@ -52,7 +52,7 @@ discarded.
 
 
 %problem 2: 2D sketch --> 3D model
-Another challenge is that when doing 3D modeling, we have to  find
+Another challenge is that when doing 3D modeling, we have to find
 indirect ways to interact with the 3D space using the input devices
 operating on the 2D computer screen. A classical solution to this
 problem is to use the Arcball~\cite{SK92} when we view a 3D object
@@ -83,7 +83,7 @@ the sketches which represent the user's depiction of the 3D shape
 are preserved.
 %To better support this approach, we propose a new surface reconstruction algorithm which builds a 3D smooth surface with arbitrary topology from user sketched cross sections in real time. Comparing to existing algorithms, our method is able to produce natural shape changes during the progressive modeling process regardless of the input order of the sketches, and makes the final surface be composed of only one component in most cases.
 
-Second, to reasonably map the 2D user sketches into 3D space  and
+Second, to reasonably map the 2D user sketches into 3D space and
 make the location and orientation of strokes in 3D space meaningful
 and intuitive, we provide some reference geometry, with reference to
 which the strokes were sketched. In particular, besides the shape in
@@ -97,7 +97,7 @@ user input sketches, we introduce some rules for regularizing and
 interpreting them. These rules consider both the semantic meaning of
 the sketched strokes and human psychology.
 
-Finally, by integrating all these techniques, we present  a novel
+Finally, by integrating all these techniques, we present a novel
 sketching interface for creating and editing 3D models. It is
 demonstrated that with help of the reference shapes and planes,
 sketch-based 3D modeling becomes more flexible and easier, thus
@@ -140,7 +140,7 @@ Section~\ref{ch3:sec:result}.
 \section{User interface}
 \label{ch3:sec:ui}
 
-Our sketching interface provides both  the sketching and sculpting
+Our sketching interface provides both the sketching and sculpting
 tools for the user to create and edit a 3D model. The former is used
 for sketching the shape of the model progressively, and the latter,
 which includes a series of editing functions such as deformation,
@@ -232,7 +232,7 @@ is also consistent with one of the visual rules in~\cite{HD00} that smooth
 lines are usually interpreted as the contours of the 3D objects by human being.
 
 %introduce reference planes
-Initially, the $x=0$, $y=0$ and $z=0$ planes serve as the  three
+Initially, the $x=0$, $y=0$ and $z=0$ planes serve as the three
 basic orthogonal planes. The user can define the cross sections of a
 3D model by sketching strokes on any of these basic planes. These
 three basic planes can also be translated along $x$, $y$ and $z$
@@ -292,7 +292,7 @@ for such an input and try to make it valid (see the details in
 Section~\ref{ch4:sec:disc}).
 
 %automatic view rotation
-The system is also able to automatically rotate the view  to make
+The system is also able to automatically rotate the view to make
 the user selected plane for sketching face him as much as possible.
 This is inspired by the observation in~\cite{BBS08} that a good view
 for the user to sketch the 2D strokes is the one that has a large
@@ -308,7 +308,7 @@ reduced. This minimizes the unnecessary back and forth adjustment of
 the sketches and speeds up the production process of a 3D model.
 
 %cad system --> our system
-It is noticed that our interface is similar to that in  traditional
+It is noticed that our interface is similar to that in traditional
 3D modeling software which provides the user three orthogonal views
 to implement the modeling operations. This will make it easy to use
 for users who are familiar with this type of interface. Moreover,
@@ -319,7 +319,7 @@ that less imagination will be needed when creating a 3D model with
 multiple components and different depths.
 
 %ambiguity and stroke rules
-It should be pointed out that even  though references have been
+It should be pointed out that even though references have been
 provided for defining the shape of a model, sometimes ambiguity
 still occurs. The ambiguity arises from two aspects: the user input
 strokes may not necessarily follow the same style -- different users
@@ -487,7 +487,7 @@ vertices will remain unchanged during the deformation process
 (called the static vertices).
 
 %how to compute handle curve
-To generate the handle curve, we use a method  similar to that
+To generate the handle curve, we use a method similar to that
 in~\cite{NSAC05}. The handle curve is composed of handle vertices.
 The vertices of the edges or faces on which the projection of the
 input stroke lie are regarded as the handle vertices. See
@@ -525,7 +525,7 @@ The brush can be viewed as a complementary tool for the former two
 methods. The user could take a rough selection using the first two
 tools and then make further modifications by brushing on the model.
 
-These sculpting tools are all sketch-based and quite  convenient to
+These sculpting tools are all sketch-based and quite convenient to
 use. Together with the sketching tool, a complete modeling system is
 built up. With this system, the user could easily create and edit a
 3D object in a short period by sketching strokes.
@@ -535,7 +535,7 @@ built up. With this system, the user could easily create and edit a
 \section{Algorithms}
 \label{ch3:sec:algo}
 
-In this section we describe the underlying  algorithms of the
+In this section we describe the underlying algorithms of the
 sketching interface. We first introduce the preprocessing algorithm
 for the input strokes. Then we propose the stroke rules for
 interpreting input cross sections and making them valid for the
@@ -693,12 +693,12 @@ topology directly by sketching the contours at the creation phase.
   \label{fig:rule2} %% label for entire figure
 \end{figure}
 
-Rule~\ref{rule:3} just does not allow self-intersection of  one
+Rule~\ref{rule:3} just does not allow self-intersection of one
 curve or intersection between any two curves on the same plane since
 it unlikely happens for the cross section contour of an object to
 have intersection.
 
-Rule~\ref{rule:4} can also be stated in another way that  the
+Rule~\ref{rule:4} can also be stated in another way that the
 intersection points between the two curves and the intersection line
 of the two planes must be be in the same positions. This rule
 actually conforms to our common understanding of appearance of a 3D
