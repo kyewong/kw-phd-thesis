@@ -784,7 +784,7 @@ will be presented in Chapter~\ref{ch:orthsurf}.
 \subsection{Reference plane calculation}
 \label{ch3:sec:algo:refplane}
 
-As mentioned in Section~\ref{ch3:sec:ui:sculpt:deform}, we  provide
+As mentioned in Section~\ref{ch3:sec:ui:sculpt:deform}, we provide
 the users reference planes for drawing the deformed shape of the
 handle curve in the deformation function. A key problem here is how
 to generate the base plane which has a suitable position and
@@ -810,21 +810,21 @@ $p_i=(x_i,y_i,z_i)$ is a point on the handle curve. This
 optimization problem can be solved using the method proposed
 in~\cite{SWMB59}.
 
-The above method just gives a suggestive orientation  of the base
+The above method just gives a suggestive orientation of the base
 plane. If the user is not satisfied, he/she can rotate the plane by
 a proper angle. The axis of the rotation is the line connecting the
 projection of the first handle point onto the initial computed plane
 to that of the last point. The calculation of the reference plane
 for extrusion process is the same as this.
 
-After the reference planes are constructed, the user  can sketch the
+After the reference planes are constructed, the user can sketch the
 new shape and position of the handle curve. If the user intends to
 draw a non-planar curve by sketching the shadow of the base plane
 curve on the projection plane, we use the algorithm proposed
 in~\cite{CMZHB99} to combine the two planar curves to generate a
 spatial one.
 
-Once the ROI vertices, the handle curve and its new  shape are
+Once the ROI vertices, the handle curve and its new shape are
 confirmed, we complete the deformation by employing a flexible mesh
 deformation algorithm, which will be presented in
 Chapter~\ref{ch:flexdeformation}.
@@ -918,7 +918,7 @@ user's requirement on a sketch-based modeling system.
 
 %computation complexity and cost
 It is observed that even if multiple cross section curves are
-sketched  initially, the constructed mesh is not quite dense, and
+sketched initially, the constructed mesh is not quite dense, and
 the number of vertices will be no more a few thousands after
 iterative editing operations. This enables us to consider more about
 the modeling effect and quality of the mesh other than the running
