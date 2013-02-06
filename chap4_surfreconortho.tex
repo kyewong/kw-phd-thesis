@@ -124,7 +124,8 @@ this chapter meets the above requirements.
 %basic workflow
 Similar to~\cite{LBDLJ08}, our algorithm also  follows the general
 divide-and-conquer strategy. That is, we first place a large virtual
-bounding box containing all the cross sections. This box will keep
+bounding box containing all the cross sections (we set its size to be 2 times
+that of the bounding box of all points on the cross sections). This box will keep
 fixed during the sketching process and all points on the input cross
 sections will lie within it. Then we partition the box into zones
 $ZN=\{zn_i~|~i=1,...,m\}$ using the planes that the cross sections
@@ -239,7 +240,7 @@ correspond to the cross sections on the zone faces.
 
 
 In the next three sections, we will show how to create sub-surfaces in
-the \textit{body} zones and \textit{end} zones and how to stitching
+the \textit{body} zones and \textit{end} zones and how to stitch
 the sub-surfaces. For an \textit{empty} zone, it has no cross
 sections and is thus ignored.
 
@@ -321,7 +322,7 @@ translation $h_p$ (the height of $cl_p$) is then computed as:
 \label{eq:clheight}
 h_p = h_{zn}- \epsilon,
 \end{equation}
-where $\epsilon$ is a small positive number to make sure  that the
+where $\epsilon$ is a small positive number to make sure that the
 center of $cl_p^t$ lie within $zn_i$. In this way, the cylinder
 $cl_p$ will be totally contained in the zone $zn_i$ and interpolates
 the input cross section $cs_p$. An example of the generation of the
@@ -496,7 +497,7 @@ extended in the same way until these requirements are satisfied.
   \label{fig:partition} %% label for entire figure
 \end{figure*}
 
-As shown in Figure~\ref{fig:partition}, by extending the  cylinders
+As shown in Figure~\ref{fig:partition}, by extending the cylinders
 built in the \textit{end} zones to make them intersect with other
 cylinders, isolated surface components can be connected to form a
 single component. While for the projection-based method
@@ -571,7 +572,7 @@ this advantage of our CSG-based method over the projection-based
 method in~\cite{LBDLJ08} can be found in Figure~\ref{fig:csgma}.
 
 %why order insensitive
-In the reconstruction process, the extension of  the cylinders in
+In the reconstruction process, the extension of the cylinders in
 the isolated zones, as well as the union calculation of the
 cylinders in all zones are carried out independently. So for a same
 set of sketches, the final reconstruction result will be unique and
@@ -587,7 +588,7 @@ updated, while those in other zones can be retained. In this way,
 the calculation can be implemented locally and accelerated.
 
 %partial cross section: stroke rules+subzone+previewed shape and computed cross sections
-The independence of calculation in each zone also makes  it possible
+The independence of calculation in each zone also makes it possible
 to allow the sketching of only a part of the cross section instead
 of a complete one, as long as the stroke rules are satisfied within
 the zone. Since the user sketches are more or less arbitrary, we
