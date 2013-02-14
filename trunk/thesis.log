@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  6 FEB 2013 21:42
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  14 FEB 2013 22:18
 entering extended mode
 **thesis.tex
 (D:\research\doc\Thesis\kw-phd-thesis\thesis.tex
@@ -362,7 +362,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 ] [8] [9] [10] [11] [12])
 \tf@lof=\write5
 
-[13]
+[13] [14]
 \c@lstlisting=\count126
 
 Chapter 1.
@@ -725,92 +725,95 @@ File: figs/f5.3.Rigid.eps Graphic file (type eps)
 <figs/f5.3.Rigid.eps>
 File: figs/f5.3.Laplacian.eps Graphic file (type eps)
  <figs/f5.3.Laplacian.eps> [65]
+File: figs/f5.3.cotweight.eps Graphic file (type eps)
+ <figs/f5.3.cotweight.eps>
 File: figs/f5.4.dihedral1.eps Graphic file (type eps)
- <figs/f5.4.dihedral1.eps>
+
+<figs/f5.4.dihedral1.eps>
 File: figs/f5.4.dihedral2.eps Graphic file (type eps)
-
-<figs/f5.4.dihedral2.eps> [66] [67] [68] [69] [70] [71]
+ <figs/f5.4.dihedral2.eps> [66] [67] [68] [69]
+[70] [71] [72]
 File: figs/f5.5.original_pc-2.eps Graphic file (type eps)
-
-<figs/f5.5.original_pc-2.eps>
+ <figs/f5.5.original_pc-2.eps>
 File: figs/f5.5.ver0-3.eps Graphic file (type eps)
  <figs/f5.5.ver0-3.eps>
 File: figs/f5.5.ver05-3.eps Graphic file (type eps)
- <figs/f5.5.ver05-3.eps>
-File: figs/f5.5.ver10-3.eps Graphic file (type eps)
 
-<figs/f5.5.ver10-3.eps>
+<figs/f5.5.ver05-3.eps>
+File: figs/f5.5.ver10-3.eps Graphic file (type eps)
+ <figs/f5.5.ver10-3.eps>
 File: figs/f5.5.edge0-3.eps Graphic file (type eps)
  <figs/f5.5.edge0-3.eps>
 File: figs/f5.5.edge05-3.eps Graphic file (type eps)
- <figs/f5.5.edge05-3.eps>
+
+<figs/f5.5.edge05-3.eps>
 File: figs/f5.5.edge10-3.eps Graphic file (type eps)
-
-<figs/f5.5.edge10-3.eps>
+ <figs/f5.5.edge10-3.eps> [73]
 File: figs/f5.6.original-pc-1.eps Graphic file (type eps)
- <figs/f5.6.original-pc-1.eps>
+
+<figs/f5.6.original-pc-1.eps>
 File: figs/f5.6.0flexible-3.eps Graphic file (type eps)
-
-<figs/f5.6.0flexible-3.eps>
+ <figs/f5.6.0flexible-3.eps>
 File: figs/f5.6.2flexible-3.eps Graphic file (type eps)
- <figs/f5.6.2flexible-3.eps>
+
+<figs/f5.6.2flexible-3.eps>
 File: figs/f5.6.5flexible-3.eps Graphic file (type eps)
-
-<figs/f5.6.5flexible-3.eps>
+ <figs/f5.6.5flexible-3.eps>
 File: figs/f5.6.8flexible-3.eps Graphic file (type eps)
- <figs/f5.6.8flexible-3.eps>
+
+<figs/f5.6.8flexible-3.eps>
 File: figs/f5.6.10flexible-3.eps Graphic file (type eps)
-
-<figs/f5.6.10flexible-3.eps>
+ <figs/f5.6.10flexible-3.eps>
 File: figs/f5.7.julius--Caesar-pc-1.eps Graphic file (type eps)
- <figs/f5.7.julius--Caesar-pc-1.eps>
+
+<figs/f5.7.julius--Caesar-pc-1.eps>
 File: figs/f5.7.0flexible-1.eps Graphic file (type eps)
-
-<figs/f5.7.0flexible-1.eps>
+ <figs/f5.7.0flexible-1.eps>
 File: figs/f5.7.2flexible-1.eps Graphic file (type eps)
- <figs/f5.7.2flexible-1.eps>
+
+<figs/f5.7.2flexible-1.eps>
 File: figs/f5.7.5flexible-1.eps Graphic file (type eps)
-
-<figs/f5.7.5flexible-1.eps>
+ <figs/f5.7.5flexible-1.eps>
 File: figs/f5.7.8flexible-1.eps Graphic file (type eps)
- <figs/f5.7.8flexible-1.eps>
+
+<figs/f5.7.8flexible-1.eps>
 File: figs/f5.7.10flexible-1.eps Graphic file (type eps)
-
-<figs/f5.7.10flexible-1.eps>
+ <figs/f5.7.10flexible-1.eps>
 File: figs/f5.8.planeMat2.eps Graphic file (type eps)
- <figs/f5.8.planeMat2.eps>
+
+<figs/f5.8.planeMat2.eps>
 File: figs/f5.8.ver0-iso-1.eps Graphic file (type eps)
-
-<figs/f5.8.ver0-iso-1.eps>
+ <figs/f5.8.ver0-iso-1.eps>
 File: figs/f5.8.ver10-iso-1.eps Graphic file (type eps)
- <figs/f5.8.ver10-iso-1.eps>
-File: figs/f5.8.verMat-iso-1.eps Graphic file (type eps)
 
-<figs/f5.8.verMat-iso-1.eps>
+<figs/f5.8.ver10-iso-1.eps>
+File: figs/f5.8.verMat-iso-1.eps Graphic file (type eps)
+ <figs/f5.8.verMat-iso-1.eps>
 File: figs/f5.9.JSMat2.eps Graphic file (type eps)
- <figs/f5.9.JSMat2.eps>
+
+<figs/f5.9.JSMat2.eps>
 File: figs/f5.9.ver0-iso-1.eps Graphic file (type eps)
  <figs/f5.9.ver0-iso-1.eps>
 File: figs/f5.9.ver05-iso-1.eps Graphic file (type eps)
-
-<figs/f5.9.ver05-iso-1.eps>
+ <figs/f5.9.ver05-iso-1.eps>
 File: figs/f5.9.ver10-iso-1.eps Graphic file (type eps)
- <figs/f5.9.ver10-iso-1.eps>
+
+<figs/f5.9.ver10-iso-1.eps>
 File: figs/f5.9.verMat-iso-1.eps Graphic file (type eps)
-
-<figs/f5.9.verMat-iso-1.eps>
+ <figs/f5.9.verMat-iso-1.eps>
 File: figs/f5.10.PigMat1-with-curve.eps Graphic file (type eps)
- <figs/f5.10.PigMat1-with-curve.eps>
-File: figs/f5.10.PigMat2.eps Graphic file (type eps)
 
-<figs/f5.10.PigMat2.eps>
+<figs/f5.10.PigMat1-with-curve.eps>
+File: figs/f5.10.PigMat2.eps Graphic file (type eps)
+ <figs/f5.10.PigMat2.eps>
 File: figs/f5.10.PigMat3.eps Graphic file (type eps)
- <figs/f5.10.PigMat3.eps>
+
+<figs/f5.10.PigMat3.eps>
 File: figs/f5.10.PigMat4.eps Graphic file (type eps)
  <figs/f5.10.PigMat4.eps>
 File: figs/f5.10.PigMat5.eps Graphic file (type eps)
-
-<figs/f5.10.PigMat5.eps> [72] [73] [74] [75] [76] [77] [78]) [79]
+ <figs/f5.10.PigMat5.eps>
+[74] [75] [76] [77] [78]) [79]
 Chapter 6.
 (D:\research\doc\Thesis\kw-phd-thesis\chap6_editsurfrecon.tex [80
 
@@ -1043,12 +1046,12 @@ Ap-pli-ca-tion-s\OT1/ptm/m/n/12 , Vol.9, No.3, 2012, pp.361-
 
 ]) [124] (D:\research\doc\Thesis\kw-phd-thesis\thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4939 strings out of 495355
- 72088 string characters out of 3183097
- 142052 words of memory out of 3000000
- 7823 multiletter control sequences out of 15000+200000
+ 4944 strings out of 495355
+ 72192 string characters out of 3183097
+ 138068 words of memory out of 3000000
+ 7827 multiletter control sequences out of 15000+200000
  20254 words of font info for 59 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,16n,43p,1516b,369s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (138 pages, 440896 bytes).
+Output written on thesis.dvi (139 pages, 442988 bytes).
