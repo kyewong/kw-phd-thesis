@@ -253,10 +253,32 @@ Mathematically, the Laplacian vector $\tilde{\delta_i}$ at $\tilde{v_i}$ is defi
 where $N(i)=\{j|\tilde{e_{ij}}\in \tilde{E}\}$ is the  index set of
 adjacent nodes in the neighboring ring of $\tilde{v_i}$ and
 $\tilde{\omega_{ij}}$ is the weight of the edge $\tilde{e_{ij}}$.
-Here we use the cotangent weight scheme~\cite{MDSB02} to compute
-$\tilde{\omega_{ij}}$. In fact, $L(\cdot)$ can be regarded as the
-discretized Laplace-Beltrami operator with cotangent coefficients on
-triangular meshes~\cite{BS08}.
+Here we use the cotangent weight scheme in~\cite{MDSB02} to compute
+$\tilde{\omega_{ij}}$:
+
+\begin{equation}
+\label{eq:cotweight}
+\tilde{\omega_{ij}}=\frac{{\cot{\tilde{\alpha_{ij}}}+\cot{\tilde{\beta_{ij}}}}}{{2\tilde{A_i}}},
+\end{equation}
+where $\tilde{\alpha_{ij}}$ and $\tilde{\beta_{ij}}$ are the two angles
+opposite to the edge $\tilde{e_{ij}}$. $\tilde{A_i}$ is the Voronoi
+area of the node $\tilde{v_i}$, which is computed as the area of
+the surface region built by connecting incident edges' midpoints
+with triangle circumcenters (for acute triangles) or midpoints of
+opposite edges (for obtuse triangles)~\cite{MDSB02}, as shown
+in Figure~\ref{fig:edgebasedcotweight}. In fact, $L(\cdot)$ can
+be regarded as the discretized Laplace-Beltrami operator with
+cotangent coefficients on triangular meshes~\cite{BS08}.
+
+\begin{figure} [htbp]
+    \centering
+  \includegraphics[scale=0.8]{figs/f5.3.cotweight.eps}
+  \caption{The angles $\tilde{\alpha_{ij}}$ and $\tilde{\beta_{ij}}$, and
+  Voronoi area $\tilde{A_i}$ for computing the cotangent weight
+  at the node $\tilde{v_i}$ in Eq.~\ref{eq:cotweight}.}
+  \label{fig:edgebasedcotweight} %% label for entire figure
+\end{figure}
+
 
 It should be noted that the Laplacian  vector $\tilde{\delta_i}$ in
 the edge-based graph can also be regarded as a measurement of the
@@ -885,7 +907,7 @@ examples is shown in Table~\ref{tb:DeformPerform}.
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 \hline
-\multirow{2}*{\minitab[c]{Model}} & 
+\multirow{2}*{\minitab[c]{Model}} &
 \multirow{2}*{\minitab[c]{$\sharp$ Involved vertices}} &
 $\sharp$ Involved nodes&\multirow{2}*{\minitab[c]{Time}}\\
 & &in edge-based graph& \\

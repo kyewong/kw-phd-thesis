@@ -101,10 +101,11 @@
 \contentsline {figure}{\numberline {5.3}{\ignorespaces (a) The 1-form. (b) The Laplacian vector.}}{65}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{65}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{65}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces The Laplacian vector $\mathaccentV {tilde}07E{\delta _i}$ in the edge-based graph and the dihedral angle $\alpha _i$ between adjacent faces in the primal domain. (a) The shorter $\mathaccentV {tilde}07E{\delta _i}$ is, the larger $\alpha _i$ will be. (b) The longer $\mathaccentV {tilde}07E{\delta _i}$ is, the smaller $\alpha _i$ will be. }}{66}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces The angles $\mathaccentV {tilde}07E{\alpha _{ij}}$ and $\mathaccentV {tilde}07E{\beta _{ij}}$, and Voronoi area $\mathaccentV {tilde}07E{A_i}$ for computing the cotangent weight at the node $\mathaccentV {tilde}07E{v_i}$ in Eq.\nobreakspace {}5.2\hbox {}.}}{66}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces The Laplacian vector $\mathaccentV {tilde}07E{\delta _i}$ in the edge-based graph and the dihedral angle $\alpha _i$ between adjacent faces in the primal domain. (a) The shorter $\mathaccentV {tilde}07E{\delta _i}$ is, the larger $\alpha _i$ will be. (b) The longer $\mathaccentV {tilde}07E{\delta _i}$ is, the smaller $\alpha _i$ will be. }}{66}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{66}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{66}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Flexible deformation of the \textit {Dinosaur} model. (a) The initial model. (b)-(d) Results of flexible deformation algorithm performed on the primal domain, with the global balance parameters valued 0, 0.5 and 1.0 respectively. (e)-(g) Results of flexible deformation algorithm performed via the edge-based graph, with the global balance parameters valued 0, 0.5 and 1.0 respectively. }}{73}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Flexible deformation of the \textit {Dinosaur} model. (a) The initial model. (b)-(d) Results of flexible deformation algorithm performed on the primal domain, with the global balance parameters valued 0, 0.5 and 1.0 respectively. (e)-(g) Results of flexible deformation algorithm performed via the edge-based graph, with the global balance parameters valued 0, 0.5 and 1.0 respectively. }}{73}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{73}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{73}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{73}
@@ -112,32 +113,32 @@
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{73}
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{73}
 \contentsline {subfigure}{\numberline {(g)}{\ignorespaces {}}}{73}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Flexible deformation of the \textit {Buffle} model via the edge-based graph under different balance parameter values. (a) The initial model. (b)-(f) Deformation results with the global balance parameters valued 0, 0.2, 0.5, 0.8, 1.0 respectively. }}{74}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Flexible deformation of the \textit {Buffle} model via the edge-based graph under different balance parameter values. (a) The initial model. (b)-(f) Deformation results with the global balance parameters valued 0, 0.2, 0.5, 0.8, 1.0 respectively. }}{74}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{74}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{74}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{74}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{74}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{74}
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{74}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Flexible deformation of the \textit {Julius-Caesar} model via the edge-based graph under different balance parameter values. (a) The initial model. (b)-(f) Deformation results with the global balance parameters valued 0, 0.2, 0.5, 0.8, 1.0 respectively. }}{75}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Flexible deformation of the \textit {Julius-Caesar} model via the edge-based graph under different balance parameter values. (a) The initial model. (b)-(f) Deformation results with the global balance parameters valued 0, 0.2, 0.5, 0.8, 1.0 respectively. }}{75}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{75}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{75}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{75}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{75}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{75}
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{75}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Material-constrained deformation result of the \textit {plane} model. (a) The initial model and its specified materials. (b)-(c) Deformation results of uniformly distributed materials with global balance parameter valued 0 and 1 respectively. (d) Deformation result with the specified non-uniform materials.}}{75}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Material-constrained deformation result of the \textit {plane} model. (a) The initial model and its specified materials. (b)-(c) Deformation results of uniformly distributed materials with global balance parameter valued 0 and 1 respectively. (d) Deformation result with the specified non-uniform materials.}}{75}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{75}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{75}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{75}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{75}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Material-constrained deformation of the \textit {Julius-Caesar} model. (a) The initial model and its specified materials. (b)-(d) Deformation results of uniformly distributed materials with global balance parameter valued 0, 0.5 and 1 respectively. (e) Deformation result with the specified non-uniform materials.}}{76}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Material-constrained deformation of the \textit {Julius-Caesar} model. (a) The initial model and its specified materials. (b)-(d) Deformation results of uniformly distributed materials with global balance parameter valued 0, 0.5 and 1 respectively. (e) Deformation result with the specified non-uniform materials.}}{76}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{76}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{76}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{76}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{76}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{76}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Material-constrained deformation of the \textit {pig} model. (a) The initial model and its specified materials. (b)-(d) Deformation results of uniformly distributed materials with global balance parameter valued 0, 0.5 and 1 respectively. (e) Deformation result with the specified non-uniform materials.}}{76}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Material-constrained deformation of the \textit {pig} model. (a) The initial model and its specified materials. (b)-(d) Deformation results of uniformly distributed materials with global balance parameter valued 0, 0.5 and 1 respectively. (e) Deformation result with the specified non-uniform materials.}}{76}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{76}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{76}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{76}
