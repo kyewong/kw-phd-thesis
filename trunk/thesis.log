@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  15 FEB 2013 22:26
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  16 FEB 2013 14:50
 entering extended mode
 **thesis.tex
 (D:\research\doc\Thesis\kw-phd-thesis\thesis.tex
@@ -748,7 +748,7 @@ File: figs/f5.5.edge05-3.eps Graphic file (type eps)
 
 <figs/f5.5.edge05-3.eps>
 File: figs/f5.5.edge10-3.eps Graphic file (type eps)
- <figs/f5.5.edge10-3.eps> [73]
+ <figs/f5.5.edge10-3.eps>
 File: figs/f5.6.original-pc-1.eps Graphic file (type eps)
 
 <figs/f5.6.original-pc-1.eps>
@@ -813,9 +813,9 @@ File: figs/f5.10.PigMat4.eps Graphic file (type eps)
  <figs/f5.10.PigMat4.eps>
 File: figs/f5.10.PigMat5.eps Graphic file (type eps)
  <figs/f5.10.PigMat5.eps>
-[74] [75] [76] [77] [78]) [79]
+[73] [74] [75] [76] [77] [78] [79]) [80]
 Chapter 6.
-(D:\research\doc\Thesis\kw-phd-thesis\chap6_editsurfrecon.tex [80
+(D:\research\doc\Thesis\kw-phd-thesis\chap6_editsurfrecon.tex [81
 
 ]
 File: figs/f6.anatomy-input.eps Graphic file (type eps)
@@ -843,7 +843,7 @@ Overfull \hbox (2.4594pt too wide) in paragraph at lines 81--81
  []
 
 File: figs/f6.anatomy-result-edited.eps Graphic file (type eps)
-<figs/f6.anatomy-result-edited.eps> [81] [82] [83]
+<figs/f6.anatomy-result-edited.eps> [82] [83] [84]
 File: figs/f6.illu-workflow-2d1.eps Graphic file (type eps)
 
 <figs/f6.illu-workflow-2d1.eps>
@@ -861,7 +861,7 @@ File: figs/f6.illu-workflow-2d6.eps Graphic file (type eps)
  <figs/f6.illu-workflow-2d6.eps>
 File: figs/f6.illu-workflow-2d7.eps Graphic file (type eps)
 
-<figs/f6.illu-workflow-2d7.eps> [84]
+<figs/f6.illu-workflow-2d7.eps> [85]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 392.
 File: figs/f6.illu-fru-non-intsct1.eps Graphic file (type eps)
@@ -875,7 +875,7 @@ File: figs/f6.illu-fru-non-intsct4.eps Graphic file (type eps)
 
 <figs/f6.illu-fru-non-intsct4.eps>
 File: figs/f6.illu-fru-non-intsct5.eps Graphic file (type eps)
- <figs/f6.illu-fru-non-intsct5.eps> [85]
+ <figs/f6.illu-fru-non-intsct5.eps> [86]
 File: figs/f6.illu-fru-intsct1.eps Graphic file (type eps)
 
 <figs/f6.illu-fru-intsct1.eps>
@@ -895,13 +895,13 @@ File: figs/f6.illu-fru-intsct7.eps Graphic file (type eps)
 
 <figs/f6.illu-fru-intsct7.eps>
 File: figs/f6.illu-fru-intsct8.eps Graphic file (type eps)
- <figs/f6.illu-fru-intsct8.eps> [86] [87]
-[88]
+ <figs/f6.illu-fru-intsct8.eps> [87] [88]
+[89]
 File: figs/f6.illu-fru-endzone1.eps Graphic file (type eps)
  <figs/f6.illu-fru-endzone1.eps>
 File: figs/f6.illu-fru-endzone2.eps Graphic file (type eps)
- <figs/f6.illu-fru-endzone2.eps> [89]
-[90] [91]
+ <figs/f6.illu-fru-endzone2.eps> [90]
+[91] [92]
 File: figs/f6.joinFP-input.eps  Graphic file (type eps)
  <figs/f6.joinFP-input.eps >
 File: figs/f6.joinFP-F-init.eps Graphic file (type eps)
@@ -913,7 +913,7 @@ File: figs/f6.joinFP-P-init.eps Graphic file (type eps)
  <figs/f6.joinFP-P-init.eps>
 File: figs/f6.joinFP-P.eps Graphic file (type eps)
  <figs/f6.joinFP-P.eps>
-[92]
+[93]
 File: figs/f6.illu-join-2zone-1.eps Graphic file (type eps)
  <figs/f6.illu-join-2zone-1.eps>
 File: figs/f6.illu-join-2zone-2.eps Graphic file (type eps)
@@ -927,7 +927,7 @@ File: figs/f6.illu-join-2zone-5.eps Graphic file (type eps)
 
 <figs/f6.illu-join-2zone-5.eps>
 File: figs/f6.illu-join-2zone-6.eps Graphic file (type eps)
- <figs/f6.illu-join-2zone-6.eps> [93]
+ <figs/f6.illu-join-2zone-6.eps> [94]
 File: figs/f6.BEsplit-input.eps Graphic file (type eps)
 
 <figs/f6.BEsplit-input.eps>
@@ -945,7 +945,7 @@ File: figs/f6.BEsplit-E-init.eps Graphic file (type eps)
  <figs/f6.BEsplit-E-init.eps>
 File: figs/f6.BEsplit-E.eps Graphic file (type eps)
 
-<figs/f6.BEsplit-E.eps> [94]
+<figs/f6.BEsplit-E.eps> [95]
 File: figs/f6.cactus.eps Graphic file (type eps)
  <figs/f6.cactus.eps>
 File: figs/f6.teacup.eps Graphic file (type eps)
@@ -962,7 +962,7 @@ Overfull \hbox (25.31516pt too wide) in paragraph at lines 1088--1088
 File: figs/f6.stomach.eps Graphic file (type eps)
 <figs/f6.stomach.eps>
 File: figs/f6.hand.eps Graphic file (type eps)
- <figs/f6.hand.eps> [95] [96]
+ <figs/f6.hand.eps> [96] [97]
 File: figs/f6.skull-input.eps Graphic file (type eps)
  <figs/f6.skull-input.eps>
 File: figs/f6.skull-init-union.eps Graphic file (type eps)
@@ -1002,25 +1002,25 @@ File: figs/f6.ovaries-edit-union.eps Graphic file (type eps)
  <figs/f6.ovaries-edit-union.eps>
 File: figs/f6.ovaries-edit.eps Graphic file (type eps)
 
-<figs/f6.ovaries-edit.eps> [97]) [98] [99]
+<figs/f6.ovaries-edit.eps> [98]) [99] [100]
 Chapter 7.
-(D:\research\doc\Thesis\kw-phd-thesis\chap7_conclusion.tex [100
+(D:\research\doc\Thesis\kw-phd-thesis\chap7_conclusion.tex [101
 
-] [101] [102])
-[103] (D:\research\doc\Thesis\kw-phd-thesis\thesis.bbl
+] [102] [103])
+[104] (D:\research\doc\Thesis\kw-phd-thesis\thesis.bbl
 Underfull \hbox (badness 6792) in paragraph at lines 24--27
 [][]\OT1/ptm/m/n/12 Inria gam-ma team re-search database.  Avail-able from: $\O
 ML/cmm/m/it/12 <$\OT1/ptm/m/n/12 http://www-
  []
 
-[104
+[105
 
 
-] [105] [106] [107] [108] [109] [110] [111]
+] [106] [107] [108] [109] [110] [111] [112]
 
 LaTeX Warning: Command \ss invalid in math mode on input line 485.
 
-[112] [113] [114] [115]
+[113] [114] [115] [116]
 Underfull \hbox (badness 4467) in paragraph at lines 695--698
 [][]\OT1/ptm/m/n/12 OpenMP Ar-chi-tec-ture Re-view Board.  Open-M-P ap-pli-ca-t
 ion pro-gram in-
@@ -1032,26 +1032,26 @@ Underfull \hbox (badness 2932) in paragraph at lines 695--698
 2 <$\OT1/ptm/m/n/12 http://www.openmp.org/mp-
  []
 
-[116] [117] [118] [119] [120]
+[117] [118] [119] [120] [121]
 Missing character: There is no ¡ in font ptmr7t!
- [121]) [122]
+ [122]) [123]
 (D:\research\doc\Thesis\kw-phd-thesis\chap8_mypub.tex
 Overfull \hbox (3.88936pt too wide) in paragraph at lines 19--23
 \OT1/ptm/m/n/12 ing with curves,'' \OT1/ptm/m/it/12 Computer-Aided De-sign and 
 Ap-pli-ca-tion-s\OT1/ptm/m/n/12 , Vol.9, No.3, 2012, pp.361-
  []
 
-[123
+[124
 
 
-]) [124] (D:\research\doc\Thesis\kw-phd-thesis\thesis.aux) ) 
+]) [125] (D:\research\doc\Thesis\kw-phd-thesis\thesis.aux) ) 
 Here is how much of TeX's memory you used:
  4944 strings out of 495355
  72192 string characters out of 3183097
- 138068 words of memory out of 3000000
+ 141359 words of memory out of 3000000
  7827 multiletter control sequences out of 15000+200000
  20254 words of font info for 59 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,16n,43p,1516b,369s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (139 pages, 443056 bytes).
+Output written on thesis.dvi (140 pages, 443148 bytes).
