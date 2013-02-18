@@ -39,17 +39,17 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{42}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{42}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{42}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces The sketching of some models using our system.}}{44}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Mushroom}}}{44}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Handicraft}}}{44}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Car}}}{44}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Censer}}}{44}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Bicycle}}}{44}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Sculpture}}}{44}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces The sketching and sculpting of some models using our system.}}{45}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Cup}}}{45}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Rabbit}}}{45}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Chair}}}{45}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces The sketching of some models using our system.}}{45}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Mushroom}}}{45}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Handicraft}}}{45}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Car}}}{45}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Censer}}}{45}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {Bicycle}}}{45}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {Sculpture}}}{45}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces The sketching and sculpting of some models using our system.}}{46}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Cup}}}{46}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Rabbit}}}{46}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Chair}}}{46}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces 2D illustration of our surface reconstruction algorithm. (a) Input segments (red, corresponding to the 3D cross sections) and partitioned zones; (b) The \textit {empty} zones (blue), \textit {end} zones (green) and \textit {body} zones (yellow); (c) Generating polygons (corresponding to the cylinders) in \textit {body} zones; (d) Generating polygons in the \textit {end} zones using the same way as the reconstruction in the \textit {body} zones. The reconstruction result contains multiple components; (e) Generating extended polygons for an \textit {end} zone; (f) Generating polygons for all \textit {end} zones; (g) The reconstruction result. }}{50}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{50}

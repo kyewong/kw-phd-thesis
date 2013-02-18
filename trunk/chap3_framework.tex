@@ -227,8 +227,8 @@ such as the silhouettes, it will cause less perception ambiguities
 when the shape becomes complex. Second, a cross section is a planar
 curve which can be quickly sketched in 3D space with the help of the
 reference planes, and the sketching is thus simple yet effective for
-depicting the 3D model. Meanwhile, taking the cross sections as the input 
-is also consistent with one of the visual rules in~\cite{HD00} that smooth 
+depicting the 3D model. Meanwhile, taking the cross sections as the input
+is also consistent with one of the visual rules in~\cite{HD00} that smooth
 lines are usually interpreted as the contours of the 3D objects by human being.
 
 %introduce reference planes
@@ -803,12 +803,56 @@ where $A$,$B$,$C$ and $D$ are the unknown parameters to be determined. Then our 
 
 \begin{equation}
 \label{eq:planeobjnoZ0}
-    f(A,B,C,D)=\sum\limits_{i \in HC} {(Ax_i+By_i+Cz_i-D)^2},
+    f(A,B,C,D)=\sum\limits_{i \in HC} {\frac {(Ax_i+By_i+Cz_i+D)^2}{A^2+B^2+C^2}},
 \end{equation}
 subject to the constraint $A^2+B^2+C^2=1$, where $i \in HC$  means
-$p_i=(x_i,y_i,z_i)$ is a point on the handle curve. This
-optimization problem can be solved using the method proposed
-in~\cite{SWMB59}.
+$p_i=(x_i,y_i,z_i)$ is a point on the handle curve.
+
+%%%introduce the solving of this optimization problem
+To solve this optimization problem, we used the method proposed
+in~\cite{SWMB59}. First, we set the partial derivative of
+$f(A,B,C,D)$ w.r.t. $D$ equal to zero and get:
+
+\begin{eqnarray}
+\label{eq:planeobjPartD}
+    \sum\limits_{i \in HC} {Ax_i+By_i+Cz_i+D} = 0\nonumber\\
+    D = -(Ax_c + By_c + Cz_c),
+\end{eqnarray}
+where $(x_c, y_c, z_c)$ represents the centroid of all the
+input points on the handle curve. Then we substitute $D$ back
+to Eq.~\ref{eq:planeobjnoZ0}, and the function to minimize can
+be written as:
+
+\begin{eqnarray}
+\label{eq:planeobjnew}
+    f(A,B,C) &=& \sum\limits_{i \in HC} {\frac {(A(x_i-x_c)+B(y_i-y_c)+C(z_i-z_c))^2}{A^2+B^2+C^2}}\nonumber\\
+    &=& (P^TM^T)(MP)/(P^TP)\nonumber\\
+    &=& P^T (M^TM) P/(P^TP),
+\end{eqnarray}
+where $P^{\rm T} = [\begin{array}{*{20}c} A & B & C \end{array}]$
+and $M$ is the matrix defined as:
+
+\begin{equation*}
+\begin{bmatrix}
+x_1-x_c & y_1-y_c & z_1-z_c\\[-1em]
+x_2-x_c & y_2-y_c & z_2-z_c\\[-1em]
+\cdot & \cdot & \cdot\\[-1em]
+\cdot & \cdot & \cdot\\[-1em]
+\cdot & \cdot & \cdot\\[-1em]
+x_n-x_c & y_n-y_c & z_n-z_c
+\end{bmatrix},
+\end{equation*}
+assuming there are $n$ points on the handle curve. Next, $f(A,B,C)$
+can be minimized by computing the singular value decomposition
+of $M=USV^{\rm T}$ and letting $P$ equal to the third column 
+of $U$. To this end, the parameters of the optimal plane in
+Eq.~\ref{eq:planefunc} can be obtained. It can be seen that
+the calculated plane will interpolate the centroid of the 
+input points and its normal vector is the singular vector
+of $M$ corresponding to its smallest singular value.
+
+%%%
+
 
 The above method just gives a suggestive orientation of the base
 plane. If the user is not satisfied, he/she can rotate the plane by

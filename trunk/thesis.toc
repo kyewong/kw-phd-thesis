@@ -25,7 +25,7 @@
 \contentsline {subsection}{\numberline {3.3.1}Input stroke preprocessing}{38}
 \contentsline {subsection}{\numberline {3.3.2}Stroke rules}{39}
 \contentsline {subsection}{\numberline {3.3.3}Reference plane calculation}{42}
-\contentsline {section}{\numberline {3.4}Results and discussions}{46}
+\contentsline {section}{\numberline {3.4}Results and discussions}{44}
 \contentsline {chapter}{\numberline {4}Progressive Surface Reconstruction from Orthogonal Cross Sections}{48}
 \contentsline {section}{\numberline {4.1}Introduction}{48}
 \contentsline {section}{\numberline {4.2}Overview of the algorithm}{49}

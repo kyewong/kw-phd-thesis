@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  17 FEB 2013 21:59
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  18 FEB 2013 23:06
 entering extended mode
 **thesis.tex
 (D:\research\doc\Thesis\kw-phd-thesis\thesis.tex
@@ -515,7 +515,7 @@ File: figs/f3.CurveMerge2.eps Graphic file (type eps)
  <figs/f3.CurveMerge2.eps>
 File: figs/f3.CurveMerge3.eps Graphic file (type eps)
  <figs/f3.CurveMerge3.eps>
-[41] [42]
+[41] [42] [43]
 File: figs/f3.mushroom.eps Graphic file (type eps)
  <figs/f3.mushroom.eps>
 File: figs/f3.6hole.eps Graphic file (type eps)
@@ -529,32 +529,32 @@ File: figs/f3.bike.eps Graphic file (type eps)
  <figs/f3.bike.eps>
 File: figs/f3.sculpture.eps Graphic file (type eps)
  <figs/f3.sculpture.eps>
-Overfull \hbox (3.0pt too wide) in paragraph at lines 845--881
+Overfull \hbox (3.0pt too wide) in paragraph at lines 889--925
  [][][] 
  []
 
 
-Overfull \hbox (3.0pt too wide) in paragraph at lines 845--881
+Overfull \hbox (3.0pt too wide) in paragraph at lines 889--925
  [] 
  []
 
 
-Overfull \hbox (3.0pt too wide) in paragraph at lines 845--881
+Overfull \hbox (3.0pt too wide) in paragraph at lines 889--925
  [] 
  []
 
 
-Overfull \hbox (3.0pt too wide) in paragraph at lines 845--881
+Overfull \hbox (3.0pt too wide) in paragraph at lines 889--925
  [] 
  []
 
 
-Overfull \hbox (3.0pt too wide) in paragraph at lines 845--881
+Overfull \hbox (3.0pt too wide) in paragraph at lines 889--925
  [] 
  []
 
 
-Overfull \hbox (3.0pt too wide) in paragraph at lines 845--881
+Overfull \hbox (3.0pt too wide) in paragraph at lines 889--925
  [] 
  []
 
@@ -564,21 +564,21 @@ File: figs/f3.rabbit.eps Graphic file (type eps)
  <figs/f3.rabbit.eps>
 File: figs/f3.chair.eps Graphic file (type eps)
  <figs/f3.chair.eps>
-Overfull \hbox (3.0pt too wide) in paragraph at lines 892--907
+Overfull \hbox (3.0pt too wide) in paragraph at lines 936--951
 [][][]
  []
 
 
-Overfull \hbox (3.0pt too wide) in paragraph at lines 892--907
+Overfull \hbox (3.0pt too wide) in paragraph at lines 936--951
 []
  []
 
 
-Overfull \hbox (3.0pt too wide) in paragraph at lines 892--907
+Overfull \hbox (3.0pt too wide) in paragraph at lines 936--951
 [] 
  []
 
-[43] [44] [45] [46]) [47]
+[44] [45] [46]) [47]
 Chapter 4.
 (D:\research\doc\Thesis\kw-phd-thesis\chap4_surfreconortho.tex [48
 
@@ -1046,12 +1046,12 @@ Ap-pli-ca-tion-s\OT1/ptm/m/n/12 , Vol.9, No.3, 2012, pp.361-
 
 ]) [125] (D:\research\doc\Thesis\kw-phd-thesis\thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4944 strings out of 495355
- 72192 string characters out of 3183097
- 141359 words of memory out of 3000000
- 7827 multiletter control sequences out of 15000+200000
+ 4946 strings out of 495355
+ 72226 string characters out of 3183097
+ 141385 words of memory out of 3000000
+ 7829 multiletter control sequences out of 15000+200000
  20254 words of font info for 59 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,16n,43p,1516b,369s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (140 pages, 443148 bytes).
+Output written on thesis.dvi (140 pages, 446144 bytes).
