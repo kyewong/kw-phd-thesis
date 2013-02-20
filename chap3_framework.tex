@@ -850,8 +850,9 @@ x_n-x_c & y_n-y_c & z_n-z_c
 \end{equation*}
 assuming there are $n$ points on the handle curve. Next, $f(A,B,C)$
 can be minimized by computing the singular value decomposition
-of $M=USV^T$ and letting $P$ equal to the third column
-of $V$. To this end, the parameters of the optimal plane in
+of $M=USV^T$ and letting $P$ equal to the column of $V$ 
+that corresponds to the smallest singular value of $M$.
+To this end, the parameters of the optimal plane in
 Eq.~\ref{eq:planefunc} can be obtained. It can be seen that
 the calculated plane will interpolate the centroid of the
 input points and its normal vector is the singular vector
