@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  20 FEB 2013 22:15
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  21 FEB 2013 22:18
 entering extended mode
 **thesis.tex
 (D:\research\doc\Thesis\kw-phd-thesis\thesis.tex
@@ -530,32 +530,32 @@ File: figs/f3.bike.eps Graphic file (type eps)
 File: figs/f3.sculpture.eps Graphic file (type eps)
 
 <figs/f3.sculpture.eps>
-Overfull \hbox (3.0pt too wide) in paragraph at lines 896--932
+Overfull \hbox (3.0pt too wide) in paragraph at lines 918--954
  [][][] 
  []
 
 
-Overfull \hbox (3.0pt too wide) in paragraph at lines 896--932
+Overfull \hbox (3.0pt too wide) in paragraph at lines 918--954
  [] 
  []
 
 
-Overfull \hbox (3.0pt too wide) in paragraph at lines 896--932
+Overfull \hbox (3.0pt too wide) in paragraph at lines 918--954
  [] 
  []
 
 
-Overfull \hbox (3.0pt too wide) in paragraph at lines 896--932
+Overfull \hbox (3.0pt too wide) in paragraph at lines 918--954
  [] 
  []
 
 
-Overfull \hbox (3.0pt too wide) in paragraph at lines 896--932
+Overfull \hbox (3.0pt too wide) in paragraph at lines 918--954
  [] 
  []
 
 
-Overfull \hbox (3.0pt too wide) in paragraph at lines 896--932
+Overfull \hbox (3.0pt too wide) in paragraph at lines 918--954
  [] 
  []
 
@@ -565,17 +565,17 @@ File: figs/f3.rabbit.eps Graphic file (type eps)
  <figs/f3.rabbit.eps>
 File: figs/f3.chair.eps Graphic file (type eps)
  <figs/f3.chair.eps>
-Overfull \hbox (3.0pt too wide) in paragraph at lines 943--958
+Overfull \hbox (3.0pt too wide) in paragraph at lines 965--980
 [][][]
  []
 
 
-Overfull \hbox (3.0pt too wide) in paragraph at lines 943--958
+Overfull \hbox (3.0pt too wide) in paragraph at lines 965--980
 []
  []
 
 
-Overfull \hbox (3.0pt too wide) in paragraph at lines 943--958
+Overfull \hbox (3.0pt too wide) in paragraph at lines 965--980
 [] 
  []
 
@@ -1055,4 +1055,4 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  39i,16n,43p,1516b,369s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (141 pages, 446800 bytes).
+Output written on thesis.dvi (141 pages, 447956 bytes).
