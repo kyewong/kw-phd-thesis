@@ -813,7 +813,8 @@ the following objective function
 \end{eqnarray}
 where $i \in HC$  means $p_i=(x_i,y_i,z_i)$ is a point on the handle curve.
 
-%%%introduce the solving of this optimization problem
+%%%%%%%%%introduce the solving of this optimization problem
+%%%%%%%%%added in thesis only
 To solve this optimization problem, we used the method proposed
 in~\cite{SWMB59}. First, we set the partial derivative of
 $f(A,B,C,D)$ w.r.t. $D$ equal to zero and get:
@@ -850,7 +851,7 @@ x_n-x_c & y_n-y_c & z_n-z_c
 \end{equation*}
 assuming there are $n$ points on the handle curve. Next, $f(A,B,C)$
 can be minimized by computing the singular value decomposition
-of $M=USV^T$ and letting $P$ equal to the column of $V$ 
+of $M=USV^T$ and letting $P$ equal to the column of $V$
 that corresponds to the smallest singular value of $M$.
 To this end, the parameters of the optimal plane in
 Eq.~\ref{eq:planefunc} can be obtained. It can be seen that
@@ -858,7 +859,8 @@ the calculated plane will interpolate the centroid of the
 input points and its normal vector is the singular vector
 of $M$ corresponding to its smallest singular value.
 
-%%%
+%%%%%%%%%added in thesis only
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 The above method just gives a suggestive orientation of the base
@@ -874,6 +876,26 @@ draw a non-planar curve by sketching the shadow of the base plane
 curve on the projection plane, we use the algorithm proposed
 in~\cite{CMZHB99} to combine the two planar curves to generate a
 spatial one.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%added in thesis only
+That is, we first filter the shadow curve and resample it 
+to make the number of points equal to that of the handle
+curve on the base plane, by using the method proposed in 
+Section~\ref{ch3:sec:alg:strokepreproc}. This way, there
+will be a one-to-one correspondence between each point $P^b_i$ 
+on the planar handle curve and $P^p_i$ on the shadow curve.
+Then we project $P^b_i$ onto the projection plane to 
+get a projection point $P^{bp}_i$, and compute the 
+vector $V_i=P^p_i-P^{bp}_i$ which points from $P^{bp}_i$ 
+to $P^p_i$. The point $P_i$ on the new handle curve 
+can be obtained by translating $P^b_i$ along the 
+vector $V_i$ (i.e. $P_i=P^b_i+V_i$), and the desired handle curve 
+can be formed by connecting each new point $P_i$ sequentially.
+%%%%%%%%%added in thesis only
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 Once the ROI vertices, the handle curve and its new shape are
 confirmed, we complete the deformation by employing a flexible mesh
