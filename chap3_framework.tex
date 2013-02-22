@@ -728,9 +728,55 @@ points on each curve can then be chosen as the points closest to
 $V_{m1}$ and $V_{m2}$ respectively. Next a range of points near the
 handles are to be moved with them and we need to compute their new
 positions. So we could perform the Laplacian deformation algorithm
-to the two curves to deform them. Since the two curves are both
-planar, it can be further simplified into a 2D deformation problem
-which can be precisely solved~\cite{ESA07}.
+to the two curves to deform them. 
+%Since the two curves are both
+%planar, it can be further simplified into a 2D deformation problem
+%which can be precisely solved~\cite{ESA07}.
+
+%%%%%%%%%introduce the solving of this optimization problem
+%%%%%%%%%added in thesis only
+Since the two curves are both planar, it can be further simplified 
+into a 2D deformation problem and we used the method in~\cite{ESA07}
+to solve it.
+
+First, we compute the Laplacian vector $\delta_i$ at each curve point $V_i$
+as:
+
+\begin{equation}
+\label{eq:curveLap}
+ \delta_i=L(V_i)=V_i- \frac{1}{2} \sum\limits_{j \in N(i)} {V_j},
+\end{equation}
+where $\{V_j, j\in N(i)\}$ are the positions of the two neighboring
+points of $V_i$. Supposing there are $n$ points involved in the
+deformation,  and considering the positional constraints
+$\{C_i\},i\in\{m,...,n\},m<n$, the deformation energy we aim to
+minimize for computing the new point positions is:
+
+\begin{equation}
+\label{eq:curvedeform}
+    E(V^\prime)=\sum\limits_{i=1}^n{||L({V_i}^\prime)-T_i\delta_i||^2}
+    +\sum\limits_{i=m}^n{||{V_i}^\prime-C_i||^2},
+\end{equation}
+where $T_i$ is the matrix representing the transformation of $\delta_i$ 
+during the deformation process. $T_i$ can be derived by estimating the 
+transformation of the point $V_i$ and its neighbors through minimizing:
+
+\begin{equation}
+\label{eq:curveLapTi}
+    E({V_i}^\prime)=||{V_i}^\prime-T_iV_i||^2 + 
+    \sum\limits_{j \in N(i)}{||{V_j}^\prime-T_iV_j||^2}.
+\end{equation}
+Since $T_i$ contains 2D rotation and isotropic scale transformations,
+it can be represented as a skew-symmetric matrix
+$T_i= \begin{pmatrix} s_i & \omega_i \\ -\omega_i & s_i \end{pmatrix}$.
+Thus, $T_i$ is a linear combination of ${V_i}^\prime$
+and ${V_j}^\prime$. By substituting $T_i$ into Eq.~\ref{eq:curvedeform},
+the point positions of the deformed curve can be solved.
+
+
+%%%%%%%%%added in thesis only
+%%%%%%%%%introduce the solving of this optimization problem
+
 
 \begin{figure} [htbp]
   \centering
@@ -879,18 +925,18 @@ spatial one.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%added in thesis only
-That is, we first filter the shadow curve and resample it 
+That is, we first filter the shadow curve and resample it
 to make the number of points equal to that of the handle
-curve on the base plane, by using the method proposed in 
+curve on the base plane, by using the method proposed in
 Section~\ref{ch3:sec:alg:strokepreproc}. This way, there
-will be a one-to-one correspondence between each point $P^b_i$ 
+will be a one-to-one correspondence between each point $P^b_i$
 on the planar handle curve and $P^p_i$ on the shadow curve.
-Then we project $P^b_i$ onto the projection plane to 
-get a projection point $P^{bp}_i$, and compute the 
-vector $V_i=P^p_i-P^{bp}_i$ which points from $P^{bp}_i$ 
-to $P^p_i$. The point $P_i$ on the new handle curve 
-can be obtained by translating $P^b_i$ along the 
-vector $V_i$ (i.e. $P_i=P^b_i+V_i$), and the desired handle curve 
+Then we project $P^b_i$ onto the projection plane to
+get a projection point $P^{bp}_i$, and compute the
+vector $V_i=P^p_i-P^{bp}_i$ which points from $P^{bp}_i$
+to $P^p_i$. The point $P_i$ on the new handle curve
+can be obtained by translating $P^b_i$ along the
+vector $V_i$ (i.e. $P_i=P^b_i+V_i$), and the desired handle curve
 can be formed by connecting each new point $P_i$ sequentially.
 %%%%%%%%%added in thesis only
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
