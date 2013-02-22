@@ -541,8 +541,8 @@ zone and interpolate the cross section.
   (a) Input cross sections;
   (b) Generate the frusta by shrinking the top faces;
   (c) Non-manifold sub-surface caused by the over-shrinkage of the top of each frustum;
-  (d) Translate the bottom $fr_p^b$ to get the initial frustum $fr_p$. The yellow dots represent the points outside the zone (i.e. $PT_f$ in Eq~\ref{eq:curvedeform});
-  (e) Move the outside points into the zone. The green dots are the points near the other faces of the zone (i.e. $PT_o$ in Eq~\ref{eq:curvedeform});
+  (d) Translate the bottom $fr_p^b$ to get the initial frustum $fr_p$. The yellow dots represent the points outside the zone (i.e. $PT_f$ in Eq~\ref{eq:curvedeform2});
+  (e) Move the outside points into the zone. The green dots are the points near the other faces of the zone (i.e. $PT_o$ in Eq~\ref{eq:curvedeform2});
   (f) Deform the boundary of the frustum top by keeping the yellow and green points fixed, to get a valid frustum;
   (g) Generate another frustum;
   (h) Compute the union of the two frusta.}
@@ -584,23 +584,48 @@ by the translation of these points, we launch a deformation process
 to deform the boundary curve $PT_b$ of $fr_p^t$. Specifically, we
 try to fix the positions of $PT_f$ and preserve the Laplacian
 vectors which are used to represent the local shape of the original
-curve. The Laplacian vector $\delta_i$ is calculated at each
-boundary points $pt_i$ of the initially obtained $fr_p^t$, by using
-the equation:
+curve. 
+The Laplacian vector $\delta_i$ at each boundary points $pt_i$ 
+of the initially obtained $fr_p^t$ can be calculated by using 
+Eq.~\ref{eq:curveLap}.
 
-\begin{equation}
-\label{eq:curveLap}
-\delta_i=L(pt_i)=\frac{1}{N}\sum\limits_{j\in N(i)}{(pt_i-pt_j)},
-\end{equation}
-where $L(\cdot)$ is the Laplacian operator and $\{pt_j, j\in N(i)\}$ are the positions of the two neighboring points of $pt_i$. We also fix the positions of points $PT_o$ which stay near the other faces of $zn_i$ (the green points in Figure~\ref{fig:fruint:e}), to prevent them from getting out of $zn_i$ after the deformation. So the total energy to minimize for the deformation is:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%deleted in thesis only, since has been introduced in Chapter 3
+%The Laplacian vector $\delta_i$ is calculated at each
+%boundary points $pt_i$ of the initially obtained $fr_p^t$, by using
+%the equation:
+%
+%\begin{equation}
+%\label{eq:curveLap}
+%\delta_i=L(pt_i)=\frac{1}{N}\sum\limits_{j\in N(i)}{(pt_i-pt_j)},
+%\end{equation}
+%where $L(\cdot)$ is the Laplacian operator and $\{pt_j, j\in N(i)\}$ are the positions of the two neighboring points of $pt_i$. 
+%%%%%%%%%deleted in thesis only, since has been introduced in Chapter 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+We also fix the positions of points $PT_o$ which stay near the other 
+faces of $zn_i$ (the green points in Figure~\ref{fig:fruint:e}), to prevent 
+them from getting out of $zn_i$ after the deformation. So the total energy 
+to minimize for the deformation is:
 
 \begin{eqnarray}
-\label{eq:curvedeform}
+\label{eq:curvedeform2}
 E(PT_b^\prime) &=& \sum\limits_{pt_i \in PT_b} {||L(pt_i^\prime)- T_i\delta_i||^2}+\nonumber\\
 & & \sum\limits_{pt_i \in PT_f}{||pt_i^\prime-pt_i||^2}+\nonumber\\
 & & \sum\limits_{pt_i \in PT_o}{||pt_i^\prime-pt_i||^2},
 \end{eqnarray}
-where $pt_i$ and $pt_i^\prime$ represent the original and deformed point positions. $T_i$ denotes the transformation matrix of the Laplacian vector whose calculation can be found in~\cite{ESA07}. Since all the points of $PT$ lie on the same plane, this is actually a 2D curve deformation problem that is easy to solve.
+where $pt_i$ and $pt_i^\prime$ represent the original and deformed point positions. 
+$T_i$ denotes the transformation matrix of the Laplacian vector. 
+This curve deformation problem can then be solved by using the same method 
+we have introduced in Section~\ref{ch3:sec:algo:rule}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%deleted in thesis only, since has been introduced in Chapter 3
+%$T_i$ denotes the transformation matrix of the Laplacian vector whose calculation can be found in~\cite{ESA07}. Since all the points of $PT$ lie on the same plane, this is actually a 2D curve deformation problem that is easy to solve.
+%%%%%%%%%deleted in thesis only, since has been introduced in Chapter 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 Although we tried to  anchor the points near the boundary faces of
 $zn_i$, there may still exist some other points staying outside
@@ -608,7 +633,7 @@ $zn_i$ after the deformation. In that case, these points are then
 translated towards the center of the deformed curve $PT_b$ until
 they come into the inside of $zn_i$ and the set $PT_o$ will be
 updated accordingly. After a few iterations of using
-Eq.~\ref{eq:curvedeform}, all points on $PT_b$ will be inside $zn_i$
+Eq.~\ref{eq:curvedeform2}, all points on $PT_b$ will be inside $zn_i$
 and valid $fr_p$ can then be obtained (see
 Figure~\ref{fig:fruint:f}). This method also works when $cs_p$
 intersects with multiple cross sections.
