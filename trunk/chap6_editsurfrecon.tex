@@ -584,9 +584,9 @@ by the translation of these points, we launch a deformation process
 to deform the boundary curve $PT_b$ of $fr_p^t$. Specifically, we
 try to fix the positions of $PT_f$ and preserve the Laplacian
 vectors which are used to represent the local shape of the original
-curve. 
-The Laplacian vector $\delta_i$ at each boundary points $pt_i$ 
-of the initially obtained $fr_p^t$ can be calculated by using 
+curve.
+The Laplacian vector $\delta_i$ at each boundary points $pt_i$
+of the initially obtained $fr_p^t$ can be calculated by using
 Eq.~\ref{eq:curveLap}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -599,14 +599,14 @@ Eq.~\ref{eq:curveLap}.
 %\label{eq:curveLap}
 %\delta_i=L(pt_i)=\frac{1}{N}\sum\limits_{j\in N(i)}{(pt_i-pt_j)},
 %\end{equation}
-%where $L(\cdot)$ is the Laplacian operator and $\{pt_j, j\in N(i)\}$ are the positions of the two neighboring points of $pt_i$. 
+%where $L(\cdot)$ is the Laplacian operator and $\{pt_j, j\in N(i)\}$ are the positions of the two neighboring points of $pt_i$.
 %%%%%%%%%deleted in thesis only, since has been introduced in Chapter 3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-We also fix the positions of points $PT_o$ which stay near the other 
-faces of $zn_i$ (the green points in Figure~\ref{fig:fruint:e}), to prevent 
-them from getting out of $zn_i$ after the deformation. So the total energy 
+We also fix the positions of points $PT_o$ which stay near the other
+faces of $zn_i$ (the green points in Figure~\ref{fig:fruint:e}), to prevent
+them from getting out of $zn_i$ after the deformation. So the total energy
 to minimize for the deformation is:
 
 \begin{eqnarray}
@@ -615,9 +615,9 @@ E(PT_b^\prime) &=& \sum\limits_{pt_i \in PT_b} {||L(pt_i^\prime)- T_i\delta_i||^
 & & \sum\limits_{pt_i \in PT_f}{||pt_i^\prime-pt_i||^2}+\nonumber\\
 & & \sum\limits_{pt_i \in PT_o}{||pt_i^\prime-pt_i||^2},
 \end{eqnarray}
-where $pt_i$ and $pt_i^\prime$ represent the original and deformed point positions. 
-$T_i$ denotes the transformation matrix of the Laplacian vector. 
-This curve deformation problem can then be solved by using the same method 
+where $pt_i$ and $pt_i^\prime$ represent the original and deformed point positions.
+$T_i$ denotes the transformation matrix of the Laplacian vector.
+This curve deformation problem can then be solved by using the same method
 we have introduced in Section~\ref{ch3:sec:algo:rule}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -743,7 +743,7 @@ needed.
 \label{ch6:sec:reconst:global}
 
 Similar to Chapter~\ref{ch:orthsurf},  we use the algorithm proposed
-in ~\cite{LTH86} to compute the union of the generated frusta. Since
+in~\cite{LTH86} to compute the union of the generated frusta. Since
 the frusta are simple shapes, this method is fast and robust enough
 for our application. The calculation of the global surface
 $M_{init}$ can be expressed as:

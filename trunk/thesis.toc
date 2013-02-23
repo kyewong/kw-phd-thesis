@@ -32,7 +32,7 @@
 \contentsline {section}{\numberline {4.3}Sub-surface reconstruction for a \textit {body} zone}{54}
 \contentsline {section}{\numberline {4.4}Sub-surface reconstruction for an \textit {end} zone}{57}
 \contentsline {section}{\numberline {4.5}Global surface reconstruction}{59}
-\contentsline {subsection}{\numberline {4.5.1}Mesh improvement}{59}
+\contentsline {subsection}{\numberline {4.5.1}Mesh improvement}{60}
 \contentsline {section}{\numberline {4.6}Results and discussions}{60}
 \contentsline {chapter}{\numberline {5}Triangular Mesh Deformation via Edge-Based Graph}{62}
 \contentsline {section}{\numberline {5.1}Introduction}{62}
