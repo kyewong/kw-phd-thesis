@@ -522,13 +522,36 @@ possibility caused by the newly added sketch.
 
 \section{Global surface reconstruction} \label{ch4:sec:algo:global}
 
-After all the cylinders in each zone are built, we use the algorithm
-proposed in~\cite{LTH86} to compute the union of them. The algorithm
-computes the unions of the input polyhedrons by getting those of the
-faces and glue them together, and it is robust and quick enough for
-our application since the shape of the polyhedrons are regular. The
-global surface of the initial mesh $M_{init}$ can then be calculated
-as:
+%After all the cylinders in each zone are built, we use the algorithm
+%proposed in~\cite{LTH86} to compute the union of them. The algorithm
+%computes the unions of the input polyhedrons by getting those of the
+%faces and glue them together, and it is robust and quick enough for
+%our application since the shape of the polyhedrons are regular. The
+%global surface of the initial mesh $M_{init}$ can then be calculated
+%as:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%added in thesis only
+After all the cylinders in each zone are built, we use the
+CarveCSG library~\cite{CarveCSG} which implements the algorithm proposed
+in~\cite{LTH86} to compute the union of these polyhedrons one by one. 
+
+Given two polyhedrons $P_a$ and $P_b$, each triangle $Tr^a_i$ on $P_a$ will be
+visited first. If $Tr^a_i$ intersects with a triangle $Tr^b_j$ on $P_b$, then
+both $Tr^a_i$ and $Tr^b_j$ will be bisected by the plane of each other's.
+This way, $P_a$ and $P_b$ will become new polyhedrons $P^\prime_a$ and
+$P^\prime_b$ which are composed of bisected triangles. Next, the triangles on
+$P^\prime_a$ which are inside the volume of $P^\prime_b$, as well as
+those on $P^\prime_b$ inside the volume of $P^\prime_a$ will be removed.
+Finally, the left triangles from $P^\prime_a$ and $P^\prime_b$ will
+be merged and the union result can be obtained.
+
+This method is robust and quick enough for our application since the shape 
+of the polyhedrons are regular. The global surface of the initial mesh 
+$M_{init}$ can then be calculated as:
+%%%%%%%%%added in thesis only
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{equation}
 \label{eq:surfreconstortho}
