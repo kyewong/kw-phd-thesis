@@ -534,7 +534,7 @@ possibility caused by the newly added sketch.
 %%%%%%%%%added in thesis only
 After all the cylinders in each zone are built, we use the
 CarveCSG library~\cite{CarveCSG} which implements the algorithm proposed
-in~\cite{LTH86} to compute the union of these polyhedrons one by one. 
+in~\cite{LTH86} to compute the union of these polyhedrons one by one.
 
 Given two polyhedrons $P_a$ and $P_b$, each triangle $Tr^a_i$ on $P_a$ will be
 visited first. If $Tr^a_i$ intersects with a triangle $Tr^b_j$ on $P_b$, then
@@ -546,8 +546,8 @@ those on $P^\prime_b$ inside the volume of $P^\prime_a$ will be removed.
 Finally, the left triangles from $P^\prime_a$ and $P^\prime_b$ will
 be merged and the union result can be obtained.
 
-This method is robust and quick enough for our application since the shape 
-of the polyhedrons are regular. The global surface of the initial mesh 
+This method is robust and quick enough for our application since the shape
+of the polyhedrons are regular. The global surface of the initial mesh
 $M_{init}$ can then be calculated as:
 %%%%%%%%%added in thesis only
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -566,7 +566,39 @@ zone.
 
 Since the shape of the initially reconstructed surface $M_{init}$ is usually unnatural and jaggy, we then improve it through iterative refinement and smoothing.
 
-For the mesh refinement, we used the algorithm proposed in~\cite{LP03} to produce a result similar to the Delaunay-like triangulation through iterative triangle splitting and edge swapping. To ensure the interpolation on the input curves, edge swapping is restricted to the edges which do not belong to the input cross sections.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%modified in the revised thesis
+For the mesh refinement, we used the algorithm proposed in~\cite{LP03} to produce a result similar to the Delaunay-like triangulation through iterative triangle splitting and edge swapping. 
+
+First, we compute the length attribute $\sigma_i$ for each vertex $v^0_i$ on the input cross sections as the average length of all the edges adjacent to $v^0_i$. The attribute for
+each neighbor vertex $v^1_i$ of $v^0_i$ which is not on the input cross sections will
+be computed as the average of $\sigma_i$ of all $v^0_i$s which are neighbors of $v^1_i$.
+The length attributes for all other vertices will be computed ring by ring in 
+this propagation way.
+
+Then, for each triangle $(v_i, v_j, v_k)$, we compute its centroid $v_c$ and the 
+length attribute $\sigma_c$ for $v_c$ as 
+$\sigma_c= (\sigma_i + \sigma_j + \sigma_k)/3$. For each vertex $\{v_m | m=i, j, k\}$ 
+of this triangle, if $\alpha ||v_m-v_c||> \sigma_c$ and $\alpha ||v_m-v_c||> \sigma_m$
+(we set $\alpha=\sqrt{2}$ as suggested in~\cite{LP03}),
+we then replace the triangle $(v_i, v_j, v_k)$ with triangles $(v_i, v_j, v_c)$,
+$(v_j, v_k, v_c)$ and $(v_k, v_i, v_c)$, and relax the edges $(v_i, v_j)$, $(v_j, v_k)$
+and $(v_k, v_i)$.
+
+Here relaxing an edge $(v_i, v_j)$ means for the two triangles $(v_i, v_j, v_k)$ and
+$(v_i, v_j, v_n)$ adjacent to $(v_i, v_j)$, we check if $v_k$ and $v_n$ lie inside
+the triangles $(v_i, v_j, v_n)$ and $(v_i, v_j, v_k)$ respectively. If yes, we implement 
+the edge swapping to let the two triangles become $(v_i, v_k, v_n)$ and $(v_j, v_k, v_n)$.
+To ensure the interpolation on the input curves, this edge swapping is restricted to 
+the edges which do not belong to the input cross sections.
+
+If there are new triangles created in the above step, we relax all the edges and
+repeat this step; otherwise, the refinement process is complete.
+
+
+
+%%%%%%%%%modified in the revised thesis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 For the mesh smoothing, we adopted the algorithm in~\cite{YB02} to produce meshes with smooth shapes. The initial surface is evolved by first moving each vertex along its normal direction to minimize the local curvature differences. Then to improve the computational stability, the triangle sizes are made as equal as possible by moving the vertices along the tangential direction. These two movements are implemented iteratively on the vertices that do not lie on the input cross section curves.
 
