@@ -568,39 +568,59 @@ Since the shape of the initially reconstructed surface $M_{init}$ is usually unn
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%modified in the revised thesis
-For the mesh refinement, we used the algorithm proposed in~\cite{LP03} to produce a result similar to the Delaunay-like triangulation through iterative triangle splitting and edge swapping. 
+For the mesh refinement, we used the algorithm proposed in~\cite{LP03} to produce a result similar to the Delaunay-like triangulation through iterative triangle splitting and edge swapping.
 
 First, we compute the length attribute $\sigma_i$ for each vertex $v^0_i$ on the input cross sections as the average length of all the edges adjacent to $v^0_i$. The attribute for
 each neighbor vertex $v^1_i$ of $v^0_i$ which is not on the input cross sections will
 be computed as the average of $\sigma_i$ of all $v^0_i$s which are neighbors of $v^1_i$.
-The length attributes for all other vertices will be computed ring by ring in 
+The length attributes for all other vertices will be computed ring by ring in
 this propagation way.
 
-Then, for each triangle $(v_i, v_j, v_k)$, we compute its centroid $v_c$ and the 
-length attribute $\sigma_c$ for $v_c$ as 
-$\sigma_c= (\sigma_i + \sigma_j + \sigma_k)/3$. For each vertex $\{v_m | m=i, j, k\}$ 
+Then, for each triangle $(v_i, v_j, v_k)$, we compute its centroid $v_c$ and the
+length attribute $\sigma_c$ for $v_c$ as
+$\sigma_c= (\sigma_i + \sigma_j + \sigma_k)/3$. For each vertex $\{v_m | m=i, j, k\}$
 of this triangle, if $\alpha ||v_m-v_c||> \sigma_c$ and $\alpha ||v_m-v_c||> \sigma_m$
 (we set $\alpha=\sqrt{2}$ as suggested in~\cite{LP03}),
-we then replace the triangle $(v_i, v_j, v_k)$ with triangles $(v_i, v_j, v_c)$,
+we then split the triangle $(v_i, v_j, v_k)$ to triangles $(v_i, v_j, v_c)$,
 $(v_j, v_k, v_c)$ and $(v_k, v_i, v_c)$, and relax the edges $(v_i, v_j)$, $(v_j, v_k)$
 and $(v_k, v_i)$.
 
 Here relaxing an edge $(v_i, v_j)$ means for the two triangles $(v_i, v_j, v_k)$ and
 $(v_i, v_j, v_n)$ adjacent to $(v_i, v_j)$, we check if $v_k$ and $v_n$ lie inside
-the triangles $(v_i, v_j, v_n)$ and $(v_i, v_j, v_k)$ respectively. If yes, we implement 
+the triangles $(v_i, v_j, v_n)$ and $(v_i, v_j, v_k)$ respectively. If yes, we implement
 the edge swapping to let the two triangles become $(v_i, v_k, v_n)$ and $(v_j, v_k, v_n)$.
-To ensure the interpolation on the input curves, this edge swapping is restricted to 
+To ensure the interpolation on the input curves, this edge swapping is restricted to
 the edges which do not belong to the input cross sections.
 
 If there are new triangles created in the above step, we relax all the edges and
-repeat this step; otherwise, the refinement process is complete.
+repeat the triangle splitting step; otherwise, the refinement process is complete.
 
 
+For the mesh smoothing, we adopted the algorithm in~\cite{YB02} to produce meshes 
+with smooth shapes. The position $p_i$ of each vertex $v_i$ is updated to $p^\prime_i$
+through the following equation:
+
+\begin{equation}
+\label{eq:surfsmooth}
+    p^\prime_i = p_i + \tau N_i + \epsilon T_i.
+\end{equation}
+In the above equation, $N_i$ is the unit normal vector at $v_i$. We compute $N_i$
+as the normalized weighted sum of of the normals of the incident triangles of $v_i$, 
+with weights equal to the areas of the triangles. We set the step size
+$\tau = A^2/150$ as suggested in~\cite{YB02}, where $A$ is the minimum area 
+among all the incident triangles. To improve the stability of the surface
+evolution through making the triangle sizes as equal as possible, we then 
+move the vertex along a tangential vector $T_i$. More precisely, we compute it
+as $T_i = \delta_i + N_i$, where $\delta_i$ is the vector pointing from $v_i$
+to the centroid of all its neighbor vertices. The step size $\epsilon$ 
+is set to $0.5$ in Eq.~\ref{eq:surfsmooth}. Similarly, the smoothing is only 
+limited to the vertices which do not lie on the input cross sections 
+to ensure the interpolation.
+
+%The initial surface is evolved by first moving each vertex along its normal direction to minimize the local curvature differences. Then to improve the computational stability, the triangle sizes are made as equal as possible by moving the vertices along the tangential direction. These two movements are implemented iteratively on the vertices that do not lie on the input cross section curves.
 
 %%%%%%%%%modified in the revised thesis
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-For the mesh smoothing, we adopted the algorithm in~\cite{YB02} to produce meshes with smooth shapes. The initial surface is evolved by first moving each vertex along its normal direction to minimize the local curvature differences. Then to improve the computational stability, the triangle sizes are made as equal as possible by moving the vertices along the tangential direction. These two movements are implemented iteratively on the vertices that do not lie on the input cross section curves.
 
 In our implementation, we alternatively refine and smooth the initial mesh for 10 iterations. The result surface will have satisfactory quality and its interpolation on the input cross sections is maintained.
 
