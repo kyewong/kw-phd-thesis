@@ -587,9 +587,9 @@ and $(v_k, v_i)$.
 
 Here relaxing an edge $(v_i, v_j)$ means for the two triangles $(v_i, v_j, v_k)$ and
 $(v_i, v_j, v_n)$ adjacent to $(v_i, v_j)$, we check if $v_k$ and $v_n$ lie inside
-the circumcircles of triangles $(v_i, v_j, v_n)$ and $(v_i, v_j, v_k)$ respectively. 
-If yes, we implement the edge swapping to let the two triangles become 
-$(v_i, v_k, v_n)$ and $(v_j, v_k, v_n)$. To ensure the interpolation on the input curves, 
+the circumcircles of triangles $(v_i, v_j, v_n)$ and $(v_i, v_j, v_k)$ respectively.
+If yes, we implement the edge swapping to let the two triangles become
+$(v_i, v_k, v_n)$ and $(v_j, v_k, v_n)$. To ensure the interpolation on the input curves,
 the edge swapping is restricted to the edges which do not belong to the input cross sections.
 
 If there are new triangles created in the triangle splitting step, we relax all the edges
@@ -609,11 +609,11 @@ as the normalized weighted sum of the normals of the incident triangles of $v_i$
 with weights equal to the areas of the triangles. We set the factor
 $\tau_i = A_i^2/150$ as suggested in~\cite{YB02}, where $A_i$ is the minimum area
 among all the incident triangles of $v_i$. To improve the stability of the surface
-evolution, we then move the vertex along a tangential vector $T_i$ to make 
+evolution, we then move the vertex along a tangential vector $T_i$ to make
 the triangle sizes as equal as possible. More precisely, we compute it
 as $T_i = \delta_i + N_i$, where $\delta_i$ is the vector pointing from $v_i$
 to the centroid of all its neighbor vertices. The factor $\epsilon_i$
-is set to $0.5$ in Eq.~\ref{eq:surfsmooth}. Similarly, the smoothing is only
+is set to $0.5$ in Eq.~\ref{eq:surfsmooth}. Similarly, the position update is only
 limited to the vertices which do not lie on the input cross sections
 to ensure the interpolation.
 
