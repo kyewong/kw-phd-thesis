@@ -65,7 +65,7 @@
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{53}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{53}
 \contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{53}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces An example of surface reconstruction from non-intersected cross sections in the \textit {body} zones. (a) The input cross sections; (b) Partition result. The red planes are the bounding planes of each zone and the numbers represent the indices of the zones; (c)-(d) Cylinders generated from the two cross sections in Zone 1; (e) The union of cylinders in Zone 1; (f) The unions of cylinders in all zones; (g) The initial reconstruction result obtained by stitching surfaces in all zones; (h) The final reconstruction result after refinement and smoothing.}}{55}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces An example of surface reconstruction from non-intersected cross sections in the \textit {body} zones. (a) The input cross sections; (b) Partition result. The red planes are the bounding planes of each zone and the numbers represent the indices of the zones; (c)-(d) Cylinders generated from the two cross sections in Zone 1; (e) The union of cylinders in Zone 1; (f) The unions of cylinders in all zones; (g) The initial reconstruction result obtained by stitching surfaces in all zones; (h)-(i) The results after 2 and 5 iterations of refinement and smoothing. (j) The final reconstruction result after 10 iterations of refinement and smoothing.}}{55}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{55}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{55}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{55}
@@ -74,6 +74,8 @@
 \contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{55}
 \contentsline {subfigure}{\numberline {(g)}{\ignorespaces {}}}{55}
 \contentsline {subfigure}{\numberline {(h)}{\ignorespaces {}}}{55}
+\contentsline {subfigure}{\numberline {(i)}{\ignorespaces {}}}{55}
+\contentsline {subfigure}{\numberline {(j)}{\ignorespaces {}}}{55}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces An example of surface reconstruction from intersected cross sections in the \textit {body} zones. (a) The input cross sections. (b)-(c) Cylinders are generated from the two cross sections and perturbed; (d) The union of cylinders in the zone; (e) The initial reconstruction result; (f) The final reconstruction result after refinement and smoothing.}}{56}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{56}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{56}
