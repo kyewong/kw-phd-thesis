@@ -295,26 +295,26 @@ sections and is thus ignored.
     \label{fig:cshape:g}
     \begin{minipage}[b]{0.22\textwidth}
       \centering
-      \includegraphics[scale=0.15]{figs/f3.surf-cshape-7.eps}
+      \includegraphics[scale=0.18]{figs/f3.surf-cshape-7.eps}
     \end{minipage}}
   \\
   \subfigure[]{
     \label{fig:cshape:h}
     \begin{minipage}[b]{0.22\textwidth}
       \centering
-      \includegraphics[scale=0.15]{figs/f3.surf-cshape-RS2.eps}
+      \includegraphics[scale=0.18]{figs/f3.surf-cshape-RS2.eps}
     \end{minipage}}
   \subfigure[]{
     \label{fig:cshape:i}
     \begin{minipage}[b]{0.22\textwidth}
       \centering
-      \includegraphics[scale=0.15]{figs/f3.surf-cshape-RS5.eps}
+      \includegraphics[scale=0.18]{figs/f3.surf-cshape-RS5.eps}
     \end{minipage}}
   \subfigure[]{
     \label{fig:cshape:j}
-    \begin{minipage}[b]{0.44\textwidth}
+    \begin{minipage}[b]{0.52\textwidth}
       \centering
-      \includegraphics[scale=0.15]{figs/f3.surf-cshape-8.eps}
+      \includegraphics[scale=0.18]{figs/f3.surf-cshape-8.eps}
     \end{minipage}}
   \caption{An example of surface reconstruction from non-intersected cross sections in the \textit{body} zones. (a) The input cross sections; (b) Partition result. The red planes are the bounding planes of each zone and the numbers represent the indices of the zones; (c)-(d) Cylinders generated from the two cross sections in Zone 1; (e) The union of cylinders in Zone 1; (f) The unions of cylinders in all zones; (g) The initial reconstruction result obtained by stitching surfaces in all zones; (h)-(i) The results after 2 and 5 iterations of refinement and
   smoothing. (j) The final reconstruction result after 10 iterations of refinement and smoothing.}
@@ -636,7 +636,8 @@ to ensure the interpolation.
 %%%%%%%%%modified in the revised thesis
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In our implementation, we alternatively refine and smooth the initial mesh for 10 iterations. The result surface will have satisfactory quality and its interpolation on the input cross sections is maintained.
+In our implementation, we alternatively refine and smooth the initial mesh for 10 iterations. The result surface will have satisfactory quality and its interpolation on the input cross sections is maintained. An example of the
+refinement and smoothing process can be found in Figure~\ref{fig:cshape}.
 
 
 %=================section==================
