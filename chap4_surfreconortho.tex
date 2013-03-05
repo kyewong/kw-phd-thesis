@@ -383,7 +383,7 @@ cylinders in this case can be found in Figure~\ref{fig:cshape}.
       \centering
       \includegraphics[scale=0.15]{figs/f3.surf-csinters-7.eps}
     \end{minipage}}
-  \caption{An example of surface reconstruction from intersected cross sections in the \textit{body} zones. (a) The input cross sections. (b)-(c) Cylinders are generated from the two cross sections and perturbed; (d) The union of cylinders in the zone; (e) The initial reconstruction result; (f) The final reconstruction result after refinement and smoothing.}
+  \caption{An example of surface reconstruction from intersected cross sections in the \textit{body} zones. (a) The input cross sections; (b)-(c) Cylinders are generated from the two cross sections and perturbed; (d) The union of cylinders in the zone; (e) The initial reconstruction result; (f) The final reconstruction result after refinement and smoothing.}
   \label{fig:csinters} %% label for entire figure
 \end{figure*}
 
@@ -400,7 +400,8 @@ translating a subset of points of $cl_p^t$ which lie on the neighbor
 face $f_{ik}$ towards the center point of $cl_p^t$ a small distance,
 such that there will not be any face of the result cylinder
 $cl_p^{ptb}$ coincide with $f_{ik}$, and interpolation of the final
-surface on $cs_q$ can thus be achieved. Strictly speaking,
+surface on $cs_q$ can thus be achieved. An illustration of this perturbation
+process can be found in Figure~\ref{fig:csintersPerturb}. Strictly speaking,
 $cl_p^{ptb}$ will not be a cylinder anymore, since the shapes of its
 bottom and top are not the same after the perturbation. However,
 this will not affect the union calculation which takes general
@@ -411,6 +412,43 @@ sections (see Figure~\ref{fig:csinters:d}). This perturbation method
 also works for the generation of a cylinder from a cross section
 which intersects with other cross sections on multiple neighbor
 faces.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%added in thesis only
+\begin{figure} [htbp]
+  \centering
+  \subfigure[]{
+    \centering
+    \label{fig:csintersPerturb:a} %% label for first subfigure
+    \begin{minipage}[b]{0.3\textwidth}%\textwidth   %\linewidth
+      \centering
+      \includegraphics[scale=0.33]{figs/f4.illu-non-intsct-per1.eps}%0.25
+    \end{minipage}}
+  \subfigure[]{
+    \centering
+    \label{fig:csintersPerturb:b}
+    \begin{minipage}[b]{0.3\textwidth}
+      \centering
+      \includegraphics[scale=0.33]{figs/f4.illu-non-intsct-per2.eps}
+    \end{minipage}}
+  \subfigure[]{
+    \label{fig:csintersPerturb:c}
+    \begin{minipage}[b]{0.3\textwidth}
+      \centering
+      \includegraphics[scale=0.33]{figs/f4.illu-non-intsct-per3.eps}
+    \end{minipage}}
+  \caption{Illustration of constructing a cylinder for intersected cross sections
+  in a \textit{body} zone.
+  (a) Input cross sections;
+  (b) Generate initial cylinder $cl_p^{ini}$ from one cross section $cs_p$. It can be 
+  seen that the other cross section is covered by $cl_p^{ini}$;
+  (c) Perturb the top of $cl_p^{ini}$ a little bit, such that the result cylinder
+  $cl_p^{ptb}$ will lie within the zone and interpolate $cs_p$.}
+  \label{fig:csintersPerturb}
+\end{figure}
+%%%%%%%%%added in thesis only
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \section{Sub-surface reconstruction for an \textit{end} zone}
 \label{ch4:sec:algo:end}
