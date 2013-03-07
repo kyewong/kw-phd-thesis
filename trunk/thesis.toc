@@ -1,7 +1,7 @@
 \contentsline {section}{Abstract}{i}
 \contentsline {section}{Acknowledgements}{iii}
 \contentsline {section}{Table of Contents}{iv}
-\contentsline {section}{List of Figures}{vii}
+\contentsline {section}{List of Figures}{v}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Background}{1}
 \contentsline {section}{\numberline {1.2}Problem statement and objectives}{3}
