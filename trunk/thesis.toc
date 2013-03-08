@@ -1,7 +1,7 @@
 \contentsline {section}{Abstract}{i}
 \contentsline {section}{Acknowledgements}{iii}
 \contentsline {section}{Table of Contents}{iv}
-\contentsline {section}{List of Figures}{v}
+\contentsline {section}{List of Figures}{vii}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Background}{1}
 \contentsline {section}{\numberline {1.2}Problem statement and objectives}{3}
@@ -16,46 +16,46 @@
 \contentsline {section}{\numberline {2.3}Surface reconstruction from cross sections}{25}
 \contentsline {chapter}{\numberline {3}Reference Plane Assisted Sketching Interface for Progressive Shape Design}{28}
 \contentsline {section}{\numberline {3.1}Introduction}{28}
-\contentsline {section}{\numberline {3.2}User interface}{30}
+\contentsline {section}{\numberline {3.2}User interface}{31}
 \contentsline {subsection}{\numberline {3.2.1}Sketching tool}{31}
 \contentsline {subsection}{\numberline {3.2.2}Sculpting tool}{34}
 \contentsline {subsubsection}{Basic functions}{34}
 \contentsline {subsubsection}{Deformation tool}{36}
-\contentsline {section}{\numberline {3.3}Algorithms}{38}
-\contentsline {subsection}{\numberline {3.3.1}Input stroke preprocessing}{38}
+\contentsline {section}{\numberline {3.3}Algorithms}{37}
+\contentsline {subsection}{\numberline {3.3.1}Input stroke preprocessing}{37}
 \contentsline {subsection}{\numberline {3.3.2}Stroke rules}{39}
-\contentsline {subsection}{\numberline {3.3.3}Reference plane calculation}{43}
-\contentsline {section}{\numberline {3.4}Results and discussions}{46}
-\contentsline {chapter}{\numberline {4}Progressive Surface Reconstruction from Orthogonal Cross Sections}{50}
-\contentsline {section}{\numberline {4.1}Introduction}{50}
+\contentsline {subsection}{\numberline {3.3.3}Generation of reference planes}{43}
+\contentsline {section}{\numberline {3.4}Results}{45}
+\contentsline {chapter}{\numberline {4}Progressive Surface Reconstruction from Orthogonal Cross Sections}{49}
+\contentsline {section}{\numberline {4.1}Introduction}{49}
 \contentsline {section}{\numberline {4.2}Overview of the algorithm}{51}
-\contentsline {section}{\numberline {4.3}Sub-surface reconstruction for a \textit {body} zone}{54}
-\contentsline {section}{\numberline {4.4}Sub-surface reconstruction for an \textit {end} zone}{57}
-\contentsline {section}{\numberline {4.5}Global surface reconstruction}{59}
-\contentsline {subsection}{\numberline {4.5.1}Mesh improvement}{60}
-\contentsline {section}{\numberline {4.6}Results and discussions}{62}
-\contentsline {chapter}{\numberline {5}Triangular Mesh Deformation via Edge-Based Graph}{64}
-\contentsline {section}{\numberline {5.1}Introduction}{64}
-\contentsline {section}{\numberline {5.2}Edge-based graph}{66}
-\contentsline {section}{\numberline {5.3}Flexible mesh deformation}{67}
-\contentsline {subsection}{\numberline {5.3.1}First and second order discrete differential quantities}{67}
-\contentsline {subsection}{\numberline {5.3.2}Energy function for flexible deformation}{71}
-\contentsline {subsection}{\numberline {5.3.3}Solving of the system}{74}
-\contentsline {section}{\numberline {5.4}Specification of the balance parameters}{75}
-\contentsline {section}{\numberline {5.5}Results and discussions}{82}
-\contentsline {chapter}{\numberline {6}Editable Surface Reconstruction from Cross Sections with Arbitrary Orientations}{85}
-\contentsline {section}{\numberline {6.1}Introduction}{85}
-\contentsline {section}{\numberline {6.2}Overview of the algorithm}{88}
-\contentsline {section}{\numberline {6.3}Surface reconstruction}{89}
-\contentsline {subsection}{\numberline {6.3.1}Sub-surface reconstruction for a \textit {body} zone}{90}
-\contentsline {subsection}{\numberline {6.3.2}Sub-surface reconstruction for an \textit {end} zone}{94}
-\contentsline {subsection}{\numberline {6.3.3}Global surface reconstruction}{96}
-\contentsline {section}{\numberline {6.4}Topology editing}{96}
-\contentsline {subsection}{\numberline {6.4.1}The join operation}{97}
-\contentsline {subsection}{\numberline {6.4.2}The split operation}{99}
-\contentsline {section}{\numberline {6.5}Results and discussions}{101}
-\contentsline {chapter}{\numberline {7}Conclusions}{105}
-\contentsline {section}{\numberline {7.1}Summary}{105}
-\contentsline {section}{\numberline {7.2}Future directions}{107}
-\contentsline {chapter}{References}{109}
-\contentsline {chapter}{Author's Publications}{128}
+\contentsline {section}{\numberline {4.3}Sub-surface reconstruction for a \textit {body} zone}{53}
+\contentsline {section}{\numberline {4.4}Sub-surface reconstruction for an \textit {end} zone}{56}
+\contentsline {section}{\numberline {4.5}Global surface reconstruction}{58}
+\contentsline {subsection}{\numberline {4.5.1}Mesh improvement}{59}
+\contentsline {section}{\numberline {4.6}Results and discussions}{61}
+\contentsline {chapter}{\numberline {5}Triangular Mesh Deformation via Edge-Based Graph}{63}
+\contentsline {section}{\numberline {5.1}Introduction}{63}
+\contentsline {section}{\numberline {5.2}Edge-based graph}{65}
+\contentsline {section}{\numberline {5.3}Flexible mesh deformation}{66}
+\contentsline {subsection}{\numberline {5.3.1}First and second order discrete differential quantities}{66}
+\contentsline {subsection}{\numberline {5.3.2}Energy function for flexible deformation}{70}
+\contentsline {subsection}{\numberline {5.3.3}Solving of the system}{73}
+\contentsline {section}{\numberline {5.4}Specification of the balance parameters}{74}
+\contentsline {section}{\numberline {5.5}Results and discussions}{81}
+\contentsline {chapter}{\numberline {6}Editable Surface Reconstruction from Cross Sections with Arbitrary Orientations}{84}
+\contentsline {section}{\numberline {6.1}Introduction}{84}
+\contentsline {section}{\numberline {6.2}Overview of the algorithm}{87}
+\contentsline {section}{\numberline {6.3}Surface reconstruction}{88}
+\contentsline {subsection}{\numberline {6.3.1}Sub-surface reconstruction for a \textit {body} zone}{89}
+\contentsline {subsection}{\numberline {6.3.2}Sub-surface reconstruction for an \textit {end} zone}{93}
+\contentsline {subsection}{\numberline {6.3.3}Global surface reconstruction}{95}
+\contentsline {section}{\numberline {6.4}Topology editing}{95}
+\contentsline {subsection}{\numberline {6.4.1}The join operation}{96}
+\contentsline {subsection}{\numberline {6.4.2}The split operation}{98}
+\contentsline {section}{\numberline {6.5}Results and discussions}{100}
+\contentsline {chapter}{\numberline {7}Conclusions}{104}
+\contentsline {section}{\numberline {7.1}Summary}{104}
+\contentsline {section}{\numberline {7.2}Future directions}{106}
+\contentsline {chapter}{References}{108}
+\contentsline {chapter}{Author's Publications}{127}

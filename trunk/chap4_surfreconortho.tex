@@ -15,39 +15,50 @@ is usually a set of planar cross section curves which are extracted
 from scanned 2D slices or sketched from scratch, and the output is a
 smooth surface which interpolates the input curves.
 
-%progressive surface reconstruction,input, output
-In our sketch-based modeling system, the sketching function
-requires reconstruction where the input is a set of cross sections
-$CS=\{cs_i~|~i=1,...,m\}$ which are progressively sketched by the
-users and lie on a set of orthogonal planes $P=\{p_i~|~i=1,...,n\}$
-in 3D space $\mathbb{R}^3$. Each plane $p_i$ can be defined by
-$x=d_i$, $y=d_i$ or $z=d_i$ ($d_i\in \mathbb{R}$). The cross
-sections are represented as polylines. In the progressive modeling
-process, the output in each step is expected to be a closed
+%input, output
+The input of the surface reconstruction function is a set of cross
+sections $CS=\{cs_i~|~i=1,...,m\}$ which are progressively sketched
+by the users and lie on a set of orthogonal planes
+$P=\{p_i~|~i=1,...,n\}$ in 3D space $\mathbb{R}^3$. Each plane $p_i$
+can be defined by $x=d_i$, $y=d_i$ or $z=d_i$ ($d_i\in \mathbb{R}$).
+The cross sections are represented as polylines. In the progressive
+modeling process, the output in each step is expected to be a closed
 2-manifold triangular mesh $M$ interpolating the sketched cross
 sections $CS^\prime=\{cs_i~|~i=1,...,m^\prime, m^\prime\leq m\}$.
 Each edge of $M$ is incident to two faces and the faces incident to
 a vertex forms a closed fan.
 
-As introduced in Section~\ref{ch2:sec:surfreconst}, most previous
+As has been introduced in Section~\ref{ch2:sec:surfreconst}, most previous
 works mainly focused on the reconstruction from parallel cross
-sections, while recently Liu et al.~\cite{LBDLJ08} proposed a method
-to reconstruct surfaces from more complicated non-parallel cross
-sections. The method provides a more general solution to the surface
-reconstruction problem and is useful in applications which only
-require a final reconstruction result given all the input cross
-sections. However, it cannot meet the some requirements in our
-progressive sketching interface. Providing the cross sections are
-valid under the stroke rules proposed in
+sections, while the method in~\cite{LBDLJ08} is able to build a
+smooth mesh from cross sections on non-parallel planes and with
+complicated mutual relationship. It first used the classical
+algorithm in Computational Geometry to partition the 3D space into
+zones bounded by the planes that the cross sections lie on. Then
+within each zone, the cross sections are projected onto the
+calculated Medial Axis(MA) planes. Next the cross sections and
+projections are connected to form the initial mesh, whose quality
+can be improved through iterative refinement and smoothing. This
+method is designed for applications which only require a final
+reconstruction result given all the input cross sections, such as
+bio-medical modeling and so on. However, it cannot meet some
+requirements in our progressive sketching interface. Providing the
+cross sections are valid under the stroke rules proposed in
 Section~\ref{ch3:sec:algo:rule}, these requirements include:
 
 %specific requirements on the algorithm
 \begin{enumerate}
-    \item The update of the model shape during the progressive modeling process should be gradual regardless of the input orders of the sketched curves, and unexpected shape change should be avoided.
+    \item The update of the model shape during the progressive modeling process should be
+natural regardless of the input orders of the sketched curves, and
+unexpected shape change should be avoided.
     \label{req:1}
-    \item The reconstructed model is expected to have only one connected component, when the user iteratively adds new sketches that are closely related to the shape in the current design stage.
+    \item The reconstructed model is expected to have only one connected component,
+when the user iteratively adds new sketches that are closely related
+to the shape in the current design stage.
     \label{req:2}
-    \item The shape of the final model should be insensitive to the user's sketching order. In other words, given a same set of curves drawn with different orders, the reconstruction result should be unique.
+    \item The shape of the final model should be insensitive to the user's
+sketching order. In other words, given a same set of curves drawn
+with different orders, the reconstruction result should be unique.
     \label{req:3}
 \end{enumerate}
 
@@ -110,12 +121,12 @@ this chapter meets the above requirements.
       \includegraphics[scale=0.6]{figs/f4.illu-workflow-2d7.eps}
     \end{minipage}}
   \caption{2D illustration of our surface reconstruction algorithm.
-  (a) Input segments (red, corresponding to the 3D cross sections) and partitioned zones;
-  (b) The \textit{empty} zones (blue), \textit{end} zones (green) and \textit{body} zones (yellow);
-  (c) Generating polygons (corresponding to the cylinders) in \textit{body} zones;
-  (d) Generating polygons in the \textit{end} zones using the same way as the reconstruction in the \textit{body} zones. The reconstruction result contains multiple components;
-  (e) Generating extended polygons for an \textit{end} zone;
-  (f) Generating polygons for all \textit{end} zones;
+  (a) Input segments (red, corresponding to the 3D cross sections) and partitioned zones.
+  (b) The \textit{empty} zones (blue), \textit{end} zones (green) and \textit{body} zones (yellow).
+  (c) Generating polygons (corresponding to the cylinders) in \textit{body} zones.
+  (d) Generating polygons in the \textit{end} zones using the same way as the reconstruction in the \textit{body} zones. The reconstruction result contains multiple components.
+  (e) Generating extended polygons for an \textit{end} zone.
+  (f) Generating polygons for all \textit{end} zones.
   (g) The reconstruction result. }
   \label{fig:workflow2dortho}
 \end{figure*}
@@ -199,7 +210,12 @@ component) happened, which obviously goes against user's intention.
       \centering
       \includegraphics[scale=0.12]{figs/f3.surf-csgma-5.eps}
     \end{minipage}}
-  \caption{An example of comparing our surface reconstruction algorithm  and that of~\cite{LBDLJ08}. (a) Two cross sections are sketched first and then one more is added; (b) The initial reconstruction results in~\cite{LBDLJ08}. The Medial Axis planes (blue) in a zone are shown; (c) The final reconstruction results in~\cite{LBDLJ08}; (d) The initial reconstruction results in our algorithm. The union of cylinders in each zone is shown; (e) The final reconstruction results in our algorithm.}
+  \caption{An example of comparing our surface reconstruction algorithm  and that of~\cite{LBDLJ08}. 
+  (a) Two cross sections are sketched first and then one more is added. 
+  (b) The initial reconstruction results in~\cite{LBDLJ08}. The Medial Axis planes (blue) in a zone are shown. 
+  (c) The final reconstruction results in~\cite{LBDLJ08}. 
+  (d) The initial reconstruction results in our algorithm. The union of cylinders in each zone is shown. 
+  (e) The final reconstruction results in our algorithm.}
   \label{fig:csgma} %% label for entire figure
 \end{figure*}
 
@@ -316,8 +332,15 @@ sections and is thus ignored.
       \centering
       \includegraphics[scale=0.18]{figs/f3.surf-cshape-8.eps}
     \end{minipage}}
-  \caption{An example of surface reconstruction from non-intersected cross sections in the \textit{body} zones. (a) The input cross sections; (b) Partition result. The red planes are the bounding planes of each zone and the numbers represent the indices of the zones; (c)-(d) Cylinders generated from the two cross sections in Zone 1; (e) The union of cylinders in Zone 1; (f) The unions of cylinders in all zones; (g) The initial reconstruction result obtained by stitching surfaces in all zones; (h)-(i) The results after 2 and 5 iterations of refinement and
-  smoothing. (j) The final reconstruction result after 10 iterations of refinement and smoothing.}
+  \caption{An example of surface reconstruction from non-intersected cross sections in the \textit{body} zones. 
+  (a) The input cross sections. 
+  (b) Partition result. The red planes are the bounding planes of each zone and the numbers represent the indices of the zones. 
+  (c)-(d) Cylinders generated from the two cross sections in Zone 1. 
+  (e) The union of cylinders in Zone 1. 
+  (f) The unions of cylinders in all zones. 
+  (g) The initial reconstruction result obtained by stitching surfaces in all zones. 
+  (h)-(i) The results after 2 and 5 iterations of refinement and  smoothing. 
+  (j) The final reconstruction result after 10 iterations of refinement and smoothing.}
   \label{fig:cshape} %% label for entire figure
 \end{figure*}
 
@@ -383,7 +406,12 @@ cylinders in this case can be found in Figure~\ref{fig:cshape}.
       \centering
       \includegraphics[scale=0.15]{figs/f3.surf-csinters-7.eps}
     \end{minipage}}
-  \caption{An example of surface reconstruction from intersected cross sections in the \textit{body} zones. (a) The input cross sections; (b)-(c) Cylinders are generated from the two cross sections and perturbed; (d) The union of cylinders in the zone; (e) The initial reconstruction result; (f) The final reconstruction result after refinement and smoothing.}
+  \caption{An example of surface reconstruction from intersected cross sections in the \textit{body} zones. 
+  (a) The input cross sections. 
+  (b)-(c) Cylinders are generated from the two cross sections and perturbed. 
+  (d) The union of cylinders in the zone. 
+  (e) The initial reconstruction result. 
+  (f) The final reconstruction result after refinement and smoothing.}
   \label{fig:csinters} %% label for entire figure
 \end{figure*}
 
@@ -439,9 +467,9 @@ faces.
     \end{minipage}}
   \caption{Illustration of constructing a cylinder for intersected cross sections
   in a \textit{body} zone.
-  (a) Input cross sections;
-  (b) Generate initial cylinder $cl_p^{ini}$ from one cross section $cs_p$. It can be 
-  seen that the other cross section is covered by $cl_p^{ini}$;
+  (a) Input cross sections.
+  (b) Generate initial cylinder $cl_p^{ini}$ from one cross section $cs_p$. It can be
+  seen that the other cross section is covered by $cl_p^{ini}$.
   (c) Perturb the top of $cl_p^{ini}$ a little bit, such that the result cylinder
   $cl_p^{ptb}$ will lie within the zone and interpolate $cs_p$.}
   \label{fig:csintersPerturb}
@@ -545,7 +573,13 @@ extended in the same way until these requirements are satisfied.
       \centering
       \includegraphics[scale=0.14]{figs/f3.surf-end-6.eps}%0.12
     \end{minipage}}
-  \caption{An example of surface reconstruction in the \textit{end} and \textit{body} zones. (a) Input cross sections; (b) The partition result; (c) The extended cylinders for the \textit{end} zones.  The blue faces are those which may cause isolated surface components; (d) The unions of cylinders in all zones; (e) Final surface reconstruction result in our approach; (f) Reconstruction result using the algorithm in~\cite{LBDLJ08}.}
+  \caption{An example of surface reconstruction in the \textit{end} and \textit{body} zones. 
+  (a) Input cross sections. 
+  (b) The partition result. 
+  (c) The extended cylinders for the \textit{end} zones.  The blue faces are those which may cause isolated surface components. 
+  (d) The unions of cylinders in all zones. 
+  (e) Final surface reconstruction result in our approach. 
+  (f) Reconstruction result using the algorithm in~\cite{LBDLJ08}.}
   \label{fig:partition} %% label for entire figure
 \end{figure*}
 
