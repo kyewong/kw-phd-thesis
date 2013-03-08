@@ -18,37 +18,42 @@ modeling packages using the WIMP-style (Windows, Icon, Menu,
 Pointer) interfaces. Sketch-based modeling typically uses freeform
 curves (or strokes) as the basic modeling metaphor and allows user
 to produce 3D models using sketching or sculpting methods, which are
-quite similar to the creation behavior of artists in reality. In the
-sketching method, the user draws the 2D contours of a desired shape
-from scratch and the corresponding 3D model will be automatically
-generated after the sketching; while in the sculpting method, the
-user starts the creation from a very rough shape and uses various
-sketches or gestures to carve, deform, extend or smooth it to a
-desired one.
+quite similar to the creation behavior of artists in reality. It is 
+suitable for early conceptual design and idea communication.
+
+
+The processes in sketch-based modeling can roughly be classified
+into sketching and sculpting~\cite{CIW08}, which correspond to two
+modeling phases: initial overall shape creation and shape editing,
+respectively. In the sketching phase, the user draws strokes as the
+contours of a desired shape and an overall 3D model is created after
+the sketching. In the sculpting phase, the user uses various
+sketches to perform carving, deformation, extrusion or smoothing to
+interactively edit the 3D model.
 
 %the problems of sketch-based modeling.
 %problem 1: no hint/reference shapes in sketching, sketches not preserved in sculpting
-Note that the distinguished features of sketch-based modeling also
-propose some challenges. One challenge comes from the process of the
-sketching and sculpting operations. Since the sketching operation
-does not directly communicate about the shape that the user has in
-his mind, without the help of visual mediums for describing the 3D
-shape during drawings, sketching a model from scratch takes a great
-deal of skill~\cite{CIW08}. However, it is not easy to design an
-intuitive sketching interface and develop the supporting modeling
-algorithm to give the user necessary visual hints for the sketching
-operation. As introduced in Section~\ref{ch2:sec:sbim:sketch},
-existing sketching methods are designed to generate the result model
-after all the curves have been sketched, ambiguities may exist on
-both the perception on the input sketches and output shape. Although
-the sculpting operation provides an alternative solution for
-intuitive 3D modeling by allowing the iterative carve operation from
-a rough shape, it will be tedious when the shape to create is not
-simple and the quality of the model may not be well preserved after
-many editing operations. Meanwhile, with the progress of sculpting,
-previous sketches which represent the user's intentions on
-describing the shape of the model may probably be changed or
-discarded.
+As introduced in Section~\ref{ch2:sec:sbim:sketch},
+Many sketch-based modeling systems heavily rely on sculpting and
+their sketching phase is rather simple. A simple sketching
+directly creates a very rough overall model, starting from which the
+sculpting is applied to perform various sophisticated shape editing.
+The advantage of this approach is that the sculpting process is
+intuitive and the user can see the intermediate modeling results
+immediately. The disadvantage is that the sculpting is very tedious
+and time-consuming when the target model is complex geometrically
+and/or topologically. Also note that in the sculpting process, the
+initial strokes drawn in the sketching phase, which represent the
+user's intention about the shape of the target model, will generally
+be changed or discarded. On the other hand, there are some
+sketch-based modeling systems that mainly rely on
+sketching. They let the user sketch some feature lines or silhouettes of
+the target model and a good 3D model is created after all the sketches
+are drawn. As pointed out in \cite{CIW08}, nevertheless, such sketching
+operation does not directly communicate about the shape that the user
+has in his mind. Without the help of visual mediums for describing the 3D shape
+during drawings, sketching a 3D model takes a great deal of skill
+and restricts the medium to trained and experienced designers.
 
 
 %problem 2: 2D sketch --> 3D model
@@ -72,18 +77,19 @@ system correctly understands the user's intention and whether the
 creation and editing is successfully performed.
 
 %our contributions
-In this chapter, we propose methods to solve  these problems. First,
-to enhance the sketching function, we introduce a progressive
-modeling approach which takes both the existing sketches and the
-constructed 3D shape as references, when the user creates a 3D model
-through iterative sketching. In this way, the user will have a clear
-mind of the 3D shape he/she has sketched and unexpected model shape
-resulting from perception ambiguity can be avoided. Meanwhile, all
-the sketches which represent the user's depiction of the 3D shape
-are preserved.
-%To better support this approach, we propose a new surface reconstruction algorithm which builds a 3D smooth surface with arbitrary topology from user sketched cross sections in real time. Comparing to existing algorithms, our method is able to produce natural shape changes during the progressive modeling process regardless of the input order of the sketches, and makes the final surface be composed of only one component in most cases.
+In this chapter, we propose methods to solve  these problems. First, 
+we enhance the sketching phase by integrating the
+modeling capability of the conventional sketching and the
+intuitiveness and instant modeling of the conventional sculpting.
+Specifically, in the sketching phase, the user iteratively sketch on
+three sets of orthogonal planes and all the sketches are preserved
+to define the shape during the sketching, which make the sketching
+phase enable to create a complicated  3D mesh. The 3D model is
+progressively created and displayed immediately after each sketch,
+which makes the sketching phase intuitive as sculpting and the user
+get aware of the 3D shape he sketched.
 
-Second, to reasonably map the 2D user sketches into 3D space and
+Second, to properly map the 2D user sketches into 3D space and
 make the location and orientation of strokes in 3D space meaningful
 and intuitive, we provide some reference geometry, with reference to
 which the strokes were sketched. In particular, besides the shape in
@@ -144,9 +150,10 @@ Our sketching interface provides both the sketching and sculpting
 tools for the user to create and edit a 3D model. The former is used
 for sketching the shape of the model progressively, and the latter,
 which includes a series of editing functions such as deformation,
-extrusion and so on, is used to refine or further modify the created
-model. The output is a triangular mesh, which is a popular
-representation for digital geometry.
+extrusion and so on, is used to further edit or refine the created
+model. The sculpting tool is also sketch-based. With this interface, 
+the user can easily create and edit a 3D object in a short period by
+sketching strokes.
 
 \subsection{Sketching tool}
 \label{Sec:UI:sketch}
@@ -180,6 +187,8 @@ representation for digital geometry.
       \centering
       \includegraphics[scale=0.2]{figs/f3.pig-4.eps}
     \end{minipage}}
+\\    
+    
   \subfigure[]{
     \label{fig:pig:e}
     \begin{minipage}[b]{0.18\textwidth}
@@ -198,125 +207,130 @@ representation for digital geometry.
       \centering
       \includegraphics[scale=0.22]{figs/f3.pig-7.eps}
     \end{minipage}}
-  \subfigure[]{
-    \label{fig:pig:h}
-    \begin{minipage}[b]{0.22\textwidth}
-      \centering
-      \includegraphics[scale=0.22]{figs/f3.pig-8.eps}
-    \end{minipage}}
+%  \subfigure[]{
+%    \label{fig:pig:h}
+%    \begin{minipage}[b]{0.22\textwidth}
+%      \centering
+%      \includegraphics[scale=0.22]{figs/f3.pig-8.eps}
+%    \end{minipage}}
   \subfigure[]{
     \label{fig:pig:i}
     \begin{minipage}[b]{0.26\textwidth}
       \centering
       \includegraphics[scale=0.22]{figs/f3.pig-9.eps}
     \end{minipage}}
-  \caption{Sketching tool. (a) Initially, three basic planes are provided; (b) A closed curve is sketched on the blue plane; (c) The preview of the reconstructed shape; (d) A new cross section is added on the red plane and the previewed shape is rendered; (e) The green plane is translated and three more cross sections are sketched; (f) More cross sections are added to refine the model; (g) The calculated cross section on the green plane is rendered semi-transparently to provide the user reference for further sketches; (h) Two incomplete cross sections are sketched on the green plane and the shape of the model is refined; (i) Final model.}
+  \caption{An example of using the sketching tool. 
+  (a) Initially three basic planes are provided. 
+  (b) A closed curve is sketched on the blue plane. 
+  (c) The preview of the reconstructed shape. 
+  (d) A new cross section is added on the red plane and the previewed shape is rendered. 
+  (e) The green plane is translated and three more cross sections are sketched. 
+  (f) More cross sections are added to update the overall model. 
+  (g) The intersection between the green plane and the current model is rendered semi-transparently
+  to provide reference for further sketches. 
+  (i) The final model.}
   \label{fig:pig} %% label for entire figure
 \end{figure*}
 
 %input of the system: cross sections on reference planes, why cross section
 Our sketching tool provides the user three sets of orthogonal planes
-as reference  planes. These reference planes are sketch planes, on
-which the user can sketch the cross sections of the model. The word
-\textit{cross section} means the intersection curve of the model
-surface with a plane. We choose the cross section as the input of
-the sketching tool for two considerations. First, it is an intuitive
-and accurate description of a 3D model since it just lies on the
-surface of the model. Comparing to other kinds of shape descriptors,
-such as the silhouettes, it will cause less perception ambiguities
-when the shape becomes complex. Second, a cross section is a planar
-curve which can be quickly sketched in 3D space with the help of the
-reference planes, and the sketching is thus simple yet effective for
-depicting the 3D model. Meanwhile, taking the cross sections as the input
-is also consistent with one of the visual rules in~\cite{HD00} that smooth
-lines are usually interpreted as the contours of the 3D objects by human being.
+as reference planes. These reference planes are sketch planes, on
+which the user can sketch the cross sections of the model.
+\textit{Cross section} curves are the intersection curves of the
+model with a plane. We choose the cross section as the input of the
+sketching tool for two considerations. First, cross sections are an
+intuitive and effective description of a 3D model. Figuring out the
+shape from cross sections is familiar in traditional CAD design and
+some medical applications. Comparing to silhouettes for shape
+description, there might exist fewer perception ambiguities using
+cross sections. Second, a cross section is a planar curve, so it is
+relatively easy to sketch a cross section with the help of a plane.
+Meanwhile, taking the cross sections as the input is also consistent 
+with one of the visual rules in~\cite{HD00} that smooth lines are 
+usually interpreted as the contours of the 3D objects by human being.
 
 %introduce reference planes
 Initially, the $x=0$, $y=0$ and $z=0$ planes serve as the three
-basic orthogonal planes. The user can define the cross sections of a
-3D model by sketching strokes on any of these basic planes. These
-three basic planes can also be translated along $x$, $y$ and $z$
-axis respectively to allow the sketch of more contour curves. This
-can result in several sets of parallel cross sections. Note that
-though it is possible to rotate the basic planes to provide more
-general reference planes and this could give the user more
-flexibilities to sketch the contours, the price for this flexibility
-is the algorithmic complexity of constructing 3D models from
-non-parallel curve networks, the complexity of design and use of
-interface, and the increase of occurrence of various ambiguities
-from sketching. Therefore after a careful trade-off, we just allow
-the basic planes to be translated and we find that this is generally
-sufficient in practice for sketch-based freeform design.
+basic orthogonal planes (Figures~\ref{fig:pig:a},\ref{fig:pig:d}).
+The user sketches the cross section of a 3D model on any of these
+basic planes (Figure~\ref{fig:pig:b}). These three basic planes can
+be translated along $x$, $y$ and $z$ axes respectively to allow the
+sketch of more contour curves
+(Figures~\ref{fig:pig:e},\ref{fig:pig:f}). This can result in
+several sets of parallel cross sections to describe the shape of the
+model. Though we can rotate the basic planes to get the general
+orientation of the planes, which could provide more flexibilities
+for the user to sketch the contours, this however makes the
+algorithm of constructing 3D models from complicated oriented curve
+networks and design and use of interface much complicated, and
+increases the occurrence of various ambiguities from sketching.
+Therefore after a trade-off, we just allow the basic planes to be
+translated and this is generally sufficient in practice for
+sketch-based freeform design.
 
 %preview function, progresive modeling
-The most distinguished feature of our system is the progressive
-modeling function during sketching. That is, after the sketching on
-one plane, the previewed up-to-date model which interpolates the
-sketched strokes will be reconstructed and shown to the user. Since
-comparing to the sculpting technique, sketching is an indirect way
-of communicating with a shape, and it relies on the sense of human
-perception~\cite{CIW08}, providing the previewed reconstruction
-result can help the user to get a clear mind of the shape and
-relative proportions of the constructed model after each sketch. It
-also serves as a hint and reference on the following sketches and
-makes the final shape conform to the user's expectation as much as
-possible. Both the previewed model and the auxiliary planes are
-rendered semi-transparently to avoid blocking the user's view on
-existing sketches and the whole 3D space when providing sketching
-references.
+One important feature of our sketching tool is the progressive
+updating of the shape during sketching. That is, after each
+sketching, the model that interpolates all the up-to-date sketched
+strokes will be reconstructed and previewed instantly just as the
+sculpting process (Figures~\ref{fig:pig:c},\ref{fig:pig:d}), while
+most existing sketching-based systems create the model only after
+all the sketches are completed. In general, the sketching tool in
+the conventional systems is an indirect way of communicating with a
+shape and it relies on the sense of human perception comparing to
+the sculpting tool~\cite{CIW08}. We provide prompt previewed
+reconstruction after each sketching, which can help the user be
+aware of the shape and his sketching. In addition, the current 3D
+shape also serves as a reference for the next sketch.
+
 
 %auxiliary functions: operations on cross sections, highlighted intersection points, automatic view rotation
-During the sketching process, all cross sections that  the user
-sketched, as well as those calculated from the previewed model and
-reference planes, are displayed and can be modified through
-oversketching or deleted. Note that sketching cross sections on a
-plane that intersects with the previewed shape looks similar to the
-method adopted in~\cite{NSAC05,KSV09} at first glance, which shapes
-a 3D model by iteratively oversketching its silhouette and deforming
-it. However, the intrinsic difference lies in that the previewed
-shape in our approach provides a reference for the following
-sketches but sets little limitation on them, which means that these
-sketches can be very flexible and the topology of the current shape
-may even be changed. While in the deformation method the sketches
-are restricted by the 3D model to be correspondence with the
-existing cross sections on it, thus only the geometry of the current
-shape can be modified.
+With the up-to-date model available and the current sketching plane,
+their intersection curve is computed and displayed
+semi-transparently to provide a reference for the use to sketch on
+the sketching plane (Figures~\ref{fig:pig:g}). Also during the
+sketching process, all sketched cross sections  are displayed and
+they can be modified through over-sketching or deleted. In addition,
+both the 3D model and the auxiliary planes are rendered
+semi-transparently to avoid blocking the user's view on existing
+sketches and the whole 3D space when providing sketching references.
 
-%partial cross section
-Since forcing the user to sketch complete cross sections may be
-troublesome and inaccurate, we also allow the input to be just a
-part of the cross section. Of course, such a stroke is to some
-extent arbitrary and may not be explained as a valid part of the
-cross section of the model to create. We thus set some requirements
-for such an input and try to make it valid (see the details in
-Section~\ref{ch4:sec:disc}).
-
-%automatic view rotation
-The system is also able to automatically rotate the view to make
-the user selected plane for sketching face him as much as possible.
-This is inspired by the observation in~\cite{BBS08} that a good view
-for the user to sketch the 2D strokes is the one that has a large
-visible projection. With this function, frequent manual viewpoint
-changes which may interrupt the user's attention on the sketching
-can be avoided.
+Our tool is also able to automatically rotate the view to make the
+user selected plane for sketching face him as much as possible. This
+is inspired by the observation in~\cite{BBS08} that a good view for
+the user to sketch 2D strokes is the one that has a large visible
+projection. With this function, frequent manual viewpoint changes
+that interrupt the user's attention on sketching can be avoided.
 
 %example
-Figure~\ref{fig:pig} shows an overview of the creation process. With
- help of the reference planes and shapes, more descriptions on the
-shape of a model can be sketched and perception ambiguities can be
-reduced. This minimizes the unnecessary back and forth adjustment of
-the sketches and speeds up the production process of a 3D model.
+It can be seen from Figure~\ref{fig:pig} that with the help of
+reference planes and the previewed shapes, more descriptions on the
+shape of a model can be sketched and the perception ambiguities can
+be reduced. This minimizes the unnecessary back and forth adjustment
+of sketches and speeds up the production process of 3D modeling.
+
+Note that our sketching cross sections on a reference plane that
+intersects the previewed shape looks similar to the sculpting
+process as in~\cite{NSAC05,KSV09}, which creates a 3D model by
+iteratively oversketching its silhouette and deforming it. However,
+there are intrinsic differences between both processes. First, the
+cross sections that the user sketched earlier remain unchanged in
+our sketching process while they usually change with shape
+deformation in sculpting process. Second, the previewed shape in our
+process just provides a reference for subsequent sketches. It sets
+little limitation on the sketches. By contrast, in the sculpting
+process the sketches are restricted to the current 3D model.
 
 %cad system --> our system
-It is noticed that our interface is similar to that in traditional
-3D modeling software which provides the user three orthogonal views
-to implement the modeling operations. This will make it easy to use
-for users who are familiar with this type of interface. Moreover,
-comparing to the system in~\cite{RDI10} which lets the user  sketch
-the silhouettes of a 3D model on three orthogonal views, we give the
-user the freedom to input more shape descriptions in 3D space, such
-that less imagination will be needed when creating a 3D model with
-multiple components and different depths.
+%It is noticed that our interface is similar to that in traditional
+%3D modeling software which provides the user three orthogonal views
+%to implement the modeling operations. This will make it easy to use
+%for users who are familiar with this type of interface. Moreover,
+%comparing to the system in~\cite{RDI10} which lets the user  sketch
+%the silhouettes of a 3D model on three orthogonal views, we give the
+%user the freedom to input more shape descriptions in 3D space, such
+%that less imagination will be needed when creating a 3D model with
+%multiple components and different depths.
 
 %ambiguity and stroke rules
 It should be pointed out that even though references have been
@@ -334,14 +348,18 @@ discussed in Section~\ref{ch3:sec:algo:rule}.
 \label{ch3:sec:ui:sculpt}
 
 %sculpting functions
-After the user sketches the general shape of the  model, we provide
-a series of sculpting functions for him/her to do further
-refinement. The sculpting tools include deformation, extrusion,
-tunneling (digging a hole), cutting and smoothing functions, all of
-which are based on the user's sketches. An intelligent stroke
-recognition mechanism is used to judge the user's intention
-according to the sketches and switch to the corresponding mode
-automatically.
+After the user has sketched the overall shape of the model, a set of
+sculpting functions is provided for further editing and refinement.
+The sculpting functions include extrusion, tunneling (digging a
+hole), cutting, smoothing, and deformation, all of which are based
+on the user's sketches. A stroke recognition mechanism is used to
+judge the user's intention according to the sketches and switch to
+the corresponding mode automatically. The sculpting tool accepts
+three types of strokes: a simple open stroke, a closed stroke, and a
+scratch-out stroke. The strokes are drawn with reference to the
+current model. Based on the types of strokes, reference planes may
+automatically be generated for subsequent sketching.
+
 
 \subsubsection{Basic functions}
 \label{Sec:UI:sculpt:mode}
@@ -383,41 +401,57 @@ automatically.
       \centering
       \includegraphics[scale=0.11]{figs/f3.fish-sculpt-5.eps}%0.11
     \end{minipage}}
-  \caption{Sculpting tools. (a) The user sketched cross section (yellow) and initially generated model; (b) Tunneling operation; (c) Extrusion operation; (d) Cutting operation; (e) Smoothing operation.}
+  \caption{Some sculpting examples. 
+  (a) A user sketched contour (yellow) and the generated initial model. 
+  (b) Tunneling operation. 
+  (c) Extrusion operation. 
+  (d) Cutting operation. 
+  (e) Smoothing operation.}
   \label{fig:sculpt} %% label for entire figure
 \end{figure}
 
-%stroke types. open stroke
-The stroke set our system accepts in the sculpting tool includes
-three general types: a simple open stroke, a closed stroke, and a
-scratch-out stroke. When a simple open stroke is sketched, the
-operation may be cutting or deformation, depending on whether the
-stroke passes across the model in the image space or not. If it is a
-cutting stroke, a following stroke will be required to indicate
-which part to cut off (Figure~\ref{fig:sculpt:cut}). The subsequent
-operation of deformation will be introduced in detail in
-Section~\ref{ch3:sec:ui:sculpt:deform}.
+Next we introduce the types of strokes our system accepts and 
+the corresponding sculpting functions.
 
-%closed strokes, extrusion or tunneling
-We allow the user to extrude or dig  a part similar to the operation
-in~\cite{IMT99,NISA07} when a closed stroke is sketched on the
-surface of the model. What is different, our system automatically
-generates a reference plane orthogonal to the closed curve, on which
-the user can draw the silhouette curve of the extruded/dug part
-(Figure~\ref{fig:sculpt:extrude}). This plane can be rotated about
-two axes: the line passing through the center of the closed stroke
-and orthogonal to the stroke as much as possible or the line
-connecting the first drawn point of the closed stroke and the
-farthest point to it on the stroke. The reference plane helps to
-confirm the position of the silhouette curve and gives flexibility
-to adjust its direction. When the silhouette curve intersects with
-the backside surface, the operation turns to tunneling and a hole is
-dug (Figure~\ref{fig:sculpt:tunnel}).
+\begin{itemize}
+\item When a closed stroke is sketched on the
+surface of the model, it triggers an extrusion or tunneling as
+in~\cite{IMT99,NISA07}. Different from \cite{IMT99,NISA07}, our tool
+automatically generates a reference plane orthogonal to the closed
+curve. The plane provides a reference place in 3D space for the user
+to draw the silhouette curve of the extruded/dug part
+(Figure~\ref{fig:sculpt:extrude}). The orientation of the plane can
+be further adjusted by performing rotation about one of two axes:
+the line passing through the center of the closed stroke and
+orthogonal to the stroke as much as possible or the line connecting
+the first drawn point of the closed stroke and the farthest point to
+it on the stroke. The reference plane helps to determine the
+position of the silhouette curve and gives flexibility to adjust its
+direction. When the silhouette curve intersects with the backside of
+the surface, the operation becomes tunneling and a hole is dug
+(Figure~\ref{fig:sculpt:tunnel}).
 
 %scratch strokes, smoothing
-When the user scratches a part on the model back and  forth, it is
-regarded as a smoothing operation and the local part will be
-smoothed (Figure~\ref{fig:sculpt:smooth}).
+\item When the user scratches a part on the surface back and forth, it
+is regarded as a smoothing operation and the corresponding local
+part will be smoothed (Figure~\ref{fig:sculpt:smooth}).
+
+
+\item When a simple open stroke is sketched, the operation may be
+cutting or deformation, depending on whether the stroke passes
+across the model in the image space or not. If it is a cutting
+stroke, a following stroke will be required to indicate which part
+to cut off (Figure~\ref{fig:sculpt:cut}).
+
+\item If a simple open stroke does not pass across the whole model in the image space,
+the stroke is mapped to the surface and serves as a handle curve for
+deformation. The deformation of the surface is driven by the
+modification of the handle curve. Curves have been shown to be more
+effective in manipulating the shape deformation~\cite{NISA07}. See
+Figure~\ref{fig:deform} for an example. The subsequent
+operation of deformation will be introduced next.
+\end{itemize}
+
 
 
 \subsubsection{Deformation tool}
@@ -464,7 +498,15 @@ smoothed (Figure~\ref{fig:sculpt:smooth}).
       \centering
       \includegraphics[scale=0.15]{figs/f3.fish-deform-6.eps}
     \end{minipage}}
-  \caption{An example of using the deformation tool. (a) The blue curve is the handle curve sketched on the initial model. The yellow, red and green dots denote the handle, ROI and static vertices respectively; (b) The automatically generated base plane (blue) and projection plane (green); (c) The new curve (green) drawn on the base plane; (d) A curve (red) is drawn on the projection plane to create a non-planar new curve; (e) The updated new curve (green); (f) The deformed model.}
+  \caption{An example of deformation. 
+  (a) The blue curve is the handle curve sketched on the initial model.
+  The yellow, red and green dots denote the handle, ROI and static vertices respectively. 
+  (b) The automatically generated base plane (blue) and projection plane (green). 
+  (c) The target curve (green) drawn on the base plane. 
+  (d) To create a non-planar target curve, a curve (red) is drawn on the projection plane as its
+  projection. 
+  (e) The updated non-planar target curve (green). 
+  (f) The deformed model.}
   \label{fig:deform} %% label for entire figure
 \end{figure*}
 
@@ -472,58 +514,40 @@ smoothed (Figure~\ref{fig:sculpt:smooth}).
 The deformation tool is an important  sculpting function in our
 system. As introduced in Section~\ref{ch2:sec:sbim:sculpt}, to
 deform a mesh, a handle needs to be first specified for the
-following operations. Here we use a curve as the handle instead of a
-point, since it contains multiple points and thus provides more
-flexibility for the manipulation. The user needs to first sketch a
-stroke which will be projected onto the mesh to generate the handle
-curve. Two reference planes will then be generated automatically.
-Next, the user needs to sketch on the reference planes to specify
-the new shape and position of the handle curve, after which the
-deformation is completed. To implement this deformation process, the
-following information should be specified: a set of vertices (called
-handle vertices) and their new positions; the vertices within a
-region of interest (ROI), which will move with the handles; and the
-vertices will remain unchanged during the deformation process
-(called the static vertices).
-
-%how to compute handle curve
-To generate the handle curve, we use a method similar to that
-in~\cite{NSAC05}. The handle curve is composed of handle vertices.
-The vertices of the edges or faces on which the projection of the
-input stroke lie are regarded as the handle vertices. See
-Figure~\ref{fig:deform:a} for an illustration.
-
-%new position of handle curve
-The specification of new positions of the handle  vertices seems not
-trivial. Unlike previous existing methods, we provide the user with
-two reference planes for the sketching of the new curve: a base
-plane which passes the handle vertices as many as possible for
-sketching the basic shape of the new curve and a projection plane,
-which is orthogonal to the base plane, for drawing the projection of
-the new curve (Figure~\ref{fig:deform:b}). In general, the base
-plane is sufficient for sketching the new shape of the handle curve.
-However, if the new handle curve is desired to be non-planar, the
-projection plane is used to sketch its projection and then the new
-handle curve is determined (Figure~\ref{fig:deform:c} -
-Figure~\ref{fig:deform:e}). In addition, in our system the two
-planes can also be rotated to provide more flexibility. In this way,
-the user can draw arbitrary curves in 3D space while being fully
-aware of the locations.
+following operations. The handle curve is represented by a polyline 
+consisting of vertices on the surface, called the handle vertices
+(Figure~\ref{fig:deform:a}). Based on the stroke, two reference
+planes are generated for the user to sketch the modified shape of
+the handle curve: a base plane that passes the handle vertices as
+many as possible for sketching the basic shape of the target curve
+and a projection plane that is orthogonal to the base plane for
+drawing the projection of the target curve (see
+Figure~\ref{fig:deform:b}). In general, the base plane is sufficient
+for sketching the target shape of the handle curve. However, if the
+target handle curve is desired to be non-planar, the projection
+plane is used to sketch the projection of the target curve. The two
+planar curves on the base plane and the projection plane are
+combined to determine a a non-planar handle curve
+(Figure~\ref{fig:deform:c} - Figure~\ref{fig:deform:e}) using an
+algorithm proposed in~\cite{CMZHB99}. In addition,  the two planes
+can also be rotated to provide more flexibility. In this way, the
+user can generate complex 3D target curves.
 
 %ROI vertices
-For selection of the ROI vertices, three methods  are available. A
-simple approach is to specify a threshold and vertices whose
-Euclidean distances to the handles below this threshold are regarded
-as the ROI vertices. Another approach is to let user draw a circle
-on the 2D screen. The ROI vertices are the ones whose projections
-onto the screen are inside the circle. However these two methods
-seem not quite precise when the selection of certain vertices is
-required for relatively complex models. So we provide a new tool --
-a brush, to make the selection process somewhat like brushing on a
-model. The vertices brushed will then be chosen as the ROI vertices.
-The brush can be viewed as a complementary tool for the former two
-methods. The user could take a rough selection using the first two
-tools and then make further modifications by brushing on the model.
+Further, the user needs to specify the vertices of the mesh within a
+region of interest (ROI), which will move during the deformation.
+This is done by three methods. A simple method is to specify a
+threshold and  then to select those vertices on the mesh, whose
+Euclidean distances to the handles are shorter than the threshold.
+The second method is to let the user draw a circle on the 2D screen.
+The ROI vertices are the ones whose projections onto the screen are
+inside the circle. To have more control in selecting the ROI
+vertices for complex models, the third method is to use a brush. The
+vertices brushed are chosen as the ROI vertices. After this, the
+deformation is performed, which pulls the handle curve to the target
+location and adjusts the ROI vertices accordingly. The rest vertices
+remain unchanged and are called the static vertices (see
+Figure~\ref{fig:deform:a}).
 
 These sculpting tools are all sketch-based and quite convenient to
 use. Together with the sketching tool, a complete modeling system is
@@ -585,7 +609,11 @@ shown in Figure~\ref{fig:alstrokeproc}.
       \centering
       \includegraphics[scale=0.3]{figs/f3.strokepre-4.eps}
     \end{minipage}}
-  \caption{Stroke Preprocessing: The goal here is to filter the noisy points and get a smooth curve with 10 points. (a) Initial input; (b) Filtering result; (c) Resampling result; (d) Final result after smoothing.}
+  \caption{An example of stroke preprocessing. The goal here is to filter the noisy points and get a smooth curve with 10 points. 
+  (a) Initial input. 
+  (b) Filtering result. 
+  (c) Resampling result. 
+  (d) Final result after smoothing.}
   \label{fig:alstrokeproc} %% label for entire figure
 \end{figure}
 
@@ -689,7 +717,9 @@ topology directly by sketching the contours at the creation phase.
       \centering
       \includegraphics[scale=0.12]{figs/f3.rule2-2.eps}
     \end{minipage}}
-  \caption{An example for rule~\ref{rule:2}. (a) The user sketched cross sections. Containing relationship exists among multiple cross sections on the blue plane; (b) The generated model.}
+  \caption{An example for rule~\ref{rule:2}. 
+  (a) The user sketched cross sections. Containing relationship exists among multiple cross sections on the blue plane. 
+  (b) The generated model.}
   \label{fig:rule2} %% label for entire figure
 \end{figure}
 
@@ -728,14 +758,14 @@ points on each curve can then be chosen as the points closest to
 $V_{m1}$ and $V_{m2}$ respectively. Next a range of points near the
 handles are to be moved with them and we need to compute their new
 positions. So we could perform the Laplacian deformation algorithm
-to the two curves to deform them. 
+to the two curves to deform them.
 %Since the two curves are both
 %planar, it can be further simplified into a 2D deformation problem
 %which can be precisely solved~\cite{ESA07}.
 
 %%%%%%%%%introduce the solving of this optimization problem
 %%%%%%%%%added in thesis only
-Since the two curves are both planar, it can be further simplified 
+Since the two curves are both planar, it can be further simplified
 into a 2D deformation problem and we used the method in~\cite{ESA07}
 to solve it.
 
@@ -757,13 +787,13 @@ minimize for computing the new point positions is:
     E(V^\prime)=\sum\limits_{i=1}^n{||L({V_i}^\prime)-T_i\delta_i||^2}
     +\sum\limits_{i=m}^n{||{V_i}^\prime-C_i||^2},
 \end{equation}
-where $T_i$ is the matrix representing the transformation of $\delta_i$ 
-during the deformation process. $T_i$ can be derived by estimating the 
+where $T_i$ is the matrix representing the transformation of $\delta_i$
+during the deformation process. $T_i$ can be derived by estimating the
 transformation of the point $V_i$ and its neighbors through minimizing:
 
 \begin{equation}
 \label{eq:curveLapTi}
-    E({V_i}^\prime)=||{V_i}^\prime-T_iV_i||^2 + 
+    E({V_i}^\prime)=||{V_i}^\prime-T_iV_i||^2 +
     \sum\limits_{j \in N(i)}{||{V_j}^\prime-T_iV_j||^2}.
 \end{equation}
 Since $T_i$ contains 2D rotation and isotropic scale transformations,
@@ -827,19 +857,17 @@ mesh model. The details on the progressive reconstruction algorithm
 will be presented in Chapter~\ref{ch:orthsurf}.
 
 
-\subsection{Reference plane calculation}
+\subsection{Generation of reference planes}
 \label{ch3:sec:algo:refplane}
 
-As mentioned in Section~\ref{ch3:sec:ui:sculpt:deform}, we provide
-the users reference planes for drawing the deformed shape of the
-handle curve in the deformation function. A key problem here is how
-to generate the base plane which has a suitable position and
-direction, as the projection plane could be easily calculated after
-the base plane is confirmed.
-
-Our basic idea is to let the base plane go through as many points of
-the handle curve as possible. For this purpose, we compute the least
-squares plane that fits the points. Assume the plane equation is
+One problem in the sculpting phase is how to automatically generate
+reference planes, which have appropriate position and direction for
+the user to further sketch, once a stroke is drawn with reference to
+the current model to trigger a deformation, extrusion or tunneling.
+For a deformation stroke, we propose to let the base plane pass
+through as many points of the handle curve as possible. Hence the
+plane can be computed by the least squares fitting. In particular,
+assume the plane equation is
 
 \begin{equation}
 \label{eq:planefunc}
@@ -908,13 +936,13 @@ of $M$ corresponding to its smallest singular value.
 %%%%%%%%%added in thesis only
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-The above method just gives a suggestive orientation of the base
-plane. If the user is not satisfied, he/she can rotate the plane by
-a proper angle. The axis of the rotation is the line connecting the
-projection of the first handle point onto the initial computed plane
-to that of the last point. The calculation of the reference plane
-for extrusion process is the same as this.
+The projection plane is computed from the base plane. First, we
+project the starting point of the handle curve onto the base plane.
+Second, we choose another projection point of the handle curve on
+the base plane, which is farthest to the projection of the starting
+point. Connecting the two projection points forms a line. Finally,
+we rotate the base plane about the line by 90 degrees, which gives
+the projection plane.
 
 After the reference planes are constructed, the user can sketch the
 new shape and position of the handle curve. If the user intends to
@@ -941,16 +969,22 @@ can be formed by connecting each new point $P_i$ sequentially.
 %%%%%%%%%added in thesis only
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+For an extrusion or tunneling stroke, we compute the reference plane
+in a way similar to computing the projection plane. We first compute
+an initial least squares plane for the stroke. Then we compute a
+line on the plane as the rotation axis, which connects two
+projection points of the stroke. Finally the desired reference plane
+is obtained by rotating the initially obtained plane about the axis
+by 90 degrees.
 
-
-Once the ROI vertices, the handle curve and its new shape are
-confirmed, we complete the deformation by employing a flexible mesh
-deformation algorithm, which will be presented in
-Chapter~\ref{ch:flexdeformation}.
+Note that the above methods just give a suggestive orientation of
+the reference plane. If the user is not satisfied with it, he can
+rotate the plane about a line which is constructed similarly as in
+computing the projection plane.
 
 
 %-------------------------------------------------------------------------
-\section{Results and discussions}
+\section{Results}
 \label{ch3:sec:result}
 
 \begin{figure*} [htbp]
@@ -997,7 +1031,7 @@ Chapter~\ref{ch:flexdeformation}.
       \centering
       \includegraphics[scale=0.1]{figs/f3.sculpture.eps}
     \end{minipage}}
-  \caption{The sketching of some models using our system.}
+  \caption{Sketching of some models using our system.}
   \label{fig:models:sketch} %% label for entire figure
 \end{figure*}
 
@@ -1023,59 +1057,64 @@ Chapter~\ref{ch:flexdeformation}.
       \centering
       \includegraphics[scale=0.12]{figs/f3.chair.eps}
     \end{minipage}}
-  \caption{The sketching and sculpting of some models using our system.}
+  \caption{Sketching and sculpting of some models using our system.}
   \label{fig:models:combine} %% label for entire figure
 \end{figure*}
 
-%basic information
-Our current implementation of this sketch-based modeling system was
-written  in C++ on the Windows platform. We tested our system on an
-machine with Dual Core Intel Xeon 2.27GHz CPU and 2G RAM. Our
-experiments show that both the surface reconstruction and other
-sculpting functions run in interactive rates. This indeed meets the
-user's requirement on a sketch-based modeling system.
+Our sketch-based modeling is implemented using C++. The experiments
+are carried out on  an Intel Pentium 4 3.6GHz machine with 1G RAM.
+Both the surface reconstruction and other sculpting functions run in
+an interactive rate, which meets the requirement for a sketch-based
+modeling system.
+
 
 %computation complexity and cost
-It is observed that even if multiple cross section curves are
-sketched initially, the constructed mesh is not quite dense, and
-the number of vertices will be no more a few thousands after
-iterative editing operations. This enables us to consider more about
-the modeling effect and quality of the mesh other than the running
-time. Meanwhile, the modeling algorithms we developed also ensure
-that computation will be completed in real time, which can be
-introduced in the next chapters.
-
-%For the surface reconstruction in our sketching tool, the shape built from each cross section is just simple cylinders, so the CSG computation is relatively simple and little numerical issues are involved. It is observed that even if multiple cross section curves are sketched initially, the constructed mesh is not quite dense, and the number of vertices will be no more a few thousands after iterative editing operations. This enables us to consider more about the modeling effect and quality of the mesh other than the running time.
+%It is observed that even if multiple cross section curves are
+%sketched initially, the constructed mesh is not quite dense, and
+%the number of vertices will be no more a few thousands after
+%iterative editing operations. This enables us to consider more about
+%the modeling effect and quality of the mesh other than the running
+%time. Meanwhile, the modeling algorithms we developed also ensure
+%that computation will be completed in real time, which can be
+%introduced in the next chapters.
 
 %user study
-We have conducted an informal user study to test our system.  We
-trained the novice users for approximately 20 minutes and let them
-create models with freeform shapes. We found that most users tend to
-use the sketching tool to iteratively sketch and construct the 3D
-models in most of the time and just take the sculpting tools to do
-some detail modifications, although there are a few who prefer to
-build a model by sculpting it from a rough shape (see
-Figure~\ref{fig:chair}). This is consistent with the introduction
-in~\cite{CIW08} that the sketching technique is more familiar to
-public than sculpting which requires tedious manual work. Some
-results produced with either the sketching tool or the combination
-of the two tools are shown in Figure~\ref{fig:models:sketch} and
-Figure~\ref{fig:models:combine}. All of these models are produced in
-less than 30 minutes.
+We trained ten novice users for about 20 minutes and then asked them
+to create some freeform shape models. It was observed that most
+users tended to use the sketching tool to iteratively sketch and
+construct the 3D models in most of the time and just took the
+sculpting tools to do some detailed modifications and very few
+preferred to build a model by sculpting from a rough shape. This is
+consistent with the observation in~\cite{CIW08} that the sketching
+technique is more familiar to public than sculpting. Sculpting
+requires tedious manual work. Some models created using either the
+sketching tool or both sketching and sculpting tools are displayed
+in Figure~\ref{fig:models:sketch} and
+Figure~\ref{fig:models:combine}.
 
-We learned from the feedback that with help of the reference planes,
-the users can get a direct \lq\lq{touch}\rq\rq of the 3D space and
-they only need to focus on the sketching of the curves for defining
-the shape of the 3D model. The reference shape together with the
-existing sketches let them get a clear mind of the 3D model in each
-design stage and also give hints for the next sketches. Some issues
-exist in other systems such as difficulties on confirming the
-position and orientation of the 3D curves corresponding to the 2D
-sketches, the imagination of the sketched 3D shape and so on can be
-avoided. Although the users do not adapt to the stroke rules quite
-well initially, they get used to it gradually with the help of
-various hints in our system during the studying process and find it
-quite helpful for eliminating perception ambiguities eventually.
+We learned from the feedback that with the help of the reference
+planes, the users can get a direct ``touch" of the 3D space and they
+only need to focus on the sketching of the curves for defining the
+shape of the 3D model. The up-to-date shape together with the
+existing sketches lets them get a clear idea of the 3D model in each
+design stage and also gives hints for the next sketches. This can
+overcome the difficulties on confirming the position and orientation
+of the 3D curves corresponding to the 2D sketches and imagining the
+sketched 3D shape.
+
+%We learned from the feedback that with help of the reference planes,
+%the users can get a direct \lq\lq{touch}\rq\rq of the 3D space and
+%they only need to focus on the sketching of the curves for defining
+%the shape of the 3D model. The reference shape together with the
+%existing sketches let them get a clear mind of the 3D model in each
+%design stage and also give hints for the next sketches. Some issues
+%exist in other systems such as difficulties on confirming the
+%position and orientation of the 3D curves corresponding to the 2D
+%sketches, the imagination of the sketched 3D shape and so on can be
+%avoided. Although the users do not adapt to the stroke rules quite
+%well initially, they get used to it gradually with the help of
+%various hints in our system during the studying process and find it
+%quite helpful for eliminating perception ambiguities eventually.
 
 
 

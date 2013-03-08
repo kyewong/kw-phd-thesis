@@ -51,8 +51,8 @@ work and complicated computation.
       \includegraphics[scale=0.15]{figs/f6.anatomy-tj-result.eps}%0.16
     \end{minipage}}
   \caption{An example of surface reconstruction using Liu et al's
-  algorithm \cite{LBDLJ08}:
-  (a) Input cross sections;
+  algorithm \cite{LBDLJ08}.
+  (a) Input cross sections.
   (b) The reconstructed result that has several disconnected components.}
   \label{fig:anatomy-ju}
 \end{figure*}
@@ -85,10 +85,10 @@ work and complicated computation.
       \centering
       \includegraphics[scale=0.15]{figs/f6.anatomy-result-edited.eps}%0.16
     \end{minipage}}
-  \caption{The proposed surface reconstruction process for the input cross sections given in Figure~\ref{fig:anatomy-ju}(a):
-  (a) Reconstructed sub-surfaces in zones;
-  (b) The reconstructed surface that has only one connected component;
-  (c) Sketching a stroke (red) to indicate the local region to be split if desired;
+  \caption{The proposed surface reconstruction process for the input cross sections given in Figure~\ref{fig:anatomy-ju}(a).
+  (a) Reconstructed sub-surfaces in zones.
+  (b) The reconstructed surface that has only one connected component.
+  (c) Sketching a stroke (red) to indicate the local region to be split if desired.
   (d) The reconstructed result after splitting. }
   \label{fig:anatomy}
 \end{figure*}
@@ -356,12 +356,12 @@ initial result is not satisfactory.
       \includegraphics[scale=0.6]{figs/f6.illu-workflow-2d7.eps}
     \end{minipage}}
   \caption{2D illustration of our surface reconstruction algorithm.
-  (a) Input segments (red, corresponding to the 3D cross sections) and partitioned zones;
-  (b) The \textit{empty} zones (blue), \textit{end} zones (green) and \textit{body} zones (yellow);
-  (c) Generating polygons (corresponding to the frusta) in \textit{body} zones;
-  (d) Generating polygons in the \textit{end} zones using the same way as the reconstruction in the \textit{body} zones. The reconstruction result contains multiple components;
-  (e) Generating extended polygons for an \textit{end} zone. The blue segments correspond to the virtual cross sections we built;
-  (f) Generating polygons for all \textit{end} zones;
+  (a) Input segments (red, corresponding to the 3D cross sections) and partitioned zones.
+  (b) The \textit{empty} zones (blue), \textit{end} zones (green) and \textit{body} zones (yellow).
+  (c) Generating polygons (corresponding to the frusta) in \textit{body} zones.
+  (d) Generating polygons in the \textit{end} zones using the same way as the reconstruction in the \textit{body} zones. The reconstruction result contains multiple components.
+  (e) Generating extended polygons for an \textit{end} zone. The blue segments correspond to the virtual cross sections we built.
+  (f) Generating polygons for all \textit{end} zones.
   (g) The reconstruction result. }
   \label{fig:workflow2d}
 \end{figure*}
@@ -436,10 +436,10 @@ create the frustum from each cross section.
       \includegraphics[scale=0.28]{figs/f6.illu-fru-non-intsct5.eps}
     \end{minipage}}
   \caption{Illustration of sub-surface reconstruction for non-intersected cross sections in a \textit{body} zone.
-  (a) Input cross sections;
-  (b) Generate initial frustum $fr_p$ from one cross section;
-  (c) Adjust the top $fr_p^t$ of the frustum to make it lie within the zone;
-  (d)Generate another frustum;
+  (a) Input cross sections.
+  (b) Generate initial frustum $fr_p$ from one cross section.
+  (c) Adjust the top $fr_p^t$ of the frustum to make it lie within the zone.
+  (d)Generate another frustum.
   (e) Compute the union of the two frusta.}
   \label{fig:frunonint}
 \end{figure}
@@ -538,13 +538,13 @@ zone and interpolate the cross section.
       \includegraphics[scale=0.25]{figs/f6.illu-fru-intsct8.eps}
     \end{minipage}}
   \caption{Illustration of sub-surface reconstruction for intersected cross sections in a \textit{body} zone.
-  (a) Input cross sections;
-  (b) Generate the frusta by shrinking the top faces;
-  (c) Non-manifold sub-surface caused by the over-shrinkage of the top of each frustum;
-  (d) Translate the bottom $fr_p^b$ to get the initial frustum $fr_p$. The yellow dots represent the points outside the zone (i.e. $PT_f$ in Eq~\ref{eq:curvedeform2});
-  (e) Move the outside points into the zone. The green dots are the points near the other faces of the zone (i.e. $PT_o$ in Eq~\ref{eq:curvedeform2});
-  (f) Deform the boundary of the frustum top by keeping the yellow and green points fixed, to get a valid frustum;
-  (g) Generate another frustum;
+  (a) Input cross sections.
+  (b) Generate the frusta by shrinking the top faces.
+  (c) Non-manifold sub-surface caused by the over-shrinkage of the top of each frustum.
+  (d) Translate the bottom $fr_p^b$ to get the initial frustum $fr_p$. The yellow dots represent the points outside the zone (i.e. $PT_f$ in Eq~\ref{eq:curvedeform2}).
+  (e) Move the outside points into the zone. The green dots are the points near the other faces of the zone (i.e. $PT_o$ in Eq~\ref{eq:curvedeform2}).
+  (f) Deform the boundary of the frustum top by keeping the yellow and green points fixed, to get a valid frustum.
+  (g) Generate another frustum.
   (h) Compute the union of the two frusta.}
   \label{fig:fruint}
 \end{figure}
@@ -677,7 +677,7 @@ becoming disconnected surface parts will be minimized.
       \includegraphics[scale=0.25]{figs/f6.illu-fru-endzone2.eps}
     \end{minipage}}
   \caption{Illustration of sub-surface reconstruction in an \textit{end} zone.
-  (a) The input cross section $cs_p$ on face $f_{ij}$ is projected onto the other faces in the orthogonal direction of $f_{ij}$ and the face $f_{ik}$ with the largest projection area is selected;
+  (a) The input cross section $cs_p$ on face $f_{ij}$ is projected onto the other faces in the orthogonal direction of $f_{ij}$ and the face $f_{ik}$ with the largest projection area is selected.
   (b) A virtual cross section $cs_v$ is obtained by projecting $cs_p$ onto $f_{ik}$ and the frustum $fr_p$ is built by taking $cs_p$ and $cs_v$ as the bottom and top. }
   \label{fig:fruend}
 \end{figure}
@@ -861,10 +861,10 @@ editing operations.
       \includegraphics[scale=0.13]{figs/f6.joinFP-P.eps}
     \end{minipage}}
   \caption{An example of the join operation in sketch-based topology editing.
-  (a) Input cross sections;
-  (b) Computed frusta in zones;
-  (c) Sketch a curve (red) on the reconstruction result to join surface parts;
-  (d) The corresponding frustum (with light green color) is deformed;
+  (a) Input cross sections.
+  (b) Computed frusta in zones.
+  (c) Sketch a curve (red) on the reconstruction result to join surface parts.
+  (d) The corresponding frustum (with light green color) is deformed.
   (e) Editing result.}
   \label{fig:fp}
 \end{figure}
@@ -929,10 +929,10 @@ other ones will be deformed in the way to intersect with it.
       \includegraphics[scale=0.12]{figs/f6.illu-join-2zone-6.eps}
     \end{minipage}}
   \caption{Illustration of the join of surface parts in different zones.
-  (a) Sketch a curve (green) to select the two frusta;
-  (b) Re-calculate the top of the first selected frustum by projecting its bottom onto the common face with the neighbor zone;
-  (c)-(d) Extend the frustum;
-  (e) Build the extended frustum in the zone containing the second selected frustum;
+  (a) Sketch a curve (green) to select the two frusta.
+  (b) Re-calculate the top of the first selected frustum by projecting its bottom onto the common face with the neighbor zone.
+  (c)-(d) Extend the frustum.
+  (e) Build the extended frustum in the zone containing the second selected frustum.
   (f) Editing result.}
   \label{fig:join2zone}
 \end{figure}
@@ -1025,12 +1025,12 @@ can get intersected (see Figure~\ref{fig:join2zone:f}).
       \includegraphics[scale=0.13]{figs/f6.BEsplit-E.eps}
     \end{minipage}}
   \caption{An example of the split operation in sketch-based topology editing.
-  (a) Input cross sections;
-  (b) Computed frusta in zones;
-  (c) Sketch a curve (red) on the reconstruction result to split local surface;
-  (d) The corresponding frusta (with light green color) are shrunk to be separated;
-  (e) Sketch another split curve on the updated model;
-  (f) The corresponding blue frusta are shrunk;
+  (a) Input cross sections.
+  (b) Computed frusta in zones.
+  (c) Sketch a curve (red) on the reconstruction result to split local surface.
+  (d) The corresponding frusta (with light green color) are shrunk to be separated.
+  (e) Sketch another split curve on the updated model.
+  (f) The corresponding blue frusta are shrunk.
   (g) Editing result.}
   \label{fig:be}
 \end{figure}
@@ -1204,7 +1204,13 @@ of~\cite{LBDLJ08} but are avoided in our result.
       \centering
       \includegraphics[scale=0.12]{figs/f6.skull-edit.eps}%0.13
     \end{minipage}}
-  \caption{An example of the reconstruction and editing of the \textit{skull} model. (a) Input cross sections. (b) Generated sub-surfaces in zones. (c) Reconstruction result. (d) Sketch a curve (red) to split the local surface. (e) Updated sub-surfaces in zones. (f) Editing result.}
+  \caption{An example of the reconstruction and editing of the \textit{skull} model. 
+  (a) Input cross sections. 
+  (b) Generated sub-surfaces in zones. 
+  (c) Reconstruction result. 
+  (d) Sketch a curve (red) to split the local surface. 
+  (e) Updated sub-surfaces in zones. 
+  (f) Editing result.}
   \label{fig:skull}
 \end{figure*}
 
@@ -1251,7 +1257,13 @@ of~\cite{LBDLJ08} but are avoided in our result.
       \centering
       \includegraphics[scale=0.11]{figs/f6.ovaries-edit.eps}%0.12
     \end{minipage}}
-  \caption{An example of the reconstruction and editing of the \textit{ovaries} model. (a) Input cross sections. (b) Generated sub-surfaces in zones. (c) Reconstruction result. (d) Sketch a curve (red) to join the local surface. (e) Updated sub-surfaces in zones. (f) Editing result.}
+  \caption{An example of the reconstruction and editing of the \textit{ovaries} model. 
+  (a) Input cross sections. 
+  (b) Generated sub-surfaces in zones. 
+  (c) Reconstruction result. 
+  (d) Sketch a curve (red) to join the local surface. 
+  (e) Updated sub-surfaces in zones. 
+  (f) Editing result.}
   \label{fig:ovaries}
 \end{figure*}
 
