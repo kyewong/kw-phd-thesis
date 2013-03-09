@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  8 MAR 2013 22:33
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  9 MAR 2013 22:17
 entering extended mode
 **thesis.tex
 (D:\research\doc\Thesis\kw-phd-thesis\thesis.tex
@@ -977,7 +977,7 @@ File: figs/f6.tooth.eps Graphic file (type eps)
 <figs/f6.tooth.eps>
 File: figs/f6.tree.eps Graphic file (type eps)
  <figs/f6.tree.eps>
-Overfull \hbox (25.31516pt too wide) in paragraph at lines 1113--1113
+Overfull \hbox (25.31516pt too wide) in paragraph at lines 1115--1115
  [][][] 
  []
 
@@ -992,7 +992,7 @@ File: figs/f6.skull-init-union.eps Graphic file (type eps)
 <figs/f6.skull-init-union.eps>
 File: figs/f6.skull-init.eps Graphic file (type eps)
  <figs/f6.skull-init.eps>
-Overfull \hbox (21.26343pt too wide) in paragraph at lines 1186--1186
+Overfull \hbox (21.26343pt too wide) in paragraph at lines 1188--1188
  [][][] 
  []
 
@@ -1003,13 +1003,13 @@ File: figs/f6.skull-edit-union.eps Graphic file (type eps)
 File: figs/f6.skull-edit.eps Graphic file (type eps)
 
 <figs/f6.skull-edit.eps>
-Overfull \hbox (21.26343pt too wide) in paragraph at lines 1206--1206
+Overfull \hbox (21.26343pt too wide) in paragraph at lines 1208--1208
  [][][] 
  []
 
 File: figs/f6.ovaries-input.eps Graphic file (type eps)
 <figs/f6.ovaries-input.eps>
-Overfull \hbox (9.7498pt too wide) in paragraph at lines 1226--1226
+Overfull \hbox (9.7498pt too wide) in paragraph at lines 1228--1228
  [][] 
  []
 
@@ -1040,16 +1040,16 @@ ML/cmm/m/it/12 <$\OT1/ptm/m/n/12 http://www-
 
 ] [109] [110] [111] [112] [113] [114] [115]
 
-LaTeX Warning: Command \ss invalid in math mode on input line 489.
+LaTeX Warning: Command \ss invalid in math mode on input line 494.
 
 [116] [117] [118] [119]
-Underfull \hbox (badness 4467) in paragraph at lines 699--702
+Underfull \hbox (badness 4467) in paragraph at lines 711--714
 [][]\OT1/ptm/m/n/12 OpenMP Ar-chi-tec-ture Re-view Board.  Open-M-P ap-pli-ca-t
 ion pro-gram in-
  []
 
 
-Underfull \hbox (badness 2932) in paragraph at lines 699--702
+Underfull \hbox (badness 2932) in paragraph at lines 711--714
 \OT1/ptm/m/n/12 ter-face ver-sion 3.0, 2008.  Avail-able from: $\OML/cmm/m/it/1
 2 <$\OT1/ptm/m/n/12 http://www.openmp.org/mp-
  []
@@ -1068,12 +1068,12 @@ Ap-pli-ca-tion-s\OT1/ptm/m/n/12 , Vol.9, No.3, 2012, pp.361-
 
 ]) [128] (D:\research\doc\Thesis\kw-phd-thesis\thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4971 strings out of 495355
- 72879 string characters out of 3183097
- 141674 words of memory out of 3000000
- 7850 multiletter control sequences out of 15000+200000
+ 4974 strings out of 495355
+ 72899 string characters out of 3183097
+ 141689 words of memory out of 3000000
+ 7853 multiletter control sequences out of 15000+200000
  20254 words of font info for 59 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,16n,43p,1516b,369s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (143 pages, 457876 bytes).
+Output written on thesis.dvi (143 pages, 459440 bytes).

@@ -210,11 +210,11 @@ component) happened, which obviously goes against user's intention.
       \centering
       \includegraphics[scale=0.12]{figs/f3.surf-csgma-5.eps}
     \end{minipage}}
-  \caption{An example of comparing our surface reconstruction algorithm  and that of~\cite{LBDLJ08}. 
-  (a) Two cross sections are sketched first and then one more is added. 
-  (b) The initial reconstruction results in~\cite{LBDLJ08}. The Medial Axis planes (blue) in a zone are shown. 
-  (c) The final reconstruction results in~\cite{LBDLJ08}. 
-  (d) The initial reconstruction results in our algorithm. The union of cylinders in each zone is shown. 
+  \caption{An example of comparing our surface reconstruction algorithm  and that of~\cite{LBDLJ08}.
+  (a) Two cross sections are sketched first and then one more is added.
+  (b) The initial reconstruction results in~\cite{LBDLJ08}. The Medial Axis planes (blue) in a zone are shown.
+  (c) The final reconstruction results in~\cite{LBDLJ08}.
+  (d) The initial reconstruction results in our algorithm. The union of cylinders in each zone is shown.
   (e) The final reconstruction results in our algorithm.}
   \label{fig:csgma} %% label for entire figure
 \end{figure*}
@@ -332,14 +332,14 @@ sections and is thus ignored.
       \centering
       \includegraphics[scale=0.18]{figs/f3.surf-cshape-8.eps}
     \end{minipage}}
-  \caption{An example of surface reconstruction from non-intersected cross sections in the \textit{body} zones. 
-  (a) The input cross sections. 
-  (b) Partition result. The red planes are the bounding planes of each zone and the numbers represent the indices of the zones. 
-  (c)-(d) Cylinders generated from the two cross sections in Zone 1. 
-  (e) The union of cylinders in Zone 1. 
-  (f) The unions of cylinders in all zones. 
-  (g) The initial reconstruction result obtained by stitching surfaces in all zones. 
-  (h)-(i) The results after 2 and 5 iterations of refinement and  smoothing. 
+  \caption{An example of surface reconstruction from non-intersected cross sections in the \textit{body} zones.
+  (a) The input cross sections.
+  (b) Partition result. The red planes are the bounding planes of each zone and the numbers represent the indices of the zones.
+  (c)-(d) Cylinders generated from the two cross sections in Zone 1.
+  (e) The union of cylinders in Zone 1.
+  (f) The unions of cylinders in all zones.
+  (g) The initial reconstruction result obtained by stitching surfaces in all zones.
+  (h)-(i) The results after 2 and 5 iterations of refinement and  smoothing.
   (j) The final reconstruction result after 10 iterations of refinement and smoothing.}
   \label{fig:cshape} %% label for entire figure
 \end{figure*}
@@ -406,11 +406,11 @@ cylinders in this case can be found in Figure~\ref{fig:cshape}.
       \centering
       \includegraphics[scale=0.15]{figs/f3.surf-csinters-7.eps}
     \end{minipage}}
-  \caption{An example of surface reconstruction from intersected cross sections in the \textit{body} zones. 
-  (a) The input cross sections. 
-  (b)-(c) Cylinders are generated from the two cross sections and perturbed. 
-  (d) The union of cylinders in the zone. 
-  (e) The initial reconstruction result. 
+  \caption{An example of surface reconstruction from intersected cross sections in the \textit{body} zones.
+  (a) The input cross sections.
+  (b)-(c) Cylinders are generated from the two cross sections and perturbed.
+  (d) The union of cylinders in the zone.
+  (e) The initial reconstruction result.
   (f) The final reconstruction result after refinement and smoothing.}
   \label{fig:csinters} %% label for entire figure
 \end{figure*}
@@ -433,7 +433,7 @@ process can be found in Figure~\ref{fig:csintersPerturb}. Strictly speaking,
 $cl_p^{ptb}$ will not be a cylinder anymore, since the shapes of its
 bottom and top are not the same after the perturbation. However,
 this will not affect the union calculation which takes general
-polyhedrons as input. Similarly, the cylinder $cl_q^{ptb}$ can be
+polyhedral as input. Similarly, the cylinder $cl_q^{ptb}$ can be
 generated from $cs_q$. The result surface after the union
 calculation will lie in $zn_i$ and interpolate the input cross
 sections (see Figure~\ref{fig:csinters:d}). This perturbation method
@@ -573,12 +573,12 @@ extended in the same way until these requirements are satisfied.
       \centering
       \includegraphics[scale=0.14]{figs/f3.surf-end-6.eps}%0.12
     \end{minipage}}
-  \caption{An example of surface reconstruction in the \textit{end} and \textit{body} zones. 
-  (a) Input cross sections. 
-  (b) The partition result. 
-  (c) The extended cylinders for the \textit{end} zones.  The blue faces are those which may cause isolated surface components. 
-  (d) The unions of cylinders in all zones. 
-  (e) Final surface reconstruction result in our approach. 
+  \caption{An example of surface reconstruction in the \textit{end} and \textit{body} zones.
+  (a) Input cross sections.
+  (b) The partition result.
+  (c) The extended cylinders for the \textit{end} zones.  The blue faces are those which may cause isolated surface components.
+  (d) The unions of cylinders in all zones.
+  (e) Final surface reconstruction result in our approach.
   (f) Reconstruction result using the algorithm in~\cite{LBDLJ08}.}
   \label{fig:partition} %% label for entire figure
 \end{figure*}
@@ -610,9 +610,9 @@ possibility caused by the newly added sketch.
 
 %After all the cylinders in each zone are built, we use the algorithm
 %proposed in~\cite{LTH86} to compute the union of them. The algorithm
-%computes the unions of the input polyhedrons by getting those of the
+%computes the unions of the input polyhedral by getting those of the
 %faces and glue them together, and it is robust and quick enough for
-%our application since the shape of the polyhedrons are regular. The
+%our application since the shape of the polyhedral are regular. The
 %global surface of the initial mesh $M_{init}$ can then be calculated
 %as:
 
@@ -620,12 +620,12 @@ possibility caused by the newly added sketch.
 %%%%%%%%%added in thesis only
 After all the cylinders in each zone are built, we use the
 CarveCSG library~\cite{CarveCSG} which implements the algorithm proposed
-in~\cite{LTH86} to compute the union of these polyhedrons one by one.
+in~\cite{LTH86} to compute the union of these polyhedral one by one.
 
-Given two polyhedrons $P_a$ and $P_b$, each triangle $Tr^a_i$ on $P_a$ will be
+Given two polyhedral $P_a$ and $P_b$, each triangle $Tr^a_i$ on $P_a$ will be
 visited first. If $Tr^a_i$ intersects with a triangle $Tr^b_j$ on $P_b$, then
 both $Tr^a_i$ and $Tr^b_j$ will be bisected by the plane of each other's.
-This way, $P_a$ and $P_b$ will become new polyhedrons $P^\prime_a$ and
+This way, $P_a$ and $P_b$ will become new polyhedral $P^\prime_a$ and
 $P^\prime_b$ which are composed of bisected triangles. Next, the triangles on
 $P^\prime_a$ which are inside the volume of $P^\prime_b$, as well as
 those on $P^\prime_b$ inside the volume of $P^\prime_a$ will be removed.
@@ -633,15 +633,15 @@ Finally, the left triangles from $P^\prime_a$ and $P^\prime_b$ will
 be merged and the union result can be obtained.
 
 This method is robust and quick enough for our application since the shape
-of the polyhedrons are regular. The global surface of the initial mesh
+of the polyhedral are regular. The global surface of the initial mesh
 $M_{init}$ can then be calculated as:
 %%%%%%%%%added in thesis only
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \begin{equation}
 \label{eq:surfreconstortho}
-    M_{init}=\sum\limits_{i=1}^m {(Cl_{i1} \bigcup Cl_{i2} \bigcup {...} \bigcup Cl_{in})}
+%    M_{init}=\sum\limits_{i=1}^m {(Cl_{i1} \bigcup Cl_{i2} \bigcup {...} \bigcup Cl_{in})}
+    M_{init}=\sum\limits_{i=1}^m {(\bigcup\limits_{j = 1}^n {Cl_{ij}})}
 \end{equation}
 where $Cl_{ij}$ refers to the $j$th cylinder built in  the $i$th
 zone, assuming there are totally $m$ zones and $n$ cylinders in each

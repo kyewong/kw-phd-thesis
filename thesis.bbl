@@ -384,6 +384,11 @@ J.~Huang, X.~Shi, X.~Liu, K.~Zhou, L.~Wei, S.~Teng, H.~Bao, B.~Guo, and
 \newblock {\em ACM Transactions on Graphics(Proc. SIGGRAPH 2006)},
   25(3):1126--1134, 2006.
 
+\bibitem{HL07}
+K.~Hui and Y.~Lai.
+\newblock Generating subdivision surfaces from profile curves.
+\newblock {\em Computer-Aided Design}, 39(9):783--793, 2007.
+
 \bibitem{IH01}
 T.~Igarashi and J.~Hughes.
 \newblock A suggestive interface for 3d drawing.
@@ -636,6 +641,13 @@ A.~Nasri.
   computer-aided geometric design.
 \newblock {\em Computer Aided Geometric Design}, 17(7):595 -- 619, 2000.
 
+\bibitem{NAH03}
+A.~Nasri, A.~Abbas, and I.~Hasbini.
+\newblock Skinning catmull-clark subdivision surfaces with incompatible
+  cross-sectional curves.
+\newblock In {\em Proceedings of the 11th Pacific Conference on Computer
+  Graphics and Applications}, pages 102--111, 2003.
+
 \bibitem{NKS09}
 A.~Nasri, W.~Karam, and F.~Samavati.
 \newblock Sketch-based subdivision models.
@@ -751,6 +763,12 @@ K.~Rose, A.~Sheffer, J.~Wither, M.~Cani, and B.~Thibert.
 \newblock Developable surfaces from arbitrary sketched boundaries.
 \newblock In {\em SGP '07: Proceedings of the fifth Eurographics Symposium on
   Geometry Processing}, pages 163--172, 2007.
+
+\bibitem{SWZ04}
+S.~Schaefer, J.~Warren, and D.~Zorin.
+\newblock Lofting curve networks using subdivision surfaces.
+\newblock In {\em SGP '04: Proceedings of the 2004 Eurographics/ACM SIGGRAPH
+  Symposium on Geometry Processing}, pages 103--114, 2004.
 
 \bibitem{SS08}
 R.~Schmidt and K.~Singh.

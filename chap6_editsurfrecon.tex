@@ -750,10 +750,12 @@ $M_{init}$ can be expressed as:
 
 \begin{equation}
 \label{eq:surfreconst}
-    M_{init}=\sum\limits_{i=1}^m {(fr_{i1} \bigcup fr_{i2} \bigcup {...} \bigcup fr_{in})},
+%    M_{init}=\sum\limits_{i=1}^m {(fr_{i1} \bigcup fr_{i2} \bigcup {...} \bigcup fr_{in})},
+    M_{init}=\sum\limits_{i=1}^m {(\bigcup\limits_{j = 1}^n {fr_{ij}})}
 \end{equation}
 in which $fr_{ij}$ refers to the  $j$th frustum built in zone
-$zn_i$. After the computation, all $fr_{ij}$ and their unions will
+$zn_i$, assuming there are totally $m$ zones and $n$ frusta in each
+zone. After the computation, all $fr_{ij}$ and their unions will
 be preserved for the further edit operation if necessary, which will
 be introduced in detail in Section~\ref{ch6:sec:edit}. Finally, we
 iteratively refine and smooth the mesh surface using the same
@@ -1204,12 +1206,12 @@ of~\cite{LBDLJ08} but are avoided in our result.
       \centering
       \includegraphics[scale=0.12]{figs/f6.skull-edit.eps}%0.13
     \end{minipage}}
-  \caption{An example of the reconstruction and editing of the \textit{skull} model. 
-  (a) Input cross sections. 
-  (b) Generated sub-surfaces in zones. 
-  (c) Reconstruction result. 
-  (d) Sketch a curve (red) to split the local surface. 
-  (e) Updated sub-surfaces in zones. 
+  \caption{An example of the reconstruction and editing of the \textit{skull} model.
+  (a) Input cross sections.
+  (b) Generated sub-surfaces in zones.
+  (c) Reconstruction result.
+  (d) Sketch a curve (red) to split the local surface.
+  (e) Updated sub-surfaces in zones.
   (f) Editing result.}
   \label{fig:skull}
 \end{figure*}
@@ -1257,12 +1259,12 @@ of~\cite{LBDLJ08} but are avoided in our result.
       \centering
       \includegraphics[scale=0.11]{figs/f6.ovaries-edit.eps}%0.12
     \end{minipage}}
-  \caption{An example of the reconstruction and editing of the \textit{ovaries} model. 
-  (a) Input cross sections. 
-  (b) Generated sub-surfaces in zones. 
-  (c) Reconstruction result. 
-  (d) Sketch a curve (red) to join the local surface. 
-  (e) Updated sub-surfaces in zones. 
+  \caption{An example of the reconstruction and editing of the \textit{ovaries} model.
+  (a) Input cross sections.
+  (b) Generated sub-surfaces in zones.
+  (c) Reconstruction result.
+  (d) Sketch a curve (red) to join the local surface.
+  (e) Updated sub-surfaces in zones.
   (f) Editing result.}
   \label{fig:ovaries}
 \end{figure*}
