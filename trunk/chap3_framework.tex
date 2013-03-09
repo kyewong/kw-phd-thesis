@@ -18,7 +18,7 @@ modeling packages using the WIMP-style (Windows, Icon, Menu,
 Pointer) interfaces. Sketch-based modeling typically uses freeform
 curves (or strokes) as the basic modeling metaphor and allows user
 to produce 3D models using sketching or sculpting methods, which are
-quite similar to the creation behavior of artists in reality. It is 
+quite similar to the creation behavior of artists in reality. It is
 suitable for early conceptual design and idea communication.
 
 
@@ -34,7 +34,7 @@ interactively edit the 3D model.
 %the problems of sketch-based modeling.
 %problem 1: no hint/reference shapes in sketching, sketches not preserved in sculpting
 As introduced in Section~\ref{ch2:sec:sbim:sketch},
-Many sketch-based modeling systems heavily rely on sculpting and
+many sketch-based modeling systems heavily rely on sculpting and
 their sketching phase is rather simple. A simple sketching
 directly creates a very rough overall model, starting from which the
 sculpting is applied to perform various sophisticated shape editing.
@@ -77,7 +77,7 @@ system correctly understands the user's intention and whether the
 creation and editing is successfully performed.
 
 %our contributions
-In this chapter, we propose methods to solve  these problems. First, 
+In this chapter, we propose methods to solve  these problems. First,
 we enhance the sketching phase by integrating the
 modeling capability of the conventional sketching and the
 intuitiveness and instant modeling of the conventional sculpting.
@@ -87,7 +87,7 @@ to define the shape during the sketching, which make the sketching
 phase enable to create a complicated  3D mesh. The 3D model is
 progressively created and displayed immediately after each sketch,
 which makes the sketching phase intuitive as sculpting and the user
-get aware of the 3D shape he sketched.
+aware of the 3D shape he sketched.
 
 Second, to properly map the 2D user sketches into 3D space and
 make the location and orientation of strokes in 3D space meaningful
@@ -151,7 +151,7 @@ tools for the user to create and edit a 3D model. The former is used
 for sketching the shape of the model progressively, and the latter,
 which includes a series of editing functions such as deformation,
 extrusion and so on, is used to further edit or refine the created
-model. The sculpting tool is also sketch-based. With this interface, 
+model. The sculpting tool is also sketch-based. With this interface,
 the user can easily create and edit a 3D object in a short period by
 sketching strokes.
 
@@ -187,8 +187,8 @@ sketching strokes.
       \centering
       \includegraphics[scale=0.2]{figs/f3.pig-4.eps}
     \end{minipage}}
-\\    
-    
+\\
+
   \subfigure[]{
     \label{fig:pig:e}
     \begin{minipage}[b]{0.18\textwidth}
@@ -219,15 +219,15 @@ sketching strokes.
       \centering
       \includegraphics[scale=0.22]{figs/f3.pig-9.eps}
     \end{minipage}}
-  \caption{An example of using the sketching tool. 
-  (a) Initially three basic planes are provided. 
-  (b) A closed curve is sketched on the blue plane. 
-  (c) The preview of the reconstructed shape. 
-  (d) A new cross section is added on the red plane and the previewed shape is rendered. 
-  (e) The green plane is translated and three more cross sections are sketched. 
-  (f) More cross sections are added to update the overall model. 
+  \caption{An example of using the sketching tool.
+  (a) Initially three basic planes are provided.
+  (b) A closed curve is sketched on the blue plane.
+  (c) The preview of the reconstructed shape.
+  (d) A new cross section is added on the red plane and the previewed shape is rendered.
+  (e) The green plane is translated and three more cross sections are sketched.
+  (f) More cross sections are added to update the overall model.
   (g) The intersection between the green plane and the current model is rendered semi-transparently
-  to provide reference for further sketches. 
+  to provide reference for further sketches.
   (i) The final model.}
   \label{fig:pig} %% label for entire figure
 \end{figure*}
@@ -245,8 +245,8 @@ some medical applications. Comparing to silhouettes for shape
 description, there might exist fewer perception ambiguities using
 cross sections. Second, a cross section is a planar curve, so it is
 relatively easy to sketch a cross section with the help of a plane.
-Meanwhile, taking the cross sections as the input is also consistent 
-with one of the visual rules in~\cite{HD00} that smooth lines are 
+Meanwhile, taking the cross sections as the input is also consistent
+with one of the visual rules in~\cite{HD00} that smooth lines are
 usually interpreted as the contours of the 3D objects by human being.
 
 %introduce reference planes
@@ -401,16 +401,16 @@ automatically be generated for subsequent sketching.
       \centering
       \includegraphics[scale=0.11]{figs/f3.fish-sculpt-5.eps}%0.11
     \end{minipage}}
-  \caption{Some sculpting examples. 
-  (a) A user sketched contour (yellow) and the generated initial model. 
-  (b) Tunneling operation. 
-  (c) Extrusion operation. 
-  (d) Cutting operation. 
+  \caption{Some sculpting examples.
+  (a) A user sketched contour (yellow) and the generated initial model.
+  (b) Tunneling operation.
+  (c) Extrusion operation.
+  (d) Cutting operation.
   (e) Smoothing operation.}
   \label{fig:sculpt} %% label for entire figure
 \end{figure}
 
-Next we introduce the types of strokes our system accepts and 
+Next we introduce the types of strokes our system accepts and
 the corresponding sculpting functions.
 
 \begin{itemize}
@@ -498,14 +498,14 @@ operation of deformation will be introduced next.
       \centering
       \includegraphics[scale=0.15]{figs/f3.fish-deform-6.eps}
     \end{minipage}}
-  \caption{An example of deformation. 
+  \caption{An example of deformation.
   (a) The blue curve is the handle curve sketched on the initial model.
-  The yellow, red and green dots denote the handle, ROI and static vertices respectively. 
-  (b) The automatically generated base plane (blue) and projection plane (green). 
-  (c) The target curve (green) drawn on the base plane. 
+  The yellow, red and green dots denote the handle, ROI and static vertices respectively.
+  (b) The automatically generated base plane (blue) and projection plane (green).
+  (c) The target curve (green) drawn on the base plane.
   (d) To create a non-planar target curve, a curve (red) is drawn on the projection plane as its
-  projection. 
-  (e) The updated non-planar target curve (green). 
+  projection.
+  (e) The updated non-planar target curve (green).
   (f) The deformed model.}
   \label{fig:deform} %% label for entire figure
 \end{figure*}
@@ -514,7 +514,7 @@ operation of deformation will be introduced next.
 The deformation tool is an important  sculpting function in our
 system. As introduced in Section~\ref{ch2:sec:sbim:sculpt}, to
 deform a mesh, a handle needs to be first specified for the
-following operations. The handle curve is represented by a polyline 
+following operations. The handle curve is represented by a polyline
 consisting of vertices on the surface, called the handle vertices
 (Figure~\ref{fig:deform:a}). Based on the stroke, two reference
 planes are generated for the user to sketch the modified shape of
@@ -609,10 +609,10 @@ shown in Figure~\ref{fig:alstrokeproc}.
       \centering
       \includegraphics[scale=0.3]{figs/f3.strokepre-4.eps}
     \end{minipage}}
-  \caption{An example of stroke preprocessing. The goal here is to filter the noisy points and get a smooth curve with 10 points. 
-  (a) Initial input. 
-  (b) Filtering result. 
-  (c) Resampling result. 
+  \caption{An example of stroke preprocessing. The goal here is to filter the noisy points and get a smooth curve with 10 points.
+  (a) Initial input.
+  (b) Filtering result.
+  (c) Resampling result.
   (d) Final result after smoothing.}
   \label{fig:alstrokeproc} %% label for entire figure
 \end{figure}
@@ -717,8 +717,8 @@ topology directly by sketching the contours at the creation phase.
       \centering
       \includegraphics[scale=0.12]{figs/f3.rule2-2.eps}
     \end{minipage}}
-  \caption{An example for rule~\ref{rule:2}. 
-  (a) The user sketched cross sections. Containing relationship exists among multiple cross sections on the blue plane. 
+  \caption{An example for rule~\ref{rule:2}.
+  (a) The user sketched cross sections. Containing relationship exists among multiple cross sections on the blue plane.
   (b) The generated model.}
   \label{fig:rule2} %% label for entire figure
 \end{figure}
