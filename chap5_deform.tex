@@ -265,7 +265,7 @@ opposite to the edge $\tilde{e_{ij}}$. $\tilde{A_i}$ is the Voronoi
 area of the node $\tilde{v_i}$, which is computed as the area of
 the surface region built by connecting incident edges' midpoints
 with triangle circumcenters (for acute triangles) or midpoints of
-opposite edges (for obtuse triangles)~\cite{MDSB02}, as shown
+opposite edges (for obtuse triangles), as shown
 in Figure~\ref{fig:edgebasedcotweight}. In fact, $L(\cdot)$ can
 be regarded as the discretized Laplace-Beltrami operator with
 cotangent coefficients on triangular meshes~\cite{BS08}.
@@ -357,7 +357,7 @@ E(\tilde{v_i}^\prime) &=& \sum\limits_{j\in N(i)}{\tilde{\omega_{ij}} ||\tilde{e
 -2\tilde{e_{ij}}^{\prime T}R_i\tilde{e_{ij}}+\tilde{e_{ij}}^T R_i^T R_i \tilde{e_{ij}})}\nonumber\\
 &=&\sum\limits_{j\in N(i)}{(\tilde{\omega_{ij}} \tilde{e_{ij}}^{\prime T}\tilde{e_{ij}}^\prime
 -2\tilde{\omega_{ij}} \tilde{e_{ij}}^{\prime T}R_i\tilde{e_{ij}}
-+\tilde{\omega_{ij}} \tilde{e_{ij}}^T \tilde{e_{ij}})}
++\tilde{\omega_{ij}} \tilde{e_{ij}}^T \tilde{e_{ij}})}.
 \end{eqnarray}
 
 Since the terms that do not contain $R_i$ are constant, they can be ignored.
