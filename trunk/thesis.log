@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  9 MAR 2013 22:45
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.10.30)  10 MAR 2013 16:25
 entering extended mode
 **thesis.tex
 (D:\research\doc\Thesis\kw-phd-thesis\thesis.tex
@@ -579,19 +579,12 @@ Overfull \hbox (3.0pt too wide) in paragraph at lines 1045--1060
 
 [45] [46] [47]) [48]
 Chapter 4.
-(D:\research\doc\Thesis\kw-phd-thesis\chap4_surfreconortho.tex
-Overfull \hbox (0.44005pt too wide) in paragraph at lines 19--30
-[][]\OT1/ptm/m/n/12 The in-put of the sur-face re-con-struc-tion func-tion is a
- set of cross sec-tion-s $\OML/cmm/m/it/12 CS \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/1
-2 f\OML/cmm/m/it/12 cs[] []\OMS/cmsy/m/n/12 j []\OML/cmm/m/it/12 i \OT1/cmr/m/n
-/12 =$
- []
-
-[49
+(D:\research\doc\Thesis\kw-phd-thesis\chap4_surfreconortho.tex [49
 
 ]
 File: figs/f4.illu-workflow-2d1.eps Graphic file (type eps)
- <figs/f4.illu-workflow-2d1.eps>
+
+<figs/f4.illu-workflow-2d1.eps>
 File: figs/f4.illu-workflow-2d2.eps Graphic file (type eps)
  <figs/f4.illu-workflow-2d2.eps>
 File: figs/f4.illu-workflow-2d3.eps Graphic file (type eps)
@@ -620,66 +613,66 @@ File: figs/f3.surf-csgma-4.eps Graphic file (type eps)
 File: figs/f3.surf-csgma-5.eps Graphic file (type eps)
  <figs/f3.surf-csgma-5.eps> [52]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 266.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 267.
 File: figs/f3.surf-cshape-1.eps Graphic file (type eps)
 
 <figs/f3.surf-cshape-1.eps>
-Overfull \hbox (2.08911pt too wide) in paragraph at lines 277--277
+Overfull \hbox (2.08911pt too wide) in paragraph at lines 278--278
  [][] 
  []
 
 File: figs/f3.surf-cshape-2.eps Graphic file (type eps)
 <figs/f3.surf-cshape-2.eps>
-Overfull \hbox (2.08911pt too wide) in paragraph at lines 284--284
+Overfull \hbox (2.08911pt too wide) in paragraph at lines 285--285
  [][][] 
  []
 
 File: figs/f3.surf-cshape-3.eps Graphic file (type eps)
 <figs/f3.surf-cshape-3.eps>
-Overfull \hbox (2.08911pt too wide) in paragraph at lines 291--291
+Overfull \hbox (2.08911pt too wide) in paragraph at lines 292--292
  [][][] 
  []
 
 File: figs/f3.surf-cshape-4.eps Graphic file (type eps)
 <figs/f3.surf-cshape-4.eps>
-Overfull \hbox (2.08911pt too wide) in paragraph at lines 297--297
+Overfull \hbox (2.08911pt too wide) in paragraph at lines 298--298
  [][][] 
  []
 
 File: figs/f3.surf-cshape-5.eps Graphic file (type eps)
 <figs/f3.surf-cshape-5.eps>
-Overfull \hbox (2.08911pt too wide) in paragraph at lines 303--303
+Overfull \hbox (2.08911pt too wide) in paragraph at lines 304--304
  [][][] 
  []
 
 File: figs/f3.surf-cshape-6.eps Graphic file (type eps)
 <figs/f3.surf-cshape-6.eps>
-Overfull \hbox (2.08911pt too wide) in paragraph at lines 309--309
+Overfull \hbox (2.08911pt too wide) in paragraph at lines 310--310
  [][][] 
  []
 
 File: figs/f3.surf-cshape-7.eps Graphic file (type eps)
 <figs/f3.surf-cshape-7.eps>
-Overfull \hbox (21.66144pt too wide) in paragraph at lines 315--315
+Overfull \hbox (21.66144pt too wide) in paragraph at lines 316--316
  [][][] 
  []
 
 File: figs/f3.surf-cshape-RS2.eps Graphic file (type eps)
 <figs/f3.surf-cshape-RS2.eps>
-Overfull \hbox (21.66144pt too wide) in paragraph at lines 322--322
+Overfull \hbox (21.66144pt too wide) in paragraph at lines 323--323
  [][] 
  []
 
 File: figs/f3.surf-cshape-RS5.eps Graphic file (type eps)
 <figs/f3.surf-cshape-RS5.eps>
-Overfull \hbox (21.66144pt too wide) in paragraph at lines 328--328
+Overfull \hbox (21.66144pt too wide) in paragraph at lines 329--329
  [][][] 
  []
 
 File: figs/f3.surf-cshape-8.eps Graphic file (type eps)
 <figs/f3.surf-cshape-8.eps>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 357.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 358.
  [53] [54]
 File: figs/f3.surf-csinters-2.eps Graphic file (type eps)
  <figs/f3.surf-csinters-2.eps>
@@ -1070,10 +1063,10 @@ Ap-pli-ca-tion-s\OT1/ptm/m/n/12 , Vol.9, No.3, 2012, pp.361-
 Here is how much of TeX's memory you used:
  4974 strings out of 495355
  72899 string characters out of 3183097
- 141689 words of memory out of 3000000
+ 141569 words of memory out of 3000000
  7853 multiletter control sequences out of 15000+200000
  20254 words of font info for 59 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,16n,43p,1516b,369s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.dvi (143 pages, 459436 bytes).
+Output written on thesis.dvi (143 pages, 459780 bytes).

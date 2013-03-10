@@ -16,7 +16,8 @@ from scanned 2D slices or sketched from scratch, and the output is a
 smooth surface which interpolates the input curves.
 
 %input, output
-The input of the surface reconstruction function is a set of cross
+In our sketching interface introduced in the last chapter,
+the input of the surface reconstruction function is a set of cross
 sections $CS=\{cs_i~|~i=1,...,m\}$ which are progressively sketched
 by the users and lie on a set of orthogonal planes
 $P=\{p_i~|~i=1,...,n\}$ in 3D space $\mathbb{R}^3$. Each plane $p_i$
@@ -641,7 +642,7 @@ $M_{init}$ can then be calculated as:
 \begin{equation}
 \label{eq:surfreconstortho}
 %    M_{init}=\sum\limits_{i=1}^m {(Cl_{i1} \bigcup Cl_{i2} \bigcup {...} \bigcup Cl_{in})}
-    M_{init}=\sum\limits_{i=1}^m {(\bigcup\limits_{j = 1}^n {Cl_{ij}})}
+    M_{init}=\sum\limits_{i=1}^m {(\bigcup\limits_{j = 1}^n {Cl_{ij}})},
 \end{equation}
 where $Cl_{ij}$ refers to the $j$th cylinder built in  the $i$th
 zone, assuming there are totally $m$ zones and $n$ cylinders in each
@@ -652,6 +653,7 @@ zone.
 
 Since the shape of the initially reconstructed surface $M_{init}$ is usually unnatural and jaggy, we then improve it through iterative refinement and smoothing.
 
+\subsubsection{Mesh refinement}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%modified in the revised thesis
 For the mesh refinement, we used the algorithm proposed in~\cite{LP03} to produce a result similar to the Delaunay-like triangulation through iterative triangle splitting and edge swapping.
@@ -681,6 +683,7 @@ the edge swapping is restricted to the edges which do not belong to the input cr
 If there are new triangles created in the triangle splitting step, we relax all the edges
 on the mesh surface and repeat the splitting step; otherwise, the refinement process is complete.
 
+\subsubsection{Mesh smoothing}
 
 For the mesh smoothing, we adopted the algorithm in~\cite{YB02} to produce meshes
 with smooth shapes. The position $p_i$ of each vertex $v_i$ is updated to $p^\prime_i$

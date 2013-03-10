@@ -643,7 +643,7 @@ Finally the stroke is smoothed by moving each point according to Eq.~\ref{eq:str
 
 \begin{equation}
 \label{eq:strokesmooth}
-    P_i^\prime = \frac{P_{i-1}+4*P_i+P_{i+1}}{6}
+    P_i^\prime = \frac{P_{i-1}+4*P_i+P_{i+1}}{6},
 \end{equation}
 where $P_i$ and $P_i^\prime$ are the old and new positions of point
 $i$. $P_{i-1}$ and $P_{i+1}$ are the old positions of its two
@@ -877,12 +877,12 @@ where $A$, $B$, $C$ and $D$ are the unknown parameters to be determined,
 and we let $A^2+B^2+C^2=1$, which means
 $N = [\begin{array}{*{20}c} A & B & C \end{array}]$ is the unit normal
 vector of the plane. Then our task is to find the plane that minimizes
-the following objective function
+the following objective function:
 
 \begin{eqnarray}
 \label{eq:planeobjnoZ0}
     f(A,B,C,D) &=& \sum\limits_{i \in HC}
-    {\frac {(Ax_i+By_i+Cz_i+D)^2}{A^2+B^2+C^2}},\nonumber\\
+    {\frac {(Ax_i+By_i+Cz_i+D)^2}{A^2+B^2+C^2}}\nonumber\\
     &=& \sum\limits_{i \in HC} {(Ax_i+By_i+Cz_i+D)^2},
 \end{eqnarray}
 where $i \in HC$  means $p_i=(x_i,y_i,z_i)$ is a point on the handle curve.
@@ -925,7 +925,7 @@ x_n-x_c & y_n-y_c & z_n-z_c
 \end{equation*}
 assuming there are $n$ points on the handle curve. Next, $f(A,B,C)$
 can be minimized by computing the singular value decomposition
-of $M=USV^T$ and letting $P$ equal to the column of $V$
+of $M=USV^T$ and letting $N$ equal to the column of $V$
 that corresponds to the smallest singular value of $M$.
 To this end, the parameters of the optimal plane in
 Eq.~\ref{eq:planefunc} can be obtained. It can be seen that
